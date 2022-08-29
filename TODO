@@ -1,0 +1,5 @@
+- component-ize everything from index.html
+- make git repo and upload everything
+- react router make routes
+- update anchor (a) tags to use Link component
+- make backend and db!
