@@ -14,7 +14,7 @@ function AllBlogsPreview(props) {
   useEffect(populateEvents, []);
 
     function populateEvents() {
-        RequestUtils.get("http://localhost:8080/blog/previews") // send out post req and get the response from server
+        RequestUtils.get("/blog/previews") // send out post req and get the response from server
         .then(response => response.json()) // take response and turn it into JSON object
         .then(data => { // data = JSON object created ^^
             if (!data.ok) {
@@ -61,15 +61,6 @@ function AllBlogsPreview(props) {
                 })
             }
           </div>
-        </div>
-        <div className="area-heading">
-          <a
-            className="w3-button w3-hoverColor1"
-            style={{ width: "50%", borderRadius: "15px" }}
-            href="blogpage.html"
-          >
-            View All Blogs
-          </a>
         </div>
       </div>
     </section>

@@ -17,6 +17,10 @@ class RequestUtils {
         - POST (frontend to backend): Giving backend something 
     */
 
+    static getDomain() {
+        return "http://localhost:8080"; // change this for live node server
+    }
+
     /**
      * Make a GET request to the specified URL
      * @param {String} url
@@ -27,7 +31,7 @@ class RequestUtils {
         // GET all users with the first name of Tarun: QUERY PARAMETERS vvv
         // fetch("http://localhost:8080/getUsers?firstName=Tarun&lastName=Eswar")
 
-        return fetch(url, {
+        return fetch(this.getDomain() + url, {
             method: "get" // type of http request
         });
     }
@@ -49,7 +53,7 @@ class RequestUtils {
                 2. Send the request. Keep running the app, but do something WHEN the backend comes back and gives response
             Second option is better. This is called ASYNCHRONOUS HTTP Request
         */
-        return fetch(url, {
+        return fetch(this.getDomain() + url, {
             method: "post", // type of http request
             headers: {"Content-Type": "application/json"}, // "options" for an HTTP request. JSON = Javascript Object
             body: JSON.stringify(object)// "object" that you want to give backend

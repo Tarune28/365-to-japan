@@ -37,7 +37,9 @@ body {
     -o-transition: .3s all ease;
     transition: .3s all ease; }
     a, a:hover {
-      text-decoration: none !important; }
+      text-decoration: none !important;
+      color: grey;
+     }
   
   .hero {
     height: 100vh;
@@ -107,7 +109,11 @@ body {
       font-family: 'Work Sans', sans-serif;
     }
       .site-navbar .site-navigation .site-menu .active {
-        color: #eb4d55 !important; }
+        color: #eb4d55 !important; 
+       
+        
+      
+      }
       .site-navbar .site-navigation .site-menu a {
         text-decoration: none !important;
         display: inline-block; }
@@ -119,6 +125,8 @@ body {
           padding: 20px 0px;
           font-size: 15px;
           color: rgba(240,136,17, 0.7) !important;
+          
+
           display: inline-block;
           text-decoration: none !important;
           position: relative; }
@@ -130,13 +138,13 @@ body {
             left: 0;
     }
           .site-navbar .site-navigation .site-menu > li > a:hover {
-            color: #a2a2a3 !important; }
+            color: #37B193 !important; }
             .site-navbar .site-navigation .site-menu > li > a:hover:before {
               -webkit-transform: scale(1);
               -ms-transform: scale(1);
               transform: scale(1); }
         .site-navbar .site-navigation .site-menu > li.active > a {
-          color: #a2a2a3 !important; }
+          color: #37B193 !important; }
           .site-navbar .site-navigation .site-menu > li.active > a:before {
             -webkit-transform: scale(1);
             -ms-transform: scale(1);

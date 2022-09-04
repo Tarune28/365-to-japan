@@ -1,0 +1,12 @@
+.btn-primary-soft {
+
+    color: #37B193;
+    background: linear-gradient(to left, #37B193 50%, white 50%) left;
+    background-size: 200%;
+    transition: .4s ease-out;
+    border: #37B193 1px solid;
+}
+
+.btn-primary-soft:hover {
+    color: grey;
+}

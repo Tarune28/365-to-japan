@@ -12,7 +12,7 @@ function BlogBanner(props) {
   // sleep time expects milliseconds
 
   return (
-    <section className="hero-banner" style={{ zIndex: "-1", background: `url(${props.pageInfo.bannerURL}) no-repeat scroll center center`}}>
+    <section className="blog-banner" style={{background: `url(${props.pageInfo.bannerURL}) center center / cover no-repeat scroll`}}>
       <div style={{position: "absolute",
     top: "0",
     left: "0",

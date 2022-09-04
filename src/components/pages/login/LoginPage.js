@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../../../Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./LoginPage.css";
+import pageImage from "../../../img/loginDash/rose.jpg";
+import PageBanner from "../../pagebanner/PageBanner";
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +19,8 @@ function Login() {
     if (user) navigate("/dashboard");
   }, [user, loading]);
   return (
+    <>
+    <PageBanner image={pageImage} title="Administrative Login."/>
     <div className="login">
       <div className="login__container">
         <input
@@ -38,14 +43,9 @@ function Login() {
         >
           Login
         </button>
-        <div>
-          <Link to="/reset">Forgot Password</Link>
-        </div>
-        <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
-        </div>
       </div>
     </div>
+    </>
   );
 }
 export default Login;

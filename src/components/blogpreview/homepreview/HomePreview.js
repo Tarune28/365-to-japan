@@ -5,6 +5,7 @@ import blog22Cover from "../../../img/blogs/immersion/cover.png"
 import moment from "moment";
 import { useEffect, useState } from "react";
 import RequestUtils from "../../../utils/RequestUtils";
+import "../homepreview/HomePreview.css"
 
 
 function HomePreview(props) {
@@ -16,7 +17,7 @@ function HomePreview(props) {
   useEffect(populateEvents, []);
 
     function populateEvents() {
-        RequestUtils.get("http://localhost:8080/blog/previews") // send out post req and get the response from server
+        RequestUtils.get("/blog/previews") // send out post req and get the response from server
         .then(response => response.json()) // take response and turn it into JSON object
         .then(data => { // data = JSON object created ^^
             if (!data.ok) {
@@ -68,7 +69,7 @@ function HomePreview(props) {
         </div>
         <div className="area-heading">
           <a
-            type="button" class="btn btn-secondary"
+            type="button" class="btn btn-primary-soft"
             style={{ width: "50%", borderRadius: "15px" }}
             href="blogpage.html"
           >

@@ -1,5 +1,5 @@
 .login {
-    height: 100vh;
+    height: 50vh;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -11,6 +11,8 @@
     text-align: center;
     background-color: #dcdcdc;
     padding: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   .login__textBox {
     padding: 10px;

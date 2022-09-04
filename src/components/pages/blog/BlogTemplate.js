@@ -18,7 +18,7 @@ function BlogTemplate(props) {
   function requestBlog() {
     let id = params.id;
    
-    RequestUtils.get("http://localhost:8080/blog/info?id=" + id) // send out post req and get the response from server
+    RequestUtils.get("/blog/info?id=" + id) // send out post req and get the response from server
     .then(response => response.json()) // take response and turn it into JSON object
     .then(data => { // data = JSON object created ^^
         if (!data.ok) {
