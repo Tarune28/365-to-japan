@@ -1,18 +1,37 @@
+
+// auth
 import {
   auth,
   logInWithEmailAndPassword,
   signInWithGoogle,
 } from "../../../Firebase";
+
+import { ContentState, convertToRaw } from 'draft-js';
+import { EditorState } from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+
+import createImagePlugin from '@draft-js-plugins/image';
+// compontents & functionality
+
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import LogoutPage from "../login/LogoutPage";
-import pageImage from "../../../img/loginDash/rose.jpg";
+import pageImage from "../../../img/loginDash/mountains.jpg";
 import PageBanner from "../../pagebanner/PageBanner";
+import "react-datetime/css/react-datetime.css";
+
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  listAll,
+  list,
+} from "firebase/storage";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
 import moment from "moment";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -50,6 +69,17 @@ function DashboardPage() {
     MomentUtils.roundUp(moment(new Date()), "hour").add(1, "hour")
   );
 
+  let _contentState = ContentState.createFromText('Sample content state');
+  const raw = convertToRaw(_contentState)
+  const [contentState, setContentState] = useState(raw)
+  const imagePlugin = createImagePlugin();
+  const plugins = [imagePlugin];
+
+  // content to html
+  // input html
+
+
+
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
@@ -64,7 +94,7 @@ function DashboardPage() {
       <section style={{ padding: "50px" }}>
         <Form>
           <Form.Group className="mb-3 w-25">
-            <Form.Label>Blog Title</Form.Label>
+            <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter blog title"
@@ -102,7 +132,8 @@ function DashboardPage() {
 
           <Form.Group controlId="formFileMultiple" className="mb-3">
             <Form.Label>Upload Files</Form.Label>
-            <Form.Control type="file" multiple />
+            <Form.Control className="mb-3" type="file" multiple />
+            <Button onClick={console.log("nothing")}>Insert an image</Button>
           </Form.Group>
 
           <Form.Group className="mb-3">
@@ -120,10 +151,40 @@ function DashboardPage() {
 
           <Form.Group className="mb-3">
             {/* implement this and submit to server*/}
+
+           
+            
+
+
             <Form.Label>HTML insert</Form.Label>
+            <Editor
+        defaultContentState={contentState}
+        onContentStateChange={setContentState}
+        wrapperClassName="wrapper-class"
+        editorClassName="editor-class"
+        toolbarClassName="toolbar-class"
+        plugins={plugins}
+
+       
+      />
+  <button onClick={console.log("nothing")}>Insert an image</button>
+          {/* <pre>
+            {JSON.stringify(
+              convertToRaw(this.state.contentState.getCurrentContent()),
+              null,
+              "  "
+            )}
+          </pre> */}
+
+
+
+
+
+
+      
             <Form.Control
               type="text"
-              as="textarea" 
+              as="textarea"
               rows={3}
               placeholder="Enter location"
               value={currentLocationName}
@@ -134,7 +195,7 @@ function DashboardPage() {
           </Form.Group>
 
           <Button variant="primary" type="submit">
-            Post Blog
+            Post
           </Button>
         </Form>
 

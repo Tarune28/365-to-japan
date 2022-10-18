@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
 import {
   GoogleAuthProvider,
   getAuth,
@@ -84,6 +85,7 @@ const sendPasswordReset = async (email) => {
 const logout = () => {
   signOut(auth);
 };
+const storage = getStorage(app);
 export {
   auth,
   db,
@@ -91,5 +93,6 @@ export {
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
   sendPasswordReset,
-  logout
+  logout,
+  storage
 };

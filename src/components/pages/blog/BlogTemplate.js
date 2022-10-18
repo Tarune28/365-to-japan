@@ -10,6 +10,8 @@ function BlogTemplate(props) {
   const params = useParams();
   let [blogPostData, setBlogPostData] = useState([]);
 
+  let [dataReady, set] = useState([]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     requestBlog();
@@ -18,7 +20,7 @@ function BlogTemplate(props) {
   function requestBlog() {
     let id = params.id;
    
-    RequestUtils.get("/blog/info?id=" + id) // send out post req and get the response from server
+    RequestUtils.get("http://localhost:8080/blog/info?id=" + id) // send out post req and get the response from server
     .then(response => response.json()) // take response and turn it into JSON object
     .then(data => { // data = JSON object created ^^
         if (!data.ok) {
@@ -57,7 +59,7 @@ function BlogTemplate(props) {
 
   return (
     <div>
-      <BlogBanner pageInfo={blogPostData}></BlogBanner>
+      <BlogBanner pageInfo={blogPostData} ></BlogBanner>
 
       <section className="blog-area area-padding">
       <div className="container grey">
