@@ -110,10 +110,11 @@ function DashboardPage() {
     setConvertedContent(currentContentAsHTML);
   }
 
-  const  [currentMarkup, setMarkup] = useState(null);
+  
   const createMarkup = (html) => {
+    
     return  {
-      __html: convertToHTML(editorState.getCurrentContent())
+      __html: convertedContent
       
       //__html: DOMPurify.sanitize(html)
     }
@@ -249,6 +250,7 @@ function DashboardPage() {
               value={convertedContent}
               onChange={(e) => {
                 setConvertedContent(e.target.value);
+                createMarkup(convertedContent);
               }}
             />
           </Form.Group>
