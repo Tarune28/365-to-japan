@@ -24,6 +24,7 @@ function HomePreview(props) {
                 alert("Events could not be populated!");
                 return;
             }
+            console.log(data.arr);
             setListBlogs(data.arr);
 
 

@@ -19,20 +19,21 @@ function BlogTemplate(props) {
 
   function requestBlog() {
     let id = params.id;
-   
-    RequestUtils.get("http://localhost:8080/blog/info?id=" + id) // send out post req and get the response from server
+    console.log("test");
+    RequestUtils.get("/blog/info?id=" + id) // send out post req and get the response from server
     .then(response => response.json()) // take response and turn it into JSON object
     .then(data => { // data = JSON object created ^^
         if (!data.ok) {
             alert("Blog could not be found!");
             return;
         }
-
+        
+        console.log(data.arr[0]);
         setBlogPostData(data.arr[0]);
 
     })
     .catch(error => { 
-        
+      console.log(error);
     }); 
 }
   /*
