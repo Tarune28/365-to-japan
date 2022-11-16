@@ -1,5 +1,14 @@
-- component-ize everything from index.html
-- make git repo and upload everything
-- react router make routes
-- update anchor (a) tags to use Link component
+- component-ize everything from index.html < done >
+- make git repo and upload everything < done >
+- react router make routes < done >
+- update anchor (a) tags to use Link component < done >
 - make backend and db!
+
+/// out dated stuff ^^^
+
+
+- finish admin portal/posting to db
+- fix db!!!!
+- fetching new shit from db
+- uploading old blogs
+- deploy!!!

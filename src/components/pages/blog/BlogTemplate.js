@@ -28,7 +28,7 @@ function BlogTemplate(props) {
             return;
         }
         
-        console.log(data.arr[0]);
+
         setBlogPostData(data.arr[0]);
 
     })
