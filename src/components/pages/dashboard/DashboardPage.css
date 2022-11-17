@@ -1,12 +1,33 @@
-.wrapper-class {
-    padding: 1rem;
-    border: 1px solid #ccc;
+.preview {
+  font-family: 'Crimson Text', serif; color: grey; padding-left: 10px; padding-right: 10px;
+}
+
+  .preview {
+    word-wrap: break-word;
+    white-space: initial;
+    color: black;
   }
-  .editor-class {
-    background-color:lightgray;
-    padding: 1rem;
-    border: 1px solid #ccc;
+
+  .indent {
+    text-indent: 40px;
   }
-  .toolbar-class {
-    border: 1px solid #ccc;
+
+  .header {
+    text-decoration: underline;
+    font-size: 18px;
   }
+
+  h1,h2,h3,h4 {
+    color: grey;
+  }
+
+  .starter:first-letter {
+   
+    float: left;
+    font-family: Georgia;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+}

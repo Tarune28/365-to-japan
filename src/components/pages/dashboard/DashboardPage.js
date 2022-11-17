@@ -2,11 +2,9 @@
 // auth
 import {
   auth,
-  logInWithEmailAndPassword,
-  signInWithGoogle,
 } from "../../../Firebase";
 
-import { ContentState, convertToRaw } from 'draft-js';
+import RequestUtils from "../../../utils/RequestUtils";
 import { EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
@@ -21,22 +19,19 @@ import LogoutPage from "../login/LogoutPage";
 import pageImage from "../../../img/loginDash/mountains.jpg";
 import PageBanner from "../../pagebanner/PageBanner";
 import "react-datetime/css/react-datetime.css";
-import DOMPurify from 'dompurify';
 import { convertToHTML } from 'draft-convert';
+import "./DashboardPage.css";
 
 //image upload
 import {
   ref,
   uploadBytes,
   getDownloadURL,
-  listAll,
-  list,
 } from "firebase/storage";
 import { storage } from "../../../Firebase";
 import { v4 } from "uuid";
 
 import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import moment from "moment";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -48,12 +43,9 @@ function DashboardPage() {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
-
+// file organization in firebase
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
-
-  const imagesListRef = ref(storage, "images/");
-
 
   const uploadFile = () => {
     if (imageUpload == null) return;
@@ -65,27 +57,20 @@ function DashboardPage() {
     });
   };
  
-  // function getContent() {
-  //   alert(JSON.stringify(
-  //     convertToRaw(contentState.getCurrentContent()),
-  //     null,
-  //     "  "
-  //   ))
-  // }
-
+// STATE HOOKS FOR DB ENTRY
   let [currentEventName, setCurrentEventName] = useState("");
 
   let [currentFileName, setCurrentFileName] = useState("");
 
   let [currentLocationName, setCurrentLocationName] = useState("");
 
-  let [currentKeepEvent, setCurrentKeepEvent] = useState(false);
+  let [currentBannerURL, setCurrentBannerURL] = useState("");
 
-  let [currentStartDateTime, setCurrentStartDateTime] = useState(
-    MomentUtils.roundUp(moment(new Date()), "hour")
-  );
+  let [currentCategory, setCurrentCategory] = useState("");
 
-  let [currentEndDateTime, setCurrentEndDateTime] = useState(
+  let [currentIcon, setCurrentIcon] = useState("");
+
+  let [currentPostTime, setCurrentPostTime] = useState(
     MomentUtils.roundUp(moment(new Date()), "hour").add(1, "hour")
   );
 
@@ -103,10 +88,12 @@ function DashboardPage() {
   const  [convertedContent, setConvertedContent] = useState(null);
   const handleEditorChange = (state) => {
     setEditorState(state);
+    
     convertContentToHTML();
   }
   const convertContentToHTML = () => {
     let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
+    console.log(currentContentAsHTML )
     setConvertedContent(currentContentAsHTML);
   }
 
@@ -142,6 +129,37 @@ function DashboardPage() {
     if (!user) navigate("/login");
   }, [user, loading, navigate]);
 
+  function postBlog(e) {
+    if (e != null){
+      e.preventDefault();
+  }
+    let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 300)
+    let reqObj = {
+      title: currentEventName,
+      bannerURL: currentBannerURL,
+      date: currentPostTime,
+      description: desc,
+      category: currentCategory,
+      icon: currentIcon,
+      html: convertedContent
+  }
+
+    RequestUtils.post("/blog/create", reqObj) // send out post req and get the response from server
+        .then(response => response.json()) // take response and turn it into JSON object
+        .then(data => { // data = JSON object created ^^
+            if (!data.ok) {
+                alert("Blog could not be created!");
+                return;
+            }
+            alert("365toJapan Blog Posted!");
+
+    
+        })
+        .catch(error => {
+            alert("Something went wrong!");
+        });
+  }
+
   return (
     <>
       <PageBanner image={pageImage} title="Administrative Login." />
@@ -164,9 +182,33 @@ function DashboardPage() {
             <Form.Control
               type="text"
               placeholder="Enter blog title"
-              value={currentEventName}
+              value={currentLocationName}
               onChange={(e) => {
-                setCurrentEventName(e.target.value);
+                setCurrentLocationName(e.target.value);
+              }}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3 w-25">
+            <Form.Label>Category</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="i.e. informational"
+              value={currentCategory}
+              onChange={(e) => {
+                setCurrentCategory(e.target.value);
+              }}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3 w-25">
+            <Form.Label>Icon</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="i.e. fa-pencil"
+              value={currentIcon}
+              onChange={(e) => {
+                setCurrentIcon(e.target.value);
               }}
             />
           </Form.Group>
@@ -176,9 +218,9 @@ function DashboardPage() {
               <Form.Group className="mb-3">
                 <Form.Label>Post Time</Form.Label>
                 <Datetime
-                  value={currentEndDateTime}
+                  value={currentPostTime}
                   timeConstraints={{ minutes: { step: 5 } }}
-                  onChange={setCurrentEndDateTime}
+                  onChange={setCurrentPostTime}
                 />
               </Form.Group>
             </Col>
@@ -215,9 +257,9 @@ function DashboardPage() {
             <Form.Control
               type="text"
               placeholder="Enter location"
-              value={currentLocationName}
+              value={currentBannerURL}
               onChange={(e) => {
-                setCurrentLocationName(e.target.value);
+                setCurrentBannerURL(e.target.value);
               }}
             />
           </Form.Group>
@@ -240,12 +282,15 @@ function DashboardPage() {
 
        
       />
-      <pre>{convertedContent}</pre>
-      <Form.Group className="mb-3">
+      
+      
+      
+      <Form.Group className="mb-3 form-inline">
             {/* implement this and submit to server*/}
             <Form.Label>HTML Adjustments</Form.Label>
             <Form.Control
               type="text"
+              
               placeholder="Enter location"
               value={convertedContent}
               onChange={(e) => {
@@ -255,6 +300,7 @@ function DashboardPage() {
             />
           </Form.Group>
   
+        <pre className="preview">{convertedContent}</pre>
          <pre className="preview" id="prv" dangerouslySetInnerHTML={createMarkup(convertedContent)}></pre>
 
           {/* <pre>
@@ -274,7 +320,7 @@ function DashboardPage() {
           
           </Form.Group>
 
-          <Button onClick={e => alert(this.state.contentState.getCurrentContent)
+          <Button onClick={e => postBlog()
             } variant="primary" type="submit">
             Post
           </Button>

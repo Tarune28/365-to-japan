@@ -49,7 +49,7 @@ function BlogCard(props) {
                 <a className="d-inline-block" href="blogs/immersion.html">
                   <h2>{props.blogInfo["title"]}</h2>
                 </a>
-                <p style={{ padding: "10px" }}>
+                <p style={{ padding: "10px", wordWrap: "break-word"}}>
                   {props.blogInfo["description"]}
                 </p>
                 <ul className="blog-info-link">
