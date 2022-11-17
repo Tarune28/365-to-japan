@@ -6,6 +6,7 @@ import { Outlet, Link } from "react-router-dom";
 function Header() {
   let [scroll, setScroll] = useState(false);
   useEffect(() => {
+    console.log(window.location.pathname);
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 50);
     });
@@ -47,20 +48,20 @@ function Header() {
                 role="navigation"
               >
                 <ul className="site-menu main-menu js-clone-nav ml-auto ">
-                  <li className="active">
+                  <li className={window.location.pathname == "/" ? "active" : "nav-link"}>
                     <a href="/" className="nav-link">Home</a>
                   </li>
-                  <li>
+                  <li className={window.location.pathname == "/blogs" ? "active" : "nav-link"}>
                   <a href="/blogs" className="nav-link">Blogs</a>
                   </li>
-                  <li>
+                  <li className={window.location.pathname == "/about" ? "active" : "nav-link"}>
                   <a href="/about" className="nav-link">About</a>
                   </li>
-                  <li>
+                  <li className={window.location.pathname == "/contact" ? "active" : "nav-link"}>
                   <a href="/contact" className="nav-link">Contact</a>
                   </li>
-                  <li>
-                  <a href="/login" className="nav-link">Login</a>
+                  <li className={window.location.pathname == "/login" ? "active" : "nav-link"}>
+                  <a href="/login" className="nav-link">Dashboard Portal</a>
                   </li>
                 </ul>
               </nav>
