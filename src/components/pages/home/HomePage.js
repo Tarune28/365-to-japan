@@ -15,6 +15,8 @@ function HomePage(){
         
         <HomeBanner/>
         <HomePreview/>
+        <Footer/>
+        
         </>
     );
 }

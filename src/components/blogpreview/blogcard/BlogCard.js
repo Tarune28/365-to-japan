@@ -13,7 +13,7 @@ function BlogCard(props) {
   //   category: blogCategory
   // }
 
-  console.log(props);
+
 
   return (
     <>

@@ -6,7 +6,7 @@ import { Outlet, Link } from "react-router-dom";
 function Header() {
   let [scroll, setScroll] = useState(false);
   useEffect(() => {
-    console.log(window.location.pathname);
+  
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 50);
     });

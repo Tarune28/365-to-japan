@@ -1,0 +1,7 @@
+.footer-div li a {
+    color: white
+}
+
+.footer-div a:hover {
+    color: #37B193;
+}

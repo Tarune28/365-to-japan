@@ -1,4 +1,8 @@
-
+import "./Footer.css";
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
 function Footer() {
 
@@ -20,32 +24,34 @@ function Footer() {
               <div className="single-footer-widget">
                 <h6 style={{color: "#f08812"}}>Notifications</h6>
                 <p style={{color: "white"}}>Enter your name and email to receive updates of upcoming blogs!</p>
-                <div className="" id="mc_embed_signup">
-                  <form target="_blank" action="email.php"
-                    method="post" className="form-inline">
-                    <div className="d-flex flex-row">
-                      <input className="form-control" name="NAME" placeholder="Enter Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Name '"
-                        required="" type="text"/>
-                      <input className="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
-                        required="" type="email"/>
-                      <button className="click-btn btn btn-default"><i className="ti-arrow-right"></i></button>
-                      <div style={{position: "absolute", left: "-5000px"}}>
-                        <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text"/>
-                      </div>
-                    </div>
-                    <div className="info"></div>
-                  </form>
-                </div>
+               
+               
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+              
+        <Col sm="10">
+          <Form.Control type="text" placeholder="Name" />
+        </Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+ 
+        <Col sm="10">
+          <Form.Control type="text" placeholder="Email" />
+        </Col>
+      </Form.Group>
+<Button variant="outline-dark">Join</Button>{' '}
+
               </div>
             </div>
             <div className="col-lg-2 col-md-6 col-sm-6">
               <div className="single-footer-widget">
                 <h6 style={{color: "#f08812"}}>Site Map</h6>
                 <ul className="footer-div" style={{color: "white"}}>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="blogpage.html">Blogs</a></li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html" >Contact</a></li>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/blogs">Blogs</a></li>
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/contact" >Contact</a></li>
+                  <li><a href="/login" >Dashboard Portal</a></li>
                   <li><a href="#top">Back To Top</a></li>
                 </ul>
               </div>
