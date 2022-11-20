@@ -137,7 +137,7 @@ function DashboardPage() {
     let reqObj = {
       title: currentEventName,
       bannerURL: currentBannerURL,
-      date: currentPostTime.format('DD/MM/YY hh:mm A'),
+      date: currentPostTime.format('MM/DD/YY hh:mm A'),
       description: desc,
       category: currentCategory,
       icon: currentIcon,

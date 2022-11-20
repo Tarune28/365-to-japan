@@ -72,7 +72,9 @@ const callbackTabClicked = (key, event) => {
         </div>
         <Tabs defaultActiveKey="1" onTabClick={callbackTabClicked}>
     <Tabs.TabPane tab="All Time" key="1">
-    {
+    <div className="row portfolio_area area-padding">
+          <div className="row portfolio-grid">
+          {
                 listBlogs.map((singularBlogPost) => {
                     // Code that runs for each element
                     // TODO: Create delete handler
@@ -81,6 +83,9 @@ const callbackTabClicked = (key, event) => {
                     );
                 })
             }
+          </div>
+    </div>
+    
     </Tabs.TabPane>
     <Tabs.TabPane tab="Past Month" key="2">
     {
