@@ -31,7 +31,7 @@ function AllBlogsPreview(props) {
         }
         console.log(data.arr)
         setListBlogs(data.arr);
-
+        console.log(data.ok);
 
     })
     .catch(error => { 
@@ -53,7 +53,7 @@ const callbackTabClicked = (key, event) => {
     console.log(listBlogs);
   }
   if (key === '4') {
-    populateEvents(4);
+    populateEvents(3);
     console.log(listBlogs);
   }
 };
@@ -88,6 +88,8 @@ const callbackTabClicked = (key, event) => {
     
     </Tabs.TabPane>
     <Tabs.TabPane tab="Past Month" key="2">
+    <div className="row portfolio_area area-padding">
+          <div className="row portfolio-grid">
     {
                 listBlogs.map((singularBlogPost) => {
                     // Code that runs for each element
@@ -97,8 +99,12 @@ const callbackTabClicked = (key, event) => {
                     );
                 })
             }
+             </div>
+    </div>
     </Tabs.TabPane>
     <Tabs.TabPane tab="Past 6 Months" key="3">
+    <div className="row portfolio_area area-padding">
+          <div className="row portfolio-grid">
     {
                 listBlogs.map((singularBlogPost) => {
                     // Code that runs for each element
@@ -108,8 +114,12 @@ const callbackTabClicked = (key, event) => {
                     );
                 })
             }
+             </div>
+    </div>
     </Tabs.TabPane>
     <Tabs.TabPane tab="Past Year" key="4">
+    <div className="row portfolio_area area-padding">
+          <div className="row portfolio-grid">
     {
                 listBlogs.map((singularBlogPost) => {
                     // Code that runs for each element
@@ -119,6 +129,8 @@ const callbackTabClicked = (key, event) => {
                     );
                 })
             }
+            </div>
+    </div>
     </Tabs.TabPane>
   </Tabs>
           
