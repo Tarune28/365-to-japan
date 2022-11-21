@@ -9,10 +9,12 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #dcdcdc;
+    background-color: white;
+    border: black 1px solid;
     padding: 30px;
     padding-top: 50px;
     padding-bottom: 50px;
+    border-radius: 5px;
   }
   .login__textBox {
     padding: 10px;

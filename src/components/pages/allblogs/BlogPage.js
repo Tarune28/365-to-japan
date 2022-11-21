@@ -10,7 +10,7 @@ function BlogPage(){
         <Header/>
         <PageBanner image={pageImage} title="Blogs"/>
         <AllBlogsPreview/>
-        <Footer/>
+  
         </>
     );
 }

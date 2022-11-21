@@ -5,3 +5,7 @@
 .footer-div a:hover {
     color: #37B193;
 }
+
+.fade {
+    background-color: none;
+  }

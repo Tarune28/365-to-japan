@@ -1,6 +1,6 @@
 import BlogCard from "../blogcard/BlogCard";
 import { Tabs } from 'antd';
-import 'antd/dist/antd.css';
+// import '~antd/dist/antd.css';
 // cover images
 import blog22Cover from "../../../img/blogs/immersion/cover.png"
 import { useEffect, useState } from "react";
@@ -66,7 +66,7 @@ const callbackTabClicked = (key, event) => {
       <div className="container">
         <div className="area-heading">
           <h3>
-            <a id="target">Recent Blogs</a>
+            <a id="target">All Blogs</a>
           </h3>
           <p>365ToJapan blogs are posted 1-2 times weekly.</p>
         </div>

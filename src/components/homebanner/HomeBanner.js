@@ -54,11 +54,12 @@ function HomeBanner() {
               {/* style="text-indent: 1.1vw;" */}
               
               
-                  <svg viewBox="0 0 1060 300">
+                  <svg viewBox="0 0 1060 300" className="svg1">
                     <symbol id="s-text">
-                      <text text-anchor="middle" x="50%" y="80%">
+                      <text text-anchor="middle" x="50%" y="60%">
                         365toJapan
                       </text>
+                
                     </symbol>
 
                     <g class="g-ants">
@@ -68,7 +69,11 @@ function HomeBanner() {
                       <use xlinkHref="#s-text" class="text-copy"></use>
                       <use xlinkHref="#s-text" class="text-copy"></use>
                     </g>
+                    <h3>
+                  プレースホルダー テキスト
+                  </h3>
                   </svg>
+
                 
               
             </div>

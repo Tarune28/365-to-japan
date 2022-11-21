@@ -6,6 +6,10 @@ import "./LoginPage.css";
 import pageImage from "../../../img/loginDash/mountains.jpg";
 // change image
 import PageBanner from "../../pagebanner/PageBanner";
+import Form from "react-bootstrap/Form";
+import { Button, ButtonGroup } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -24,26 +28,26 @@ function Login() {
     <PageBanner image={pageImage} title="Administrative Login."/>
     <div className="login">
       <div className="login__container">
-        <input
+        <Form.Control
           type="text"
           className="login__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
-        <input
+        <Form.Control
           type="password"
           className="login__textBox"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button
-          className="login__btn"
+        <Button
+     
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Login
-        </button>
+        </Button>
       </div>
     </div>
     </>

@@ -3,10 +3,78 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import { useState } from "react";
+import RequestUtils from "../../utils/RequestUtils";
+import { Modal } from "react-bootstrap";
 
 function Footer() {
 
+    let [showModal, setShowModal] = useState(false);
+
+    let [currentName, setCurrentName] = useState("");
+
+    let [currentEmail, setCurrentEmail] = useState("");
+
+    function showEventModal() {
+      setShowModal(true);
+  }
+
+    function hideEventModal() {
+      setShowModal(false);
+  }
+
+    function formReset() {
+      setCurrentEmail("");
+      setCurrentName("");
+    }
+
+    function newSubscriber(e) {
+      if (e != null){
+        e.preventDefault();
+    }
+    let reqObj = {
+      name: currentName,
+      email: currentEmail
+    }
+
+    console.log("here")
+    RequestUtils.post("/subscriber/email", reqObj) // send out post req and get the response from server
+        .then(response => response.json()) 
+        .then(data => { // data = JSON object created ^^
+            if (!data.ok) {
+                alert("email could not be sent!");
+                return;
+            }
+            if (data.ok){
+              formReset();
+             
+            }
+            
+
+    
+        })
+        .catch(error => {
+            alert("Something went wrong!");
+        });
+        showEventModal();
+    }
+    
     return (
+      <>
+      <Modal show={showModal} onHide={hideEventModal} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>Thank you for subscribing!</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    We will email you when a new blog is out!
+                </Modal.Body>
+            </Modal>
+
+
+
+
+
+
         <footer className="footer-area section_gap">
         <div className="container">
           <div className="row">
@@ -28,18 +96,31 @@ function Footer() {
                
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
               
+                
+
+
         <Col sm="10">
-          <Form.Control type="text" placeholder="Name" />
+          <Form.Control type="text"
+              placeholder="Name"
+              value={currentName}
+              onChange={(e) => {
+               setCurrentName(e.target.value);
+              }}/>
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+      <Form.Group as={Row} className="mb-3" controlId="Email">
  
         <Col sm="10">
-          <Form.Control type="text" placeholder="Email" />
+        <Form.Control type="text"
+              placeholder="Email"
+              value={currentEmail}
+              onChange={(e) => {
+               setCurrentEmail(e.target.value);
+              }}/>
         </Col>
       </Form.Group>
-<Button variant="outline-dark">Join</Button>{' '}
+<Button variant="outline-dark" onClick={newSubscriber}>Join</Button>{' '}
 
               </div>
             </div>
@@ -58,7 +139,7 @@ function Footer() {
             </div>
           </div>
         </div>
-      </footer>
+      </footer></>
     );
 }
 
