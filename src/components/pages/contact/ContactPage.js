@@ -45,7 +45,7 @@ function ContactPage(){
           .then(response => response.json()) 
           .then(data => { // data = JSON object created ^^
               if (!data.ok) {
-                  alert("email could not be sent!");
+                  alert("Email could not be sent! Try again Later!");
                   return;
               }
               if (data.ok){

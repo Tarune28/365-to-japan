@@ -30,7 +30,7 @@ function HomePreview(props) {
 
         })
         .catch(error => { 
-            alert("Something went wrong! 176");
+            alert("404: Blogs could not be populated! Try again later!");
         }); 
     }
 

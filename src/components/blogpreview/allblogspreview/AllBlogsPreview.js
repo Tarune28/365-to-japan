@@ -26,7 +26,7 @@ function AllBlogsPreview(props) {
     .then(response => response.json()) // take response and turn it into JSON object
     .then(data => { // data = JSON object created ^^
         if (!data.ok) {
-            alert("Events could not be populated!");
+            alert("Blogs could not be populated!");
             return;
         }
         console.log(data.arr)

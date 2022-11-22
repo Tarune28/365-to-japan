@@ -42,7 +42,7 @@ function Footer() {
         .then(response => response.json()) 
         .then(data => { // data = JSON object created ^^
             if (!data.ok) {
-                alert("email could not be sent!");
+                alert("Form could not be sent! Try again later!");
                 return;
             }
             if (data.ok){
@@ -54,7 +54,7 @@ function Footer() {
     
         })
         .catch(error => {
-            alert("Something went wrong!");
+            alert("Email could not be sent! Try again later!");
         });
         showEventModal();
     }
