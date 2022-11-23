@@ -5,7 +5,9 @@
   .preview {
     word-wrap: break-word;
     white-space: initial;
-    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: lightgray;
   }
 
   .indent {
@@ -19,6 +21,13 @@
 
   h1,h2,h3,h4 {
     color: grey;
+  }
+
+  .top {
+    padding-top: 10px;
+  }
+  .returnLink {
+    color:gray;
   }
 
   .starter:first-letter {

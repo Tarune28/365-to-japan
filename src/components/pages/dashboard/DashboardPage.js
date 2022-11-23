@@ -15,7 +15,6 @@ import createImagePlugin from '@draft-js-plugins/image';
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router";
-import LogoutPage from "../login/LogoutPage";
 import pageImage from "../../../img/loginDash/mountains.jpg";
 import PageBanner from "../../pagebanner/PageBanner";
 import "react-datetime/css/react-datetime.css";
@@ -40,7 +39,7 @@ import Datetime from "react-datetime";
 import MomentUtils from "../../../utils/MomentUtils";
 
 function DashboardPage() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
 // file organization in firebase
@@ -133,15 +132,24 @@ function DashboardPage() {
     if (e != null){
       e.preventDefault();
   }
+    let url = new URL("https://api.countapi.xyz/create?namespace=365ToJapan.com&key=" + currentEventName.replace(/\s+/g, '') + "&value=0")
+console.log(url);
+console.log(url.search);
+
+
+    let callBack = "https://api.countapi.xyz/update/365ToJapan.com/"+ currentEventName.replace(/\s+/g, '') +"/?amount=1"
+
     let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 300)
     let reqObj = {
       title: currentEventName,
       bannerURL: currentBannerURL,
       date: currentPostTime.format('MM/DD/YY hh:mm A'),
       description: desc,
+      location: currentLocationName,
       category: currentCategory,
       icon: currentIcon,
-      html: convertedContent
+      html: convertedContent,
+      countAPI: callBack
   }
 
     RequestUtils.post("/blog/create", reqObj) // send out post req and get the response from server
@@ -247,7 +255,7 @@ function DashboardPage() {
         }}/>
             <Button onClick={uploadFile}>Insert</Button>
             {imageUrls.map((url) => {
-        return <p>{url}</p>;
+        return <><h6 className="returnLink top">{url}</h6></>;
       })}
           </Form.Group>
 
@@ -290,7 +298,8 @@ function DashboardPage() {
             <Form.Label>HTML Adjustments</Form.Label>
             <Form.Control
               type="text"
-              
+              as="textarea"
+              rows={convertedContent != null ? (convertedContent.toString().length)/90 : 0}
               placeholder="Enter location"
               value={convertedContent}
               onChange={(e) => {
@@ -300,7 +309,7 @@ function DashboardPage() {
             />
           </Form.Group>
   
-        <pre className="preview">{convertedContent}</pre>
+
          <pre className="preview" id="prv" dangerouslySetInnerHTML={createMarkup(convertedContent)}></pre>
 
           {/* <pre>

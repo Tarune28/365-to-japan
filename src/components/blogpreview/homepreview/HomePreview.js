@@ -1,16 +1,13 @@
 import BlogCard from "../blogcard/BlogCard";
 
 // cover images
-import blog22Cover from "../../../img/blogs/immersion/cover.png"
-import moment from "moment";
+
 import { useEffect, useState } from "react";
 import RequestUtils from "../../../utils/RequestUtils";
 import "../homepreview/HomePreview.css"
 
 
 function HomePreview(props) {
-
-  let date = new Date();
 
   let [listBlogs, setListBlogs] = useState([]);
 
@@ -34,15 +31,15 @@ function HomePreview(props) {
         }); 
     }
 
-  let testObj = {
-    _id: "aisdhfioasdf",
-    title: "Title",
-    bannerURL: "https://i.imgur.com/TFQ6tfg.jpeg",
-    date: moment(date),
-    description: "blogDescription",
-    category: "blogCategory",
-    icon: "fa-pencil"
-  }
+  // let testObj = {
+  //   _id: "aisdhfioasdf",
+  //   title: "Title",
+  //   bannerURL: "https://i.imgur.com/TFQ6tfg.jpeg",
+  //   date: moment(date),
+  //   description: "blogDescription",
+  //   category: "blogCategory",
+  //   icon: "fa-pencil"
+  // }
   
 
   return (

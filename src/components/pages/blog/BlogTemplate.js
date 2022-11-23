@@ -1,16 +1,14 @@
 import BlogBanner from "../../../components/blogbanner/BlogBanner";
 import "./BlogTemplate.css"
-import moment from "moment";
-import { useLocation, useParams } from "react-router";
+
+import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import RequestUtils from "../../../utils/RequestUtils";
 
 function BlogTemplate(props) {
-  const location = useLocation();
+
   const params = useParams();
   let [blogPostData, setBlogPostData] = useState([]);
-
-  let [dataReady, set] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -36,6 +34,21 @@ function BlogTemplate(props) {
       console.log(error);
     }); 
 }
+
+const countEl = document.getElementById('count');
+
+    updateVisitCount();
+
+    function updateVisitCount() {
+        fetch(blogPostData.countAPI)
+            .then(res => res.json())
+            .then(res => {
+                countEl.innerHTML = res.value;
+            })
+    }
+
+
+  
   /*
     props: {
         location: {
@@ -66,10 +79,10 @@ function BlogTemplate(props) {
       <div className="container grey">
             <div style={{paddingLeft: "2vw", paddingRight: "2vw"}}>
            
-                <div dangerouslySetInnerHTML={{__html: blogPostData.html}} />
+                <div className="content" dangerouslySetInnerHTML={{__html: blogPostData.html}} />
                 
-                <h1 id="count" style={{color: "white"}}>0</h1>
-                <p style={{color: "white"}}>Views</p>
+                <p id="count" style={{color: "white", marginBottom: "-20px"}}>0 Views</p>
+
                 
             </div>
         </div>

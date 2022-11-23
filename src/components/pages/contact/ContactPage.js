@@ -1,5 +1,4 @@
 import { Button } from "react-bootstrap";
-import Footer from "../../../components/footer/Footer";
 import Header from "../../../components/header/Header";
 import PageBanner from "../../../components/pagebanner/PageBanner";
 import pageImage from "../../../img/contact/contactUs.jpg"
@@ -11,7 +10,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 function ContactPage(){
 
-    let [showModal, setShowModal] = useState(false);
+   // let [showModal, setShowModal] = useState(false);
 
     let [currentName, setCurrentName] = useState("");
 

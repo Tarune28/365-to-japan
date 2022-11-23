@@ -29,6 +29,7 @@ class RequestUtils {
     static get(url) {
 
         // GET all users with the first name of Tarun: QUERY PARAMETERS vvv
+        // https://blog-server-365.herokuapp.com
         // fetch("http://localhost:8080/getUsers?firstName=Tarun&lastName=Eswar")
 
         return fetch(this.getDomain() + url, {

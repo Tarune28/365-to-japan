@@ -7,11 +7,13 @@ import moment from "moment";
 function BlogBanner(props) {
 
 
-  let title = (props.pageInfo.title);
-  console.log(typeof title);
+  let title = (props.pageInfo);
+  console.log(title);
   // sleep time expects milliseconds
 
   return (
+    <>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"></link>
     <section className="blog-banner" style={{background: `url(${props.pageInfo.bannerURL}) center center / cover no-repeat scroll`}}>
       <div style={{position: "absolute",
     top: "0",
@@ -31,7 +33,16 @@ function BlogBanner(props) {
                 </ol>
             </nav>
         </div>
+        <div style={{position: "absolute", bottom: "0px", left: "20px"}}>
+            <nav aria-label="breadcrumb" className="banner-breadcrumb">
+                <ol class="breadcrumb">
+                    <li className="breadcrumb-item"><a style={{color: "white"}}><i className={props.pageInfo.location != null ? "fa fa-map-pin" : ""}></i> {props.pageInfo.location}</a></li>
+                </ol>
+            </nav>
+        </div>
+
     </section >
+    </>
   );
 }
 

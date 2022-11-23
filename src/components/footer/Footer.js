@@ -84,7 +84,8 @@ function Footer() {
                 <p style={{color: "white"}}>
                   I am a passionate Japanese language learner and culture appreciator. Next summer, I plan to visit Japan. Like many Japanese learners, I’m trying to further immerse myself in the language, and I figured the best way is to spend 2 months in Japan. However, I am not perfect.            </p>
                 <div className=" w3-hide-small">
-                  <a href="about.html" className="w3-bar-item w3-button w3-hoverColor2" style={{width: "100%", borderRadius: "25px"}}>Read More</a>
+                <Button variant="outline-dark" href="/about">Read More</Button>{' '}
+             
                 </div>
               </div>
             </div>

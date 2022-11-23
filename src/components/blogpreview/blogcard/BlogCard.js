@@ -49,7 +49,7 @@ console.log(props.blogInfo["date"])
                 <a className="d-inline-block" href="blogs/immersion.html">
                   <h2>{props.blogInfo["title"]}</h2>
                 </a>
-                <p style={{ padding: "10px", wordWrap: "break-word"}}>
+                <p style={{ padding: "10px", wordWrap: "break-word", color: "grey"}}>
                   {props.blogInfo["description"]}
                 </p>
                 <ul className="blog-info-link">

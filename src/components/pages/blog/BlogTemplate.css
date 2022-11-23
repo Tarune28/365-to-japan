@@ -2,5 +2,41 @@
 
 	margin-top: 10px;
 	padding: 35px;
-	background-color: #aba7a7;
+	background-color: #c4c4c4;
+}
+
+.preview {
+	font-family: 'Crimson Text', serif; color: grey; padding-left: 10px; padding-right: 10px;
+  }
+
+.content {
+	word-wrap: break-word;
+  color: white;
+  font-size: 15px;
+}
+/* change color later */
+
+.header {
+  
+    font-size: 16px;
+    color: white;
+  }
+
+img {
+  padding-bottom: 20px;
+}
+
+p,h1,h2,h3,h4 {
+    color: white;
+  }
+
+.starter:first-letter {
+   
+    float: left;
+    font-family: Georgia;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
 }
