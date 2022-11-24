@@ -28,7 +28,23 @@ img {
 
 p,h1,h2,h3,h4 {
     color: white;
+    
   }
+
+ul {
+  padding-left: 40px;
+  
+}
+
+ul li {
+  list-style-type: disc;
+  
+}
+
+ul li li {
+  background-color: blue;
+}
+
 
 .starter:first-letter {
    

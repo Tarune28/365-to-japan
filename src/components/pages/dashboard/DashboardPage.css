@@ -6,6 +6,7 @@
     word-wrap: break-word;
     white-space: initial;
     border-radius: 5px;
+    font-size: 15px;
     padding: 10px;
     background-color: lightgray;
   }

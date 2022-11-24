@@ -43,7 +43,7 @@ const countEl = document.getElementById('count');
         fetch(blogPostData.countAPI)
             .then(res => res.json())
             .then(res => {
-                countEl.innerHTML = res.value;
+                countEl.innerHTML = res.value +  " views";
             })
     }
 
@@ -80,9 +80,10 @@ const countEl = document.getElementById('count');
             <div style={{paddingLeft: "2vw", paddingRight: "2vw"}}>
            
                 <div className="content" dangerouslySetInnerHTML={{__html: blogPostData.html}} />
-                
+               
                 <p id="count" style={{color: "white", marginBottom: "-20px"}}>0 Views</p>
-
+            
+         
                 
             </div>
         </div>

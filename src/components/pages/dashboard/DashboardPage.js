@@ -132,12 +132,9 @@ function DashboardPage() {
     if (e != null){
       e.preventDefault();
   }
-    let url = new URL("https://api.countapi.xyz/create?namespace=365ToJapan.com&key=" + currentEventName.replace(/\s+/g, '') + "&value=0")
-console.log(url);
-console.log(url.search);
+    fetch("https://api.countapi.xyz/create?namespace=365ToJapan.com&key=" + currentEventName.replace(/\s+/g, '') + "R&value=0")
 
-
-    let callBack = "https://api.countapi.xyz/update/365ToJapan.com/"+ currentEventName.replace(/\s+/g, '') +"/?amount=1"
+    let callBack = "https://api.countapi.xyz/update/365ToJapan.com/"+ currentEventName.replace(/\s+/g, '') +"R/?amount=1"
 
     let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 300)
     let reqObj = {
