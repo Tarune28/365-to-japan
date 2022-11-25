@@ -443,14 +443,14 @@ function DashboardPage() {
 
             </Tabs.TabPane>
             <Tabs.TabPane tab="Manage Blogs" key="2">
-{
+{/* {
                 listBlogs.map((props) => {
                     // Code that runs for each element
                     // TODO: Create delete handler
                     return (
                         <BlogDetails event={props} deleteHandler={handleDelete} editHandler={handleEdit}/>
                     );
-                })}
+                })} */}
             </Tabs.TabPane>
 
 
