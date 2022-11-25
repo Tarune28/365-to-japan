@@ -181,7 +181,20 @@ function DashboardPage() {
       address: 'New York No. 1 Lake Park',
       tags: ['nice', 'developer'],
     },
-    
+    {
+      key: '2',
+      name: 'Jim Green',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+      tags: ['loser'],
+    },
+    {
+      key: '3',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sidney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
   ];
 
   useEffect(() => {
@@ -430,8 +443,14 @@ function DashboardPage() {
 
             </Tabs.TabPane>
             <Tabs.TabPane tab="Manage Blogs" key="2">
-
-            <Table columns={columns} dataSource={data}></Table>
+{
+                listBlogs.map((props) => {
+                    // Code that runs for each element
+                    // TODO: Create delete handler
+                    return (
+                        <BlogDetails event={props} deleteHandler={handleDelete} editHandler={handleEdit}/>
+                    );
+                })}
             </Tabs.TabPane>
 
 
