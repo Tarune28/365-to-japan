@@ -8,7 +8,8 @@ function BlogBanner(props) {
 
 
   let title = (props.pageInfo);
-  console.log(title);
+  console.log(props.pageInfo.location);
+  console.log(props.pageInfo.location == undefined);
   // sleep time expects milliseconds
 
   return (
@@ -36,7 +37,10 @@ function BlogBanner(props) {
         <div style={{position: "absolute", bottom: "0px", left: "20px"}}>
             <nav aria-label="breadcrumb" className="banner-breadcrumb">
                 <ol class="breadcrumb">
-                    <li className="breadcrumb-item"><a style={{color: "white"}}><i className={props.pageInfo.location != null ? "fa fa-map-pin" : ""}></i> {props.pageInfo.location}</a></li>
+                    <li className="breadcrumb-item"><a style={{color: "white"}}>
+                      {/* <i className={props.pageInfo.location == undefined ? "fa fa-map-pin" : ""}></i>  */}
+                      
+                      {props.pageInfo.location}</a></li>
                 </ol>
             </nav>
         </div>

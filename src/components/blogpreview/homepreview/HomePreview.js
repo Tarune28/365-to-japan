@@ -5,6 +5,8 @@ import BlogCard from "../blogcard/BlogCard";
 import { useEffect, useState } from "react";
 import RequestUtils from "../../../utils/RequestUtils";
 import "../homepreview/HomePreview.css"
+import { Button } from "react-bootstrap";
+import moment from "moment";
 
 
 function HomePreview(props) {
@@ -22,12 +24,16 @@ function HomePreview(props) {
                 return;
             }
             console.log(data.arr);
+            (data.arr).sort((a,b) => new moment(b.date).format('YYYYMMDD') - new moment(a.date).format('YYYYMMDD'));
             setListBlogs(data.arr);
+
+          
+
 
 
         })
         .catch(error => { 
-            alert("404: Blogs could not be populated! Try again later!");
+            alert(error);
         }); 
     }
 
@@ -51,7 +57,7 @@ function HomePreview(props) {
           </h3>
           <p>365ToJapan blogs are posted 1-2 times weekly.</p>
         </div>
-        <div className="row portfolio_area area-padding">
+        <div className="row portfolio_area">
           <div className="row portfolio-grid">
             {
                 listBlogs.map((singularBlogPost) => {
@@ -66,13 +72,10 @@ function HomePreview(props) {
           </div>
         </div>
         <div className="area-heading">
-          <a
-            type="button" class="btn btn-primary-soft"
-            style={{ width: "50%", borderRadius: "15px" }}
-            href="blogpage.html"
-          >
+          <Button className="btn btn-primary-soft" style={{ width: "50%", borderRadius: "15px" }}>
             View All Blogs
-          </a>
+          </Button>
+    
         </div>
       </div>
     </section>

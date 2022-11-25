@@ -20,6 +20,7 @@ import PageBanner from "../../pagebanner/PageBanner";
 import "react-datetime/css/react-datetime.css";
 import { convertToHTML } from 'draft-convert';
 import "./DashboardPage.css";
+import { Space, Table, Tag } from 'antd';
 
 //image upload
 import {
@@ -30,19 +31,20 @@ import {
 import { storage } from "../../../Firebase";
 import { v4 } from "uuid";
 
-import Button from "react-bootstrap/Button";
+import { Button, FormCheck } from "react-bootstrap";
 import moment from "moment";
-import Form from "react-bootstrap/Form";
+import Form from "react-bootstrap/Form"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Datetime from "react-datetime";
 import MomentUtils from "../../../utils/MomentUtils";
+import { ConfigProvider, Tabs } from "antd";
 
 function DashboardPage() {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
-// file organization in firebase
+  // file organization in firebase
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
 
@@ -55,8 +57,8 @@ function DashboardPage() {
       });
     });
   };
- 
-// STATE HOOKS FOR DB ENTRY
+
+  // STATE HOOKS FOR DB ENTRY
   let [currentEventName, setCurrentEventName] = useState("");
 
   let [currentFileName, setCurrentFileName] = useState("");
@@ -73,6 +75,9 @@ function DashboardPage() {
     MomentUtils.roundUp(moment(new Date()), "hour").add(1, "hour")
   );
 
+
+  
+  let [listBlogs, setListBlogs] = useState("");
   // let _contentState = ContentState.createFromText('Sample content state');
   // const raw = convertToRaw(_contentState)
   // const [contentState, setContentState] = useState(raw)
@@ -84,24 +89,24 @@ function DashboardPage() {
   const [editorState, setEditorState] = useState(
     () => EditorState.createEmpty(),
   );
-  const  [convertedContent, setConvertedContent] = useState(null);
+  const [convertedContent, setConvertedContent] = useState(null);
   const handleEditorChange = (state) => {
     setEditorState(state);
-    
+
     convertContentToHTML();
   }
   const convertContentToHTML = () => {
     let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
-    console.log(currentContentAsHTML )
+    console.log(currentContentAsHTML)
     setConvertedContent(currentContentAsHTML);
   }
 
-  
+
   const createMarkup = (html) => {
-    
-    return  {
+
+    return {
       __html: convertedContent
-      
+
       //__html: DOMPurify.sanitize(html)
     }
   }
@@ -119,6 +124,66 @@ function DashboardPage() {
   //   });
   // }, []);
 
+
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      render: (text) => <a>{text}</a>,
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Tags',
+      key: 'tags',
+      dataIndex: 'tags',
+      render: (_, { tags }) => (
+        <>
+          {tags.map((tag) => {
+            let color = tag.length > 5 ? 'geekblue' : 'green';
+            if (tag === 'loser') {
+              color = 'volcano';
+            }
+            return (
+              <Tag color={color} key={tag}>
+                {tag.toUpperCase()}
+              </Tag>
+            );
+          })}
+        </>
+      ),
+    },
+    {
+      title: 'Action',
+      key: 'action',
+      render: (_, record) => (
+        <Space size="middle">
+          <a>Invite {record.name}</a>
+          <a>Delete</a>
+        </Space>
+      ),
+    },
+  ];
+  const data = [
+    {
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+      tags: ['nice', 'developer'],
+    },
+    
+  ];
+
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
@@ -129,12 +194,12 @@ function DashboardPage() {
   }, [user, loading, navigate]);
 
   function postBlog(e) {
-    if (e != null){
+    if (e != null) {
       e.preventDefault();
-  }
+    }
     fetch("https://api.countapi.xyz/create?namespace=365ToJapan.com&key=" + currentEventName.replace(/\s+/g, '') + "R&value=0")
 
-    let callBack = "https://api.countapi.xyz/update/365ToJapan.com/"+ currentEventName.replace(/\s+/g, '') +"R/?amount=1"
+    let callBack = "https://api.countapi.xyz/update/365ToJapan.com/" + currentEventName.replace(/\s+/g, '') + "R/?amount=1"
 
     let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 300)
     let reqObj = {
@@ -147,169 +212,200 @@ function DashboardPage() {
       icon: currentIcon,
       html: convertedContent,
       countAPI: callBack
-  }
+    }
 
     RequestUtils.post("/blog/create", reqObj) // send out post req and get the response from server
-        .then(response => response.json()) // take response and turn it into JSON object
-        .then(data => { // data = JSON object created ^^
-            if (!data.ok) {
-                alert("Blog could not be created!");
-                return;
-            }
-            alert("365toJapan Blog Posted!");
+      .then(response => response.json()) // take response and turn it into JSON object
+      .then(data => { // data = JSON object created ^^
+        if (!data.ok) {
+          alert("Blog could not be created!");
+          return;
+        }
+        alert("365toJapan Blog Posted!");
 
-    
-        })
-        .catch(error => {
-            alert("Something went wrong while posting!");
-        });
+
+      })
+      .catch(error => {
+        alert("Something went wrong while posting!");
+      });
   }
+
+  function populateEvents(days) {
+ 
+    let req = days;
+    RequestUtils.get("/blog/getCards?days=" + 20) // send out post req and get the response from server
+    .then(response => response.json()) // take response and turn it into JSON object
+    .then(data => { // data = JSON object created ^^
+        if (!data.ok) {
+            alert("Blogs could not be populated!");
+            return;
+        }
+        console.log(data.arr)
+        setListBlogs(data.arr);
+  
+
+    })
+    .catch(error => { 
+        alert(error);
+    }); 
+}
 
   return (
     <>
+
       <PageBanner image={pageImage} title="Administrative Login." />
       <section style={{ padding: "50px" }}>
-        <Form onSubmit={e => e.preventDefault()}>
-          <Form.Group className="mb-3 w-25">
-            <Form.Label>Title</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter blog title"
-              value={currentEventName}
-              onChange={(e) => {
-                setCurrentEventName(e.target.value);
-              }}
-            />
-          </Form.Group>
 
-          <Form.Group className="mb-3 w-25">
-            <Form.Label>Location (optional)</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter blog title"
-              value={currentLocationName}
-              onChange={(e) => {
-                setCurrentLocationName(e.target.value);
-              }}
-            />
-          </Form.Group>
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: '#01B093',
+            },
+          }}
+        >
+          <Tabs defaultActiveKey="1" onTabClick={console.log("yo")}>
+            <Tabs.TabPane tab="New Blog" key="1">
+              <Form onSubmit={e => e.preventDefault()}>
+                <Form.Group className="mb-3 w-25">
+                  <Form.Label>Title</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter blog title"
+                    value={currentEventName}
+                    onChange={(e) => {
+                      setCurrentEventName(e.target.value);
+                    }}
+                  />
+                </Form.Group>
 
-          <Form.Group className="mb-3 w-25">
-            <Form.Label>Category</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="i.e. informational"
-              value={currentCategory}
-              onChange={(e) => {
-                setCurrentCategory(e.target.value);
-              }}
-            />
-          </Form.Group>
+                <Form.Group className="mb-3 w-25">
+                  <Form.Label>Location (optional)</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter blog title"
+                    value={currentLocationName}
+                    onChange={(e) => {
+                      setCurrentLocationName(e.target.value);
+                    }}
+                  />
+                </Form.Group>
 
-          <Form.Group className="mb-3 w-25">
-            <Form.Label>Icon</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="i.e. fa-pencil"
-              value={currentIcon}
-              onChange={(e) => {
-                setCurrentIcon(e.target.value);
-              }}
-            />
-          </Form.Group>
+                <Form.Group className="mb-3 w-25">
+                  <Form.Label>Category</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="i.e. informational"
+                    value={currentCategory}
+                    onChange={(e) => {
+                      setCurrentCategory(e.target.value);
+                    }}
+                  />
+                </Form.Group>
 
-          <Row>
-            <Col>
-              <Form.Group className="mb-3">
-                <Form.Label>Post Time</Form.Label>
-                <Datetime
-                  value={currentPostTime}
-                  timeConstraints={{ minutes: { step: 5 } }}
-                  onChange={setCurrentPostTime}
-                />
-              </Form.Group>
-            </Col>
-          </Row>
+                <Form.Group className="mb-3 w-25">
+                  <Form.Label>Icon</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="i.e. fa-pencil"
+                    value={currentIcon}
+                    onChange={(e) => {
+                      setCurrentIcon(e.target.value);
+                    }}
+                  />
+                </Form.Group>
 
-          <Form.Group className="mb-3">
-            {/* implement this and submit to server*/}
-            <Form.Label>Blog File Storage</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter file location"
-              value={currentFileName}
-              onChange={(e) => {
-                setCurrentFileName(e.target.value);
-              }}
-            />
-          </Form.Group>
+                <Row>
+                  <Col>
+                    <Form.Group className="mb-3">
+                      <Form.Label>Post Time</Form.Label>
+                      <Datetime
+                        value={currentPostTime}
+                        timeConstraints={{ minutes: { step: 5 } }}
+                        onChange={setCurrentPostTime}
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
 
-          <Form.Group controlId="formFileMultiple" className="mb-3">
-            <Form.Label>Upload Files</Form.Label>
-            
-            <Form.Control className="mb-4" type="file" multiple onChange={(event) => {
-          setImageUpload(event.target.files[0]);
-        }}/>
-            <Button onClick={uploadFile}>Insert</Button>
-            {imageUrls.map((url) => {
-        return <><h6 className="returnLink top">{url}</h6></>;
-      })}
-          </Form.Group>
+                <Form.Group className="mb-3">
+                  {/* implement this and submit to server*/}
+                  <Form.Label>Blog File Storage</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter file location"
+                    value={currentFileName}
+                    onChange={(e) => {
+                      setCurrentFileName(e.target.value);
+                    }}
+                  />
+                </Form.Group>
 
-          <Form.Group className="mb-3">
-            {/* implement this and submit to server*/}
-            <Form.Label>Cover Image URL</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter location"
-              value={currentBannerURL}
-              onChange={(e) => {
-                setCurrentBannerURL(e.target.value);
-              }}
-            />
-          </Form.Group>
+                <Form.Group controlId="formFileMultiple" className="mb-3">
+                  <Form.Label>Upload Files</Form.Label>
 
-          <Form.Group className="mb-3">
-            {/* implement this and submit to server*/}
+                  <Form.Control className="mb-4" type="file" multiple onChange={(event) => {
+                    setImageUpload(event.target.files[0]);
+                  }} />
+                  <Button onClick={uploadFile}>Insert</Button>
+                  {imageUrls.map((url) => {
+                    return <><h6 className="returnLink top">{url}</h6></>;
+                  })}
+                </Form.Group>
 
-           
-            
+                <Form.Group className="mb-3">
+                  {/* implement this and submit to server*/}
+                  <Form.Label>Cover Image URL</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter location"
+                    value={currentBannerURL}
+                    onChange={(e) => {
+                      setCurrentBannerURL(e.target.value);
+                    }}
+                  />
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                  {/* implement this and submit to server*/}
 
 
-            <Form.Label>HTML insert</Form.Label>
-            <Editor
-        editorState={editorState}
-        onEditorStateChange={handleEditorChange}
-        wrapperClassName="wrapper-class"
-        editorClassName="editor-class"
-        toolbarClassName="toolbar-class"
-        plugins={plugins}
 
-       
-      />
-      
-      
-      
-      <Form.Group className="mb-3 form-inline">
-            {/* implement this and submit to server*/}
-            <Form.Label>HTML Adjustments</Form.Label>
-            <Form.Control
-              type="text"
-              as="textarea"
-              rows={convertedContent != null ? (convertedContent.toString().length)/90 : 0}
-              placeholder="Enter location"
-              value={convertedContent}
-              onChange={(e) => {
-                setConvertedContent(e.target.value);
-                createMarkup(convertedContent);
-              }}
-            />
-          </Form.Group>
-  
 
-         <pre className="preview" id="prv" dangerouslySetInnerHTML={createMarkup(convertedContent)}></pre>
 
-          {/* <pre>
+                  <Form.Label>HTML insert</Form.Label>
+                  <Editor
+                    editorState={editorState}
+                    onEditorStateChange={handleEditorChange}
+                    wrapperClassName="wrapper-class"
+                    editorClassName="editor-class"
+                    toolbarClassName="toolbar-class"
+                    plugins={plugins}
+
+
+                  />
+
+
+
+                  <Form.Group className="mb-3 form-inline">
+                    {/* implement this and submit to server*/}
+                    <Form.Label>HTML Adjustments</Form.Label>
+                    <Form.Control
+                      type="text"
+                      as="textarea"
+                      rows={convertedContent != null ? (convertedContent.toString().length) / 90 : 0}
+                      placeholder="Enter location"
+                      value={convertedContent}
+                      onChange={(e) => {
+                        setConvertedContent(e.target.value);
+                        createMarkup(convertedContent);
+                      }}
+                    />
+                  </Form.Group>
+
+
+                  <pre className="preview" id="prv" dangerouslySetInnerHTML={createMarkup(convertedContent)}></pre>
+
+                  {/* <pre>
             {JSON.stringify(
               convertToRaw(this.state.contentState.getCurrentContent()),
               null,
@@ -322,15 +418,28 @@ function DashboardPage() {
 
 
 
-      
-          
-          </Form.Group>
 
-          <Button onClick={e => postBlog()
-            } variant="primary" type="submit">
-            Post
-          </Button>
-        </Form>
+
+                </Form.Group>
+
+                <Button onClick={e => postBlog()
+                } variant="primary" type="submit">
+                  Post
+                </Button>
+              </Form>
+
+            </Tabs.TabPane>
+            <Tabs.TabPane tab="Manage Blogs" key="2">
+
+            <Table columns={columns} dataSource={data}></Table>
+            </Tabs.TabPane>
+
+
+          </Tabs>
+        </ConfigProvider>
+
+
+
 
         <br />
 

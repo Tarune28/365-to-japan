@@ -5,6 +5,7 @@ import { Tabs } from 'antd';
 import blog22Cover from "../../../img/blogs/immersion/cover.png"
 import { useEffect, useState } from "react";
 import RequestUtils from "../../../utils/RequestUtils";
+import { ConfigProvider } from 'antd';
 import { Button } from "react-bootstrap";
 import moment from "moment";
 
@@ -62,7 +63,9 @@ const callbackTabClicked = (key, event) => {
     
 
   return (
-    <section className="blog_area area-padding">
+<>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <section className="blog_area area-padding portfolio-grid grid-sizer">
       <div className="container">
         <div className="area-heading">
           <h3>
@@ -70,6 +73,14 @@ const callbackTabClicked = (key, event) => {
           </h3>
           <p>365ToJapan blogs are posted 1-2 times weekly.</p>
         </div>
+
+        <ConfigProvider
+    theme={{
+      token: {
+        colorPrimary: '#01B093',
+      },
+    }}
+  >
         <Tabs defaultActiveKey="1" onTabClick={callbackTabClicked}>
     <Tabs.TabPane tab="All Time" key="1">
     <div className="row portfolio_area area-padding">
@@ -88,7 +99,7 @@ const callbackTabClicked = (key, event) => {
     
     </Tabs.TabPane>
     <Tabs.TabPane tab="Past Month" key="2">
-    <div className="row portfolio_area area-padding">
+    <div className="row portfolio_area area-padding portfolio-grid grid-sizer">
           <div className="row portfolio-grid">
     {
                 listBlogs.map((singularBlogPost) => {
@@ -133,11 +144,14 @@ const callbackTabClicked = (key, event) => {
     </div>
     </Tabs.TabPane>
   </Tabs>
-          
+  </ConfigProvider>
+
+
      
       
       </div>
     </section>
+    </>
   );
 }
 

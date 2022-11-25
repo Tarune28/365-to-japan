@@ -20,6 +20,7 @@
     "n": "^9.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
+    "react-bootstrap-validation": "^0.1.11",
     "react-datetime": "^3.1.1",
     "react-dom": "^18.2.0",
     "react-draft-wysiwyg": "^1.15.0",

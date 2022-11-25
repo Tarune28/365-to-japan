@@ -48,19 +48,19 @@ function Header() {
                 role="navigation"
               >
                 <ul className="site-menu main-menu js-clone-nav ml-auto ">
-                  <li className={window.location.pathname == "/" ? "active" : "nav-link"}>
+                  <li className={window.location.pathname == "/" ? "active nav-link" : "nav-link"}>
                     <a href="/" className="nav-link">Home</a>
                   </li>
-                  <li className={window.location.pathname == "/blogs" ? "active" : "nav-link"}>
+                  <li className={window.location.pathname == "/blogs" ? "active nav-link" : "nav-link"}>
                   <a href="/blogs" className="nav-link">Blogs</a>
                   </li>
-                  <li className={window.location.pathname == "/about" ? "active" : "nav-link"}>
+                  <li className={window.location.pathname == "/about" ? "active nav-link" : "nav-link"}>
                   <a href="/about" className="nav-link">About</a>
                   </li>
-                  <li className={window.location.pathname == "/contact" ? "active" : "nav-link"}>
+                  <li className={window.location.pathname == "/contact" ? "active nav-link" : "nav-link"}>
                   <a href="/contact" className="nav-link">Contact</a>
                   </li>
-                  <li className={window.location.pathname == "/login" ? "active" : "nav-link"}>
+                  <li className={window.location.pathname == "/login" ? "active nav-link" : "nav-link"}>
                   <a href="/login" className="nav-link">Dashboard Portal</a>
                   </li>
                 </ul>

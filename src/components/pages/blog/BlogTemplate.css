@@ -1,8 +1,13 @@
 .grey DIV {
 
-	margin-top: 10px;
-	padding: 35px;
-	background-color: #c4c4c4;
+	padding-top: 30px;
+  padding-bottom: 30px;
+	padding-left: 35px;
+  padding-right: 35px;
+  margin-left: 40px;
+  margin-right: 40px;
+	/* background-color: #c4c4c4; */
+
 }
 
 .preview {
@@ -19,25 +24,28 @@
 .header {
   
     font-size: 16px;
-    color: white;
+    color: #8f8f8f;
+    text-decoration: none;
   }
 
 img {
   padding-bottom: 20px;
 }
 
-p,h1,h2,h3,h4 {
-    color: white;
+.content p,h1,h2,h3,h4 {
+    color: #8f8f8f;
     
   }
 
-ul {
+.content ul {
   padding-left: 40px;
+  color: #8f8f8f;
   
 }
 
-ul li {
+.content ul li {
   list-style-type: disc;
+  color: #8f8f8f;
   
 }
 

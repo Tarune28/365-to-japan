@@ -2,6 +2,7 @@ import previewImg from "../../../img/blogs/immersion/cover.png";
 import { FaBeer } from "react-icons/fa";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import "./BlogCard.css";
 
 function BlogCard(props) {
   // let testObj = {
@@ -12,6 +13,7 @@ function BlogCard(props) {
   //   description: blogDescription,
   //   category: blogCategory
   // }
+  
 
 console.log(props.blogInfo["date"])
 
@@ -27,14 +29,18 @@ console.log(props.blogInfo["date"])
         crossorigin="anonymous"
       ></script>
 
-      <div className="col-lg-4 col-md-6 all pm">
+      <div className="col-lg-4 col-md-6">
         <Link to={"/blog/" + props.blogInfo["_id"]}>
           <div className="single_portfolio">
+       
             <img
               className="img-fluid w-100 card-img rounded-0"
               src={props.blogInfo["bannerURL"]}
-              alt="rural"
+              style={{height: "300px", objectFit: "cover"}}
+              alt=""
             />
+        
+            
             <article className="blog_item">
               <div className="blog_item_img">
                 <a href="blogs/immersion.html" className="blog_item_date">
@@ -52,7 +58,7 @@ console.log(props.blogInfo["date"])
                 <p style={{ padding: "10px", wordWrap: "break-word", color: "grey"}}>
                   {props.blogInfo["description"]}
                 </p>
-                <ul className="blog-info-link">
+                <ul className="blog-info-link" style={{listStyle: "none", textDecoration: "none"}}>
                   <li>
                     <i
                       className={"fa " + props.blogInfo["icon"].toString()}

@@ -80,8 +80,9 @@ const countEl = document.getElementById('count');
             <div style={{paddingLeft: "2vw", paddingRight: "2vw"}}>
            
                 <div className="content" dangerouslySetInnerHTML={{__html: blogPostData.html}} />
+                <hr></hr>
                
-                <p id="count" style={{color: "white", marginBottom: "-20px"}}>0 Views</p>
+                <p id="count" style={{marginBottom: "-20px"}}>0 Views</p>
             
          
                 
