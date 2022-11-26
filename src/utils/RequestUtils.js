@@ -15,6 +15,8 @@ class RequestUtils {
         Types of HTTP Requests:
         - GET (frontend to backend): Asking backend to retrieve something
         - POST (frontend to backend): Giving backend something 
+
+        https://blog-server-365.herokuapp.com
     */
 
     static getDomain() {

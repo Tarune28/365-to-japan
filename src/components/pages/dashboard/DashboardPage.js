@@ -39,6 +39,7 @@ import Col from "react-bootstrap/Col";
 import Datetime from "react-datetime";
 import MomentUtils from "../../../utils/MomentUtils";
 import { ConfigProvider, Tabs } from "antd";
+import BlogDetails from "../../blogdetails/BlogDetails";
 
 function DashboardPage() {
   const [user, loading] = useAuthState(auth);
@@ -77,7 +78,7 @@ function DashboardPage() {
 
 
   
-  let [listBlogs, setListBlogs] = useState("");
+  let [listBlogs, setListBlogs] = useState([]);
   // let _contentState = ContentState.createFromText('Sample content state');
   // const raw = convertToRaw(_contentState)
   // const [contentState, setContentState] = useState(raw)
@@ -125,94 +126,56 @@ function DashboardPage() {
   // }, []);
 
 
-  const columns = [
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-      render: (text) => <a>{text}</a>,
-    },
-    {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Tags',
-      key: 'tags',
-      dataIndex: 'tags',
-      render: (_, { tags }) => (
-        <>
-          {tags.map((tag) => {
-            let color = tag.length > 5 ? 'geekblue' : 'green';
-            if (tag === 'loser') {
-              color = 'volcano';
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
-        </>
-      ),
-    },
-    {
-      title: 'Action',
-      key: 'action',
-      render: (_, record) => (
-        <Space size="middle">
-          <a>Invite {record.name}</a>
-          <a>Delete</a>
-        </Space>
-      ),
-    },
-  ];
-  const data = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-      tags: ['nice', 'developer'],
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-      tags: ['loser'],
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-  ];
+
 
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
       setImageUrls([]);
+      populateEvents(3);
+
       return;
     }
     if (!user) navigate("/login");
   }, [user, loading, navigate]);
 
+
+  function handleDelete(_id) {
+    // Take the _id of the calendar event
+    // Remove the event from the list of calendar events
+    let req = {
+        _id: _id
+    }
+
+    RequestUtils.post("/blog/delete", req)
+    .then(response => response.json())
+    .then(data => {
+        if (!data.ok) {
+            alert("Event could not be deleted!");
+            return;
+        }
+
+        let listBlogsCopy = listBlogs.filter((blog) => {
+            return((blog["_id"]).localeCompare(_id) != 0);
+        });
+
+        setListBlogs(listBlogsCopy);
+        
+        // Also remove it from listOldEvents just in case handleDelete is being called from oldCalendarEvent
+      //  removeOldCalendarEvent(_id);
+    })
+    .catch(error => {
+        alert("Something went wrong!");
+    });
+}
+
   function postBlog(e) {
     if (e != null) {
       e.preventDefault();
     }
-    fetch("https://api.countapi.xyz/create?namespace=365ToJapan.com&key=" + currentEventName.replace(/\s+/g, '') + "R&value=0")
+    fetch("https://api.countapi.xyz/create?namespace=365ToJapan.com&key=" + currentEventName.replace(/[^A-Z0-9]/ig, "") + "R&value=0")
 
-    let callBack = "https://api.countapi.xyz/update/365ToJapan.com/" + currentEventName.replace(/\s+/g, '') + "R/?amount=1"
+    let callBack = "https://api.countapi.xyz/update/365ToJapan.com/" + currentEventName.replace(/[^A-Z0-9]/ig, "") + "R/?amount=1"
 
     let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 300)
     let reqObj = {
@@ -253,7 +216,7 @@ function DashboardPage() {
             alert("Blogs could not be populated!");
             return;
         }
-        console.log(data.arr)
+        console.log(data.arr);
         setListBlogs(data.arr);
   
 
@@ -443,14 +406,21 @@ function DashboardPage() {
 
             </Tabs.TabPane>
             <Tabs.TabPane tab="Manage Blogs" key="2">
-{/* {
+          
+              {
+                
                 listBlogs.map((props) => {
                     // Code that runs for each element
                     // TODO: Create delete handler
                     return (
-                        <BlogDetails event={props} deleteHandler={handleDelete} editHandler={handleEdit}/>
+                      <>
+                      
+                        <BlogDetails blogInfo={props} deleteHandler={handleDelete}/>
+                        </>
                     );
-                })} */}
+                })
+                
+                }
             </Tabs.TabPane>
 
 

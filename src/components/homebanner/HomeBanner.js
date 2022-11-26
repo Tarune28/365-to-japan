@@ -2,7 +2,7 @@ import "./HomeBanner.css";
 
 function HomeBanner() {
   return (
-    <section className="home_banner_area">
+    <section className="home_banner_area" style={{background: "rgb(179, 179, 179)"}}>
       <ul className="circles">
                     <li></li>
                     <li></li>

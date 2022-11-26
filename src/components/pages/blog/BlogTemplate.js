@@ -81,8 +81,13 @@ const countEl = document.getElementById('count');
            
                 <div className="content" dangerouslySetInnerHTML={{__html: blogPostData.html}} />
                 <hr></hr>
-               
-                <p id="count" style={{marginBottom: "-20px"}}>0 Views</p>
+           <div className="row" style={{padding: "0px", margin: "0px"}}>
+                <p id="count" className="col-6">0 Views</p>
+                <p className="col-6" style={{float: "right", textAlign: "right"}}>Tarun Eswar</p>
+           </div>
+              
+            
+                
             
          
                 
