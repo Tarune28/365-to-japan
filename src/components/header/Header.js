@@ -61,7 +61,7 @@ function Header() {
                   <a href="/contact" className="nav-link">Contact</a>
                   </li>
                   <li className={window.location.pathname == "/login" ? "active nav-link" : "nav-link"}>
-                  <a href="/login" className="nav-link">Dashboard Portal</a>
+                  <a href="/login" className="nav-link">Login</a>
                   </li>
                 </ul>
               </nav>
