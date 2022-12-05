@@ -90,7 +90,9 @@ function DashboardPage() {
   const [editorState, setEditorState] = useState(
     () => EditorState.createEmpty(),
   );
-  const [convertedContent, setConvertedContent] = useState(null);
+  const [convertedContent, setConvertedContent] = useState("_");
+  
+
   const handleEditorChange = (state) => {
     setEditorState(state);
 
@@ -177,7 +179,7 @@ function DashboardPage() {
 
     let callBack = "https://api.countapi.xyz/update/365ToJapan.com/" + currentEventName.replace(/[^A-Z0-9]/ig, "") + "R/?amount=1"
 
-    let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 2950).replace( /(<([^>]+)>)/ig, '');
+    let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 295).replace( /(<([^>]+)>)/ig, '');
     let reqObj = {
       title: currentEventName,
       bannerURL: currentBannerURL,
@@ -370,7 +372,7 @@ function DashboardPage() {
                       as="textarea"
                       rows={convertedContent != null ? (convertedContent.toString().length) / 90 : 0}
                       placeholder="Enter location"
-                      value={convertedContent}
+                      value={convertedContent.replaceAll("</p>", "</p> \n")}
                       onChange={(e) => {
                         setConvertedContent(e.target.value);
                         createMarkup(convertedContent);
