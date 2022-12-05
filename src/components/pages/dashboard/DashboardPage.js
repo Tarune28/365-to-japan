@@ -372,7 +372,7 @@ function DashboardPage() {
                       as="textarea"
                       rows={convertedContent != null ? (convertedContent.toString().length) / 90 : 0}
                       placeholder="Enter location"
-                      value={convertedContent.replaceAll("</p>", "</p> \n")}
+                      value={convertedContent.replaceAll("</p>", "</P>\n")}
                       onChange={(e) => {
                         setConvertedContent(e.target.value);
                         createMarkup(convertedContent);
