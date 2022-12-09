@@ -1144,7 +1144,7 @@ h5:first-child:first-letter {
 .hero-banner {
     position: relative;
     padding: 205px 0 150px !important;
-    background: url(../../img/blogs/SettingIntentions/blog-1.jpg) no-repeat scroll center center;
+    /* background: url(../../img/blogs/SettingIntentions/blog-1.jpg) no-repeat scroll center center; */
     background-size: cover;
 }
 

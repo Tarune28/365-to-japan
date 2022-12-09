@@ -1,4 +1,4 @@
-import previewImg from "../../../img/blogs/immersion/cover.png";
+
 import { FaBeer } from "react-icons/fa";
 import moment from "moment";
 import { Link } from "react-router-dom";

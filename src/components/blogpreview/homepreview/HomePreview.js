@@ -72,7 +72,7 @@ function HomePreview(props) {
           </div>
         </div>
         <div className="area-heading">
-          <Button className="btn btn-primary-soft" style={{ width: "50%", borderRadius: "15px" }}>
+          <Button href="/blogs" className="btn btn-primary-soft" style={{ width: "50%", borderRadius: "15px" }}>
             View All Blogs
           </Button>
     

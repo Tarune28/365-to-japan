@@ -2,7 +2,6 @@ import BlogCard from "../blogcard/BlogCard";
 import { Tabs } from 'antd';
 // import '~antd/dist/antd.css';
 // cover images
-import blog22Cover from "../../../img/blogs/immersion/cover.png"
 import { useEffect, useState } from "react";
 import RequestUtils from "../../../utils/RequestUtils";
 import { ConfigProvider } from 'antd';

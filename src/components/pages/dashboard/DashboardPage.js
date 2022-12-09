@@ -179,7 +179,7 @@ function DashboardPage() {
 
     let callBack = "https://api.countapi.xyz/update/365ToJapan.com/" + currentEventName.replace(/[^A-Z0-9]/ig, "") + "R/?amount=1"
 
-    let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 295).replace( /(<([^>]+)>)/ig, '');
+    let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 295).replace( /(<([^>]+)>)/ig, '') + "...";
     let reqObj = {
       title: currentEventName,
       bannerURL: currentBannerURL,
