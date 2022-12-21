@@ -8,7 +8,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Rubik+Dirt&family=Tourney&family=Work+Sans:wght@500&display=swap');
 
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 html {
 	box-sizing: border-box;
 }
@@ -233,7 +233,7 @@ textarea {
 
 .text_1, .text_2, .text_3 {
 	overflow: hidden;
-	font-family: 'Crimson Text', serif;
+	font-family: 'Open Sans', sans-serif;
 	padding: 15px;
 
 	
@@ -433,7 +433,7 @@ textarea {
 
 
 html, body {
-	font-family: 'Crimson Text', serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	line-height: 1.5
 }
@@ -483,7 +483,7 @@ h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Crimson Text', serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	margin: 10px 0
 }
@@ -1796,7 +1796,7 @@ input[type=checkbox]:checked~.wrapper-content {
 	background-color: #fff !important;
 	border-radius: 10px;
 	padding-right: 10px;
-	font-family: 'Montserrat';
+	font-family: 'Open Sans', sans-serif;
 }
 
 .w3-black1 {

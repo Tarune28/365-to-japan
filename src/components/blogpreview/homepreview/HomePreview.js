@@ -53,7 +53,7 @@ function HomePreview(props) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
     <section className="blog_area area-padding">
       <div className="container">
-        <div className="area-heading">
+        <div className="area-heading" style={{fontFamily: "inherit"}}>
           <h3>
             <a id="target">Recent Blogs</a>
           </h3>

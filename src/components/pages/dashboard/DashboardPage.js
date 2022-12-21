@@ -15,7 +15,7 @@ import createImagePlugin from '@draft-js-plugins/image';
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router";
-import pageImage from "../../../img/loginDash/mountains.jpg";
+import pageImage from "../../../img/loginDash/greyPAl.jpg";
 import PageBanner from "../../pagebanner/PageBanner";
 import "react-datetime/css/react-datetime.css";
 import { convertToHTML } from 'draft-convert';
@@ -44,6 +44,7 @@ import BlogDetails from "../../blogdetails/BlogDetails";
 function DashboardPage() {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
+
 
   // file organization in firebase
   const [imageUpload, setImageUpload] = useState(null);
@@ -76,7 +77,11 @@ function DashboardPage() {
     MomentUtils.roundUp(moment(new Date()), "hour").add(1, "hour")
   );
 
+  let [currentEmail, setCurrentEmail] = useState("");
 
+ 
+  
+ 
   
   let [listBlogs, setListBlogs] = useState([]);
   // let _contentState = ContentState.createFromText('Sample content state');
@@ -135,10 +140,14 @@ function DashboardPage() {
       // maybe trigger a loading screen
       setImageUrls([]);
       populateEvents(3);
-
+      
       return;
     }
     if (!user) navigate("/login");
+    if (user) {
+      console.log(user.email)
+      setCurrentEmail(user.email.slice(0, user.email.indexOf("@")));
+    }
   }, [user, loading, navigate]);
 
 
@@ -230,8 +239,8 @@ function DashboardPage() {
 
   return (
     <>
-
-      <PageBanner image={pageImage} title="Administrative Login." />
+ 
+      <PageBanner image={pageImage} title={"Welecome " + currentEmail + "."} />
       <section style={{ padding: "50px" }}>
 
         <ConfigProvider
@@ -260,7 +269,7 @@ function DashboardPage() {
                   <Form.Label>Location (optional)</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Enter blog title"
+                    placeholder="Enter blog location"
                     value={currentLocationName}
                     onChange={(e) => {
                       setCurrentLocationName(e.target.value);
@@ -335,7 +344,7 @@ function DashboardPage() {
                   <Form.Label>Cover Image URL</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Enter location"
+                    placeholder="Enter cover image url"
                     value={currentBannerURL}
                     onChange={(e) => {
                       setCurrentBannerURL(e.target.value);
