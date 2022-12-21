@@ -8,7 +8,7 @@ function BlogPage(){
     return (
         <>
         <Header/>
-        <PageBanner image={pageImage} title="Blogs"/>
+        <PageBanner image={pageImage} title="Blogs."/>
         <AllBlogsPreview/>
   
         </>

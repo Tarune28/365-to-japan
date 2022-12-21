@@ -26,6 +26,7 @@
     "react-draft-wysiwyg": "^1.15.0",
     "react-firebase-hooks": "^5.0.3",
     "react-icons": "^4.4.0",
+    "react-rounded-image": "^2.0.14",
     "react-scripts": "5.0.1",
     "react-simple-typewriter": "^3.0.1",
     "stable": "^0.1.8",

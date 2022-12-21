@@ -63,7 +63,7 @@ function ContactPage(){
     return (
         <>
         <Header/>
-        <PageBanner image={pageImage} title="Contact"/>
+        <PageBanner image={pageImage} title="Contact."/>
         <section class="area-padding">
         <div class="container">
             <div class="row">
