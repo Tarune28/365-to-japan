@@ -9,3 +9,7 @@
 .fade {
     background-color: none;
   }
+
+.single-footer-widget h6 {
+    font-family: 'Montserrat', sans-serif;
+}

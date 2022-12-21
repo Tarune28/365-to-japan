@@ -64,7 +64,7 @@ function AboutPage() {
           <div className="col-lg-12 col-md-12">
               <div className="about-content">
                 <h4 style={{textAlign: "center"}}>
-                  Writers
+                  The Team
                   <br />
                 </h4>
 
@@ -100,16 +100,13 @@ function AboutPage() {
 
       
 
-      <section className="about-area area-padding">
+      <section className="about-area area-padding" style={{paddingBottom: "0px"}}>
         <div className="container">
           <div className="row">
-            <div className="about-content" style={{ width: "100%" }}>
-              <img
-                src={code}
-                alt="coding"
-                style={{ float: "right", width: "45%", padding: "25px" }}
-              />
-              <div className="col-lg-5 col-md-12 offset-md-0 offset-lg-1">
+          
+            <div className="col-lg-5 col-md-12 offset-md-0 offset-lg-1">
+            <div className="about-content">
+
                 <h4>
                   Other Passions
                   <br />
@@ -137,21 +134,24 @@ function AboutPage() {
                 </p>
               </div>
             </div>
+            <div className="col-lg-6">
+              <div className="img-styleBox">
+                <div className="styleBox-border">
+                  <img className=" roundedimg" src={code} alt="" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="about-area area-padding">
+      <section className="about-area area-padding" style={{paddingBottom: "0px"}}>
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+          <div className="col-lg-6">
               <div className="img-styleBox">
                 <div className="styleBox-border">
-                  <img
-                    className="styleBox-img1"
-                    src={lanterns}
-                    alt="lanterns"
-                  />
+                  <img className=" roundedimg" src={lanterns} alt="" />
                 </div>
               </div>
             </div>
@@ -185,16 +185,13 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="about-area area-padding">
+      <section className="about-area area-padding" style={{marginBottom: "70px"}}>
         <div className="container">
           <div className="row">
-            <div className="about-content" style={{ width: "100%" }}>
-              <img
-                src={shop}
-                alt="coding"
-                style={{ float: "right", width: "45%", padding: "25px" }}
-              />
+
+      
               <div className="col-lg-5 col-md-12 offset-md-0 offset-lg-1">
+              <div className="about-content">
                 <h1
                   style={{
                     fontSize: "36px",
@@ -229,6 +226,13 @@ function AboutPage() {
                 </p>
                 <Button variant="custom" href="https://365tojapan.com/contact">Contact Me
                 </Button>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="img-styleBox">
+                <div className="styleBox-border">
+                  <img className=" roundedimg" src={shop} alt="" />
+                </div>
               </div>
             </div>
           </div>

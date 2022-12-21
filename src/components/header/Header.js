@@ -1,7 +1,10 @@
-import "./Header.css";
+
 import React, { useEffect, useState } from "react";
+import { ReactComponent as Logo } from "../../365.png";
 import logo from "../../365.png"
 import { Outlet, Link } from "react-router-dom";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import "./Header.css"
 
 function Header() {
   let [scroll, setScroll] = useState(false);
@@ -15,61 +18,61 @@ function Header() {
   return (
     // Navbar (sit on top)
     <>
-      <div className="site-mobile-menu site-navbar-target">
-        <div className="site-mobile-menu-header">
-          <div className="site-mobile-menu-close mt-3">
-            <span className="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-        <div className="site-mobile-menu-body"></div>
-      </div>
-
-      <header className={scroll ? "card white site-navbar-sticky site-navbar site-navbar-target" : "site-navbar-sticky site-navbar site-navbar-target"} role="banner" id="navbar">
-        <div className="container-xl">
-          <div className="row align-items-center position-relative">
-            <div className="col-3">
-              <div className="site-logo">
-                <img src={logo} style={{maxHeight: "90px", padding: "10px"}}/>
-              </div>
-            </div>
-
-            <div className="col-9 text-right">
-              <span className="d-inline-block d-lg-none">
-                <a
-                  href="#"
-                  className="text-primary site-menu-toggle js-menu-toggle py-5"
-                >
-                  <span className="icon-menu h3 text-white"></span>
-                </a>
-              </span>
-
-              <nav
-                className="site-navigation text-right ml-auto d-none d-lg-block"
-                role="navigation"
-              >
-                <ul className="site-menu main-menu js-clone-nav ml-auto ">
-                  <li className={window.location.pathname == "/" ? "active nav-link" : "nav-link"}>
-                    <a href="/" className="nav-link">Home</a>
-                  </li>
-                  <li className={window.location.pathname == "/blogs" ? "active nav-link" : "nav-link"}>
-                  <a href="/blogs" className="nav-link">Blogs</a>
-                  </li>
-                  <li className={window.location.pathname == "/about" ? "active nav-link" : "nav-link"}>
-                  <a href="/about" className="nav-link">About</a>
-                  </li>
-                  <li className={window.location.pathname == "/contact" ? "active nav-link" : "nav-link"}>
-                  <a href="/contact" className="nav-link">Contact</a>
-                  </li>
-                  <li className={window.location.pathname == "/login" ? "active nav-link" : "nav-link"}>
-                  <a href="/login" className="nav-link">Login</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </header>
+     <Navbar className={scroll ? "card white site-navbar-sticky site-navbar site-navbar-target" : "site-navbar-sticky site-navbar site-navbar-target"} variant="light" expand="lg">
+        <Container className="maxwidth-none">
+            <Navbar.Brand href="#home">
+            <img
+              src={logo}
+     
+              height="70"
+              className="img my-1"
+              alt="React Bootstrap logo"
+            />
+          </Navbar.Brand>
+          
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav className="">
+            <Nav.Link className={window.location.pathname == "/" ? "active nav-link mx-4" : "nav-link mx-4"} href="/">Home</Nav.Link>
+            <Nav.Link className={window.location.pathname == "/blogs" ? "active nav-link mx-4" : "nav-link mx-4"} href="/blogs">Blogs</Nav.Link>
+            <Nav.Link className={window.location.pathname == "/about" ? "active nav-link mx-4" : "nav-link mx-4"} href="/about">About</Nav.Link>
+            <Nav.Link className={window.location.pathname == "/contact" ? "active nav-link mx-4" : "nav-link mx-4"} href="/contact">Contact</Nav.Link>
+            <Nav.Link className={window.location.pathname == "/login" ? "active nav-link mx-4" : "nav-link mx-4"} href="/login">Login</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+        
+  
+          
+ 
+    
+        </Container>
+      </Navbar>
+{/*     
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar> */}
     </>
+  
   );
 }
 

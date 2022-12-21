@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../../../Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./LoginPage.css";
-import pageImage from "../../../img/loginDash/mountains.jpg";
+import pageImage from "../../../img/loginDash/greyPAl.jpg";
 // change image
 import PageBanner from "../../pagebanner/PageBanner";
 import Form from "react-bootstrap/Form";

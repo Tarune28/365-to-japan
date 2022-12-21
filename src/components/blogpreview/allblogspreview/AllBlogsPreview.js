@@ -7,6 +7,7 @@ import RequestUtils from "../../../utils/RequestUtils";
 import { ConfigProvider } from 'antd';
 import { Button } from "react-bootstrap";
 import moment from "moment";
+import "./AllBlogsPreview.css";
 
 function AllBlogsPreview(props) {
 

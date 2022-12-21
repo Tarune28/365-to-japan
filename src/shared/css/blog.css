@@ -234,9 +234,9 @@ textarea {
 .text_1, .text_2, .text_3 {
 	overflow: hidden;
 	font-family: 'Crimson Text', serif;
-	font-size: 80px;
+	padding: 15px;
 
-	white-space: nowrap;
+	
 	display: inline-block;
 	position: relative;
 	animation-duration: 15s;

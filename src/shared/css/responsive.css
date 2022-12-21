@@ -83,7 +83,7 @@
 @media (max-width:991px){
 	/* Main Menu Area css
 	============================================================================================ */
-	.navbar-toggler {
+	/* .navbar-toggler {
 		border: none;
 		border-radius: 0px;
 		padding: 0px;
@@ -119,7 +119,7 @@
 		margin-bottom: 4px;
 		transition: all 400ms linear;
 		cursor: pointer;
-	}
+	} */
 	.navbar .container{
 		padding-left: 15px;
 		padding-right: 15px;

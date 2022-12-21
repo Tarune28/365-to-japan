@@ -4756,13 +4756,23 @@ h6 {
     .about-area .about-content {
         margin-top: 50px;
     }
+    .about-area {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
 }
 
 @media (max-width: 767px) {
     .about-area .about-content {
         margin-top: 0;
     }
+    .about-area {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
+
 
 .about-area .about-content h4 {
     font-size: 36px;
@@ -4770,6 +4780,7 @@ h6 {
     font-family: "Playfair Display", serif;
     margin-bottom: 18px;
     line-height: 48px;
+    
 }
 
 .about-area .about-content p {
@@ -4787,7 +4798,7 @@ h6 {
 }
 
 .about-area .about-content .main_btn {
-    padding: 0 50px;
+    
     margin-top: 7px;
     background: #f81c1c;
     border-color: #f81c1c;

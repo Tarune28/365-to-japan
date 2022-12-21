@@ -1,7 +1,8 @@
 
 .roundedimg {
    
-    justify-content: center;
+    position: relative;
+    top: 50px;
     padding-bottom:0px;
     padding-top: 0px;
     padding-left: 20px;
@@ -72,4 +73,12 @@
 
 .link:hover {
     color: grey;
+}
+
+.about-area .about-content h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.about-area .about-content h1 {
+  font-family: 'Montserrat', sans-serif;
 }

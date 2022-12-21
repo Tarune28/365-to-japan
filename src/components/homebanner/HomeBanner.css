@@ -11,6 +11,23 @@ svg {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 901px) {
+	svg {
+		width: 660px;
+	}
+}
+
+@media screen and (max-width: 601px) {
+	svg {
+		width: 500px;
+	}
+}
+@media screen and (max-width: 450px) {
+	svg {
+		width: 400px;
+	}
+}
+
 .text-copy {
     fill: none;
     stroke: white;

@@ -8,6 +8,10 @@ import { useState } from "react";
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import "./ContactPage.css";
+
+
+
 function ContactPage(){
 
    // let [showModal, setShowModal] = useState(false);

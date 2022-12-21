@@ -7,8 +7,8 @@ function PageBanner(props) {
 
   return (
     <section className="page-banner" style={{ background: `url(${props.image}) no-repeat scroll center center` }}>
-      <div className="container">
-        <h3 className="w3-xxlarge w3-text-white" style={{textIndent: "1.1vw"}}>
+      <div className="container" style={{flexWrap: "wrap"}}>
+        <h3 className="w3-text-white" style={{textIndent: ".3vw", fontSize: "4rem"}}>
           <span className="w3-black w3-opacity-min text_3">
             <Typewriter onInit={(typewriter) => {
               typewriter.typeString(props.title).start();
