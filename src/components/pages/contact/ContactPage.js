@@ -124,7 +124,7 @@ function ContactPage(){
               }}/>
         </Col>
       </Form.Group>
-      <Button type="submit" class="w3-button w3-hoverColor1" variant="outline-dark" onClick={newMessage}>Send Message</Button>
+      <Button type="submit" class="w3-button w3-hoverColor1" variant="outline-dark" size="sm" onClick={newMessage}>Send Message</Button>
       </div>
                 
                 

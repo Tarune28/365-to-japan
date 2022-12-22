@@ -84,7 +84,7 @@ function Footer() {
                 <p style={{color: "white"}}>
                   I am a passionate Japanese language learner and culture appreciator. Next summer, I plan to visit Japan. Like many Japanese learners, I’m trying to further immerse myself in the language, and I figured the best way is to spend 2 months in Japan. However, I am not perfect.            </p>
                 <div className=" w3-hide-small">
-                <Button variant="outline-dark" href="/about">Read More</Button>{' '}
+                <Button variant="outline-dark" size="sm" href="/about">Read More</Button>{' '}
              
                 </div>
               </div>
@@ -121,7 +121,7 @@ function Footer() {
               }}/>
         </Col>
       </Form.Group>
-<Button variant="outline-dark" onClick={newSubscriber}>Join</Button>{' '}
+<Button variant="outline-dark" size="sm" onClick={newSubscriber}>Join</Button>{' '}
 
               </div>
             </div>

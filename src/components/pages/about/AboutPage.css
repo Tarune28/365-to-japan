@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 
 .roundedimg {
    
@@ -76,9 +78,11 @@
 }
 
 .about-area .about-content h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "open sans", sans-serif;
+  font-weight: 400;
 }
 
 .about-area .about-content h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "open sans", sans-serif;
+  font-weight: 400;
 }

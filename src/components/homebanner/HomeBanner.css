@@ -11,22 +11,6 @@ svg {
     margin: 0 auto;
 }
 
-@media screen and (max-width: 901px) {
-	svg {
-		width: 560px;
-	}
-}
-
-@media screen and (max-width: 601px) {
-	svg {
-		width: 450px;
-	}
-}
-@media screen and (max-width: 450px) {
-	svg {
-		width: 300px;
-	}
-}
 
 .text-copy {
     fill: none;
@@ -473,11 +457,11 @@ svg {
 
 @keyframes line-animation{
     from {
-        stroke-dasharray: 450px;
+        stroke-dasharray: 500px;
         stroke-dashoffset: 50%;
     }
     to{
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 0%;
     }
 }
 
@@ -485,9 +469,94 @@ svg {
     to
     {
       
+      stroke-width: 5;
+      stroke:white;
     }
 }
 .st0{display:none;}
 .st1{display:inline;fill:#001745;}
 .st2{display:inline;}
-.st3{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}
+.st3{fill:none;stroke:#37B193;stroke-width:5;stroke-miterlimit:10;}
+
+
+.triangle_down {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid white;
+    font-size: 0;
+    line-height: 0;
+    float: left;
+    
+  }
+  .triangle_down1 {
+    position: relative;
+    top: 15em;
+    content: "";
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-right: 0.2em solid white;
+    border-top: 0.2em solid white;
+    transform: rotate(135deg);
+    visibility: hidden;
+    /* animation: box-shadow 3s 6s ease-in forwards; */
+    animation: jumpInfinite 1.5s 6s infinite;
+
+  }
+
+  @keyframes jumpInfinite {
+    0% {
+      margin-top: 0;
+      visibility: visible;
+    }
+    25% {
+        margin-top: 10px;
+        visibility: visible;
+      }
+    50% {
+      margin-top: 20px;
+      visibility: visible;
+    }
+    75% {
+        margin-top: 10px;
+        visibility: visible;
+      }
+    100% {
+      margin-top: 0;
+      visibility: visible;
+    }
+  }
+
+  @media screen and (max-width: 1501px) {
+    .triangle_down1 {
+        top: 30em;
+    }
+}
+
+  @media screen and (max-width: 901px) {
+	svg {
+		width: 560px;
+	}
+    .triangle_down1 {
+        top: 30em;
+    }
+}
+
+@media screen and (max-width: 601px) {
+	svg {
+		width: 450px;
+	}
+    .triangle_down1 {
+        top: 30em;
+    }
+}
+@media screen and (max-width: 450px) {
+	svg {
+		width: 300px;
+	}
+    .triangle_down1 {
+        top: 20em;
+    }
+}

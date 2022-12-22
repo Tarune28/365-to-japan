@@ -74,6 +74,11 @@ function HomeBanner() {
 
 
           </div>
+          <div class="col-lg-12" style={{display: "flex", alignContents: "Center", justifyContent: "center"}}>
+          <div id="dialog2" class="triangle_down1"></div>
+          </div>
+
+          
           
         </div>
       </div>
