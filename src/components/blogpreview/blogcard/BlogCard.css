@@ -13,3 +13,11 @@
     height: 300px;
     margin: -75px 0 0 -100px;
 }
+
+.blog_item_date {
+    font-family: "open sans", sans-serif;
+}
+
+.blog_item_date h3 {
+    font-family: "open sans", sans-serif;
+}

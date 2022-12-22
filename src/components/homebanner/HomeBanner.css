@@ -13,18 +13,18 @@ svg {
 
 @media screen and (max-width: 901px) {
 	svg {
-		width: 660px;
+		width: 560px;
 	}
 }
 
 @media screen and (max-width: 601px) {
 	svg {
-		width: 500px;
+		width: 450px;
 	}
 }
 @media screen and (max-width: 450px) {
 	svg {
-		width: 400px;
+		width: 300px;
 	}
 }
 
@@ -145,7 +145,7 @@ svg {
     width: 80px;
     height: 80px;
     background: rgb(55,177,147);
-    animation-delay: 0s;
+    animation-delay: 4s;
 }
 
 
@@ -153,7 +153,7 @@ svg {
     left: 10%;
     width: 120px;
     height: 120px;
-    animation-delay: 2s;
+    animation-delay: 6s;
     animation-duration: 12s;
 }
 
@@ -162,14 +162,14 @@ svg {
     width: 140px;
     height: 140px;
     background: rgb(55,177,147);
-    animation-delay: 4s;
+    animation-delay: 8s;
 }
 
 .circles li:nth-child(4){
     left: 40%;
     width: 60px;
     height: 60px;
-    animation-delay: 0s;
+    animation-delay: 4s;
     animation-duration: 18s;
 }
 
@@ -177,7 +177,7 @@ svg {
     left: 65%;
     width: 120px;
     height: 120px;
-    animation-delay: 0s;
+    animation-delay: 4s;
     background: rgb(55,177,147);
     animation-duration: 13s;
 }
@@ -186,7 +186,7 @@ svg {
     left: 75%;
     width: 110px;
     height: 110px;
-    animation-delay: 13s;
+    animation-delay: 17s;
     animation-duration: 16s;
 }
 
@@ -194,7 +194,7 @@ svg {
     left: 35%;
     width: 150px;
     height: 150px;
-    animation-delay: 10s;
+    animation-delay: 14s;
     background: rgb(55,177,147);
     animation-duration: 21s;
 }
@@ -203,7 +203,7 @@ svg {
     left: 50%;
     width: 125px;
     height: 125px;
-    animation-delay: 15s;
+    animation-delay: 19s;
     animation-duration: 25s;
 }
 
@@ -212,7 +212,7 @@ svg {
     width: 115px;
     height: 115px;
     background: rgb(55,177,147);
-    animation-delay: 2s;
+    animation-delay: 6s;
     animation-duration: 19s;
 }
 
@@ -220,7 +220,7 @@ svg {
     left: 85%;
     width: 150px;
     height: 150px;
-    animation-delay: 0s;
+    animation-delay: 4s;
     animation-duration: 15s;
 }
 .circles li:nth-child(11){
@@ -228,14 +228,14 @@ svg {
     width: 71px;
     height: 71px;
     background: rgb(55,177,147);
-    animation-delay: 6s;
+    animation-delay: 10s;
     animation-duration: 17s;
 }
 .circles li:nth-child(12){
     left: 10%;
     width: 116px;
     height: 116px;
-    animation-delay: 3s;
+    animation-delay: 7s;
     animation-duration: 25s;
 }
 .circles li:nth-child(13){
@@ -243,14 +243,14 @@ svg {
     width: 81px;
     height: 81px;
     background: rgb(55,177,147);
-    animation-delay: 4s;
+    animation-delay: 8s;
     animation-duration: 12s;
 }
 .circles li:nth-child(14){
     left: 58%;
     width: 64px;
     height: 64px;
-    animation-delay: 5s;
+    animation-delay: 9s;
     animation-duration: 24s;
 }
 .circles li:nth-child(15){
@@ -258,14 +258,14 @@ svg {
     width: 52px;
     height: 52px;
     background: rgb(55,177,147);
-    animation-delay: 7s;
+    animation-delay: 11s;
     animation-duration: 14s;
 }
 .circles li:nth-child(16){
     left: 14%;
     width: 141px;
     height: 141px;
-    animation-delay: 2s;
+    animation-delay: 6s;
     animation-duration: 22s;
 }
 .circles li:nth-child(17){
@@ -273,14 +273,14 @@ svg {
     width: 150px;
     height: 150px;
     background: rgb(55,177,147);
-    animation-delay: 1s;
+    animation-delay: 5s;
     animation-duration: 25s;
 }
 .circles li:nth-child(18){
     left: 37%;
     width: 68px;
     height: 68px;
-    animation-delay: 4s;
+    animation-delay: 8s;
     animation-duration: 12s;
 }
 .circles li:nth-child(19){
@@ -288,14 +288,14 @@ svg {
     width: 180px;
     height: 180px;
     background: rgb(55,177,147);
-    animation-delay: 6s;
+    animation-delay: 10s;
     animation-duration: 18s;
 }
 .circles li:nth-child(20){
     left: 40%;
     width: 125px;
     height: 125px;
-    animation-delay: 3s;
+    animation-delay: 7s;
     animation-duration: 20s;
 }
 .circles li:nth-child(21){
@@ -303,14 +303,14 @@ svg {
     width: 109px;
     height: 109px;
     background: rgb(55,177,147);
-    animation-delay: 10s;
+    animation-delay: 14s;
     animation-duration: 10s;
 }
 .circles li:nth-child(22){
     left: 67%;
     width: 129px;
     height: 129px;
-    animation-delay: 10s;
+    animation-delay: 14s;
     animation-duration: 18s;
 }
 
@@ -319,14 +319,14 @@ svg {
     width: 52px;
     height: 52px;
     background: rgb(55,177,147);
-    animation-delay: 13s;
+    animation-delay: 17s;
     animation-duration: 14s;
 }
 .circles li:nth-child(24){
     left: 67%;
     width: 141px;
     height: 141px;
-    animation-delay: 21s;
+    animation-delay: 25s;
     animation-duration: 12s;
 }
 .circles li:nth-child(25){
@@ -334,14 +334,14 @@ svg {
     width: 150px;
     height: 150px;
     background: rgb(55,177,147);
-    animation-delay: 11s;
+    animation-delay: 15s;
     animation-duration: 11s;
 }
 .circles li:nth-child(26){
     left: 43%;
     width: 68px;
     height: 68px;
-    animation-delay: 4s;
+    animation-delay: 8s;
     animation-duration: 15s;
 }
 .circles li:nth-child(27){
@@ -349,14 +349,14 @@ svg {
     width: 180px;
     height: 180px;
     background: rgb(55,177,147);
-    animation-delay: 16s;
+    animation-delay: 20s;
     animation-duration: 12s;
 }
 .circles li:nth-child(28){
     left: 49%;
     width: 125px;
     height: 125px;
-    animation-delay: 13s;
+    animation-delay: 17s;
     animation-duration: 17s;
 }
 .circles li:nth-child(29){
@@ -364,17 +364,16 @@ svg {
     width: 109px;
     height: 109px;
     background: rgb(55,177,147);
-    animation-delay: 0s;
+    animation-delay: 4s;
     animation-duration: 25s;
 }
 .circles li:nth-child(30){
     left: 15%;
     width: 129px;
     height: 129px;
-    animation-delay: 0s;
+    animation-delay: 4s;
     animation-duration: 10s;
 }
-
 
 
 @keyframes animate {
@@ -404,3 +403,91 @@ svg {
     }
 
 }
+
+
+
+
+
+#text{
+    height: 30vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#text path:nth-child(1){
+    stroke-dasharray: 1047px;
+    stroke-dashoffset: 1047px;
+    animation: line-animation ease forwards 1.2s, box-shadow 0.5s ease forwards 6s;
+}
+
+#text path:nth-child(2){
+    stroke-dasharray: 1084px;
+    stroke-dashoffset: 1084px;
+    animation: line-animation ease forwards 1.5s 0.5s, box-shadow 0.5s ease forwards 6s;
+}
+
+#text path:nth-child(3){
+    stroke-dasharray: 1046px;
+    stroke-dashoffset: 1046px;
+    animation: line-animation ease forwards 1.5s 1s, box-shadow 0.5s ease forwards 6s;
+}
+
+#text path:nth-child(4){
+    stroke-dasharray: 790px;
+    stroke-dashoffset: 790px;
+    animation: line-animation ease forwards 1.5s 1.5s, box-shadow 0.5s ease forwards 6s;
+}
+#text path:nth-child(5){
+    stroke-dasharray: 790px;
+    stroke-dashoffset: 790px;
+    animation: line-animation ease forwards 1.5s 2s, box-shadow 0.5s ease forwards 6s;
+}
+#text path:nth-child(6){
+    stroke-dasharray: 790px;
+    stroke-dashoffset: 790px;
+    animation: line-animation ease forwards 1.5s 2.5s, box-shadow 0.5s ease forwards 6s;
+}
+#text path:nth-child(7){
+    stroke-dasharray: 790px;
+    stroke-dashoffset: 790px;
+    animation: line-animation ease forwards 1.5s 3s, box-shadow 0.5s ease forwards 6s;
+}
+#text path:nth-child(8){
+    stroke-dasharray: 790px;
+    stroke-dashoffset: 790px;
+    animation: line-animation ease forwards 1.5s 3.5s, box-shadow 0.5s ease forwards 6s;
+}
+#text path:nth-child(9){
+    stroke-dasharray: 790px;
+    stroke-dashoffset: 790px;
+    animation: line-animation ease forwards 1.5s 4s, box-shadow 0.5s ease forwards 6s;
+}
+#text path:nth-child(10){
+    stroke-dasharray: 790px;
+    stroke-dashoffset: 790px;
+    animation: line-animation ease forwards 1.5s 4.5s, box-shadow 0.5s ease forwards 6s;
+}
+
+@keyframes line-animation{
+    from {
+        stroke-dasharray: 450px;
+        stroke-dashoffset: 50%;
+    }
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes box-shadow{
+    to
+    {
+      
+    }
+}
+.st0{display:none;}
+.st1{display:inline;fill:#001745;}
+.st2{display:inline;}
+.st3{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}

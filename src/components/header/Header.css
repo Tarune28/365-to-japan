@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Tourney&family=Work+Sans:wght@400&display=swap');
 
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 body {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -54,6 +54,10 @@ body {
     
         
     }
+  .nav-link {
+    font-family: "open sans", sans-serif;
+    font-weight: 400;
+  }
   
   .site-navbar {
     margin-bottom: 0px;

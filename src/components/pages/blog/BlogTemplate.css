@@ -34,8 +34,9 @@ img {
 
 .content p,h1,h2,h3,h4 {
     color: #8f8f8f;
-    
+    font-family: "Crimson Text", serif;    
   }
+
 
 .content ul {
   padding-left: 40px;
