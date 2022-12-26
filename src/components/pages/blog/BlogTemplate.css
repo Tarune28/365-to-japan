@@ -47,13 +47,15 @@ img {
 .content ul li {
   list-style-type: disc;
   color: #8f8f8f;
-  
 }
 
 ul li li {
   background-color: blue;
 }
 
+u {
+  font-family: 'Crimson Text', serif;
+}
 
 .starter:first-letter {
    
