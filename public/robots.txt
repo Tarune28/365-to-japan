@@ -1,3 +1,14 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Allow: /blogs
+Allow: /about
+Allow: /contact
+Disallow: https://365tojapan.com
+Disallow: /dashboard
+Disallow: /login
+Disallow: /css/
+Disallow: /js/
+Disallow: /images/
+Host: https://365tojapan.com
+
+Sitemap: https://365tojapan.com/sitemap.xml

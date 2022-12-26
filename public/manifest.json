@@ -1,25 +1,27 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "365toJapan",
+  "name": "365toJapan: A Language Learning Blog",
+  "description": "I am a passionate Japanese language learner and culture appreciator. Next summer, I plan to visit Japan. Like many Japanese learners, I'm trying to further immerse myself in the language, and I figured the best way is to spend 2 months in Japan. However, I am not perfect.",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "256x256",
       "type": "image/x-icon"
     },
     {
       "src": "favicon.ico",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "256x256"
     },
     {
       "src": "favicon.ico",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "256x256"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#37B193",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary"
 }

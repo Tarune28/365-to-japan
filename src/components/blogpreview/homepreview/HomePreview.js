@@ -54,8 +54,8 @@ function HomePreview(props) {
     <section className="blog_area area-padding">
       <div className="container">
         <div className="area-heading" style={{fontFamily: "inherit"}}>
-          <h3>
-            <a id="target">Recent Blogs</a>
+          <h3 id="target">
+            Recent Blogs
           </h3>
           <p>365ToJapan blogs are posted 1-2 times weekly.</p>
         </div>
