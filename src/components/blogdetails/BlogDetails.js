@@ -16,6 +16,7 @@ function BlogDetails(props) {
               
                     <ButtonGroup className="me-2" aria-label="Second group">
                         <button className="btn pr-3  btn-outline-danger" onClick={() => { props.deleteHandler(props.blogInfo["_id"]) }}>delete</button>
+                        <button className="btn pr-3  btn-outline-secondary" onClick={() => { props.editHandler(props.blogInfo["_id"]) }}>edit</button>
                     </ButtonGroup>
                 </ButtonToolbar>
 

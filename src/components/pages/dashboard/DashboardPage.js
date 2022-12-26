@@ -61,6 +61,8 @@ function DashboardPage() {
   };
 
   // STATE HOOKS FOR DB ENTRY
+  let [currentID, setCurrentID] = useState("");
+
   let [currentEventName, setCurrentEventName] = useState("");
 
   let [currentFileName, setCurrentFileName] = useState("");
@@ -73,12 +75,15 @@ function DashboardPage() {
 
   let [currentIcon, setCurrentIcon] = useState("");
 
+  let [currentCount, setCurrentCount] = useState("");
+
   let [currentPostTime, setCurrentPostTime] = useState(
     MomentUtils.roundUp(moment(new Date()), "hour").add(1, "hour")
   );
 
   let [currentEmail, setCurrentEmail] = useState("");
 
+  
  
   
  
@@ -180,6 +185,37 @@ function DashboardPage() {
     });
 }
 
+
+    function handleEdit(_id) {
+      
+      RequestUtils.get("/blog/info?id=" + _id)
+      .then(response => response.json()) // take response and turn it into JSON object
+      .then(data => { // data = JSON object created ^^
+          if (!data.ok) {
+              alert("Blog could not be found!");
+              return;
+          }
+          
+          setCurrentID(data.arr[0]["_id"]);
+          setCurrentEventName(data.arr[0]["title"]);
+          console.log(data.arr[0]["bannerURL"].toString().substring(data.arr[0]["bannerURL"].indexOf("images%2F") + 9, data.arr[0]["bannerURL"].lastIndexOf("%2F")));
+          setCurrentFileName("/" + data.arr[0]["bannerURL"].toString().substring(data.arr[0]["bannerURL"].indexOf("images%2F") + 9, data.arr[0]["bannerURL"].lastIndexOf("%2F")));
+          setCurrentLocationName(data.arr[0]["location"]);
+          setCurrentBannerURL(data.arr[0]["bannerURL"]);
+          setCurrentCategory(data.arr[0]["category"]);
+          setCurrentIcon(data.arr[0]["icon"]);
+          setCurrentPostTime(moment(data.arr[0]["date"]));
+          setConvertedContent(data.arr[0]["html"]);
+        
+          
+
+
+      })
+      .catch(error => { 
+        console.log(error);
+      }); 
+    }
+
   function postBlog(e) {
     if (e != null) {
       e.preventDefault();
@@ -209,6 +245,41 @@ function DashboardPage() {
           return;
         }
         alert("365toJapan Blog Posted!");
+
+
+      })
+      .catch(error => {
+        alert("Something went wrong while posting!");
+      });
+  }
+
+
+  function editBlog(e) {
+    if (e != null) {
+      e.preventDefault();
+    }
+
+    let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 295).replace( /(<([^>]+)>)/ig, '') + "...";
+    let reqObj = {
+      _id: currentID,
+      title: currentEventName,
+      bannerURL: currentBannerURL,
+      date: currentPostTime.format('MM/DD/YY hh:mm A'),
+      description: desc,
+      location: currentLocationName,
+      category: currentCategory,
+      icon: currentIcon,
+      html: convertedContent
+    }
+
+    RequestUtils.post("/blog/update", reqObj) // send out post req and get the response from server
+      .then(response => response.json()) // take response and turn it into JSON object
+      .then(data => { // data = JSON object created ^^
+        if (!data.ok) {
+          alert("Blog could not be created!");
+          return;
+        }
+        alert("365toJapan Blog Edited!");
 
 
       })
@@ -413,6 +484,10 @@ function DashboardPage() {
                 } variant="primary" type="submit">
                   Post
                 </Button>
+                <Button className="mx-2" onClick={e => editBlog()
+                } variant="primary" type="submit">
+                  Save
+                </Button>
               </Form>
 
             </Tabs.TabPane>
@@ -426,7 +501,7 @@ function DashboardPage() {
                     return (
                       <>
                       
-                        <BlogDetails blogInfo={props} deleteHandler={handleDelete}/>
+                        <BlogDetails blogInfo={props} deleteHandler={handleDelete} editHandler={handleEdit}/>
                         </>
                     );
                 })
