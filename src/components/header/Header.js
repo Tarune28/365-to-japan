@@ -20,7 +20,7 @@ function Header() {
     <>
      <Navbar className={scroll ? "card white site-navbar-sticky site-navbar site-navbar-target" : "site-navbar-sticky site-navbar site-navbar-target"} variant="light" expand="lg">
         <Container className="maxwidth-none">
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
             <img
               src={logo}
      
