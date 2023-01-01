@@ -5,9 +5,23 @@ import logo from "../../365.png"
 import { Outlet, Link } from "react-router-dom";
 import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./Header.css"
+import Modal from 'react-bootstrap/Modal'
 
 function Header() {
+
+  let [showModal, setShowModal] = useState(false);
+
   let [scroll, setScroll] = useState(false);
+
+  function showEventModal() {
+    setShowModal(true);
+}
+
+function hideEventModal() {
+  setShowModal(false);
+}
+
+
   useEffect(() => {
   
     window.addEventListener("scroll", () => {
@@ -45,8 +59,36 @@ function Header() {
           
  
     
-        </Container>
+        </Container >
+       
       </Navbar>
+      <Navbar className={(!scroll && window.location.pathname == "/") ? "card1 site-navbar-sticky1 site-navbar1 site-navbar site-navbar-target justify-content-center" : "card1 site-navbar-sticky1 site-navbar1 site-navbar site-navbar-target justify-content-center hide" } variant="light" expand="lg">
+          <h6>365toJapan 1.0.2 updates have been released! Learn more <button onClick={showEventModal}>here.</button></h6>
+    </Navbar>
+
+    <Modal show={showModal} onHide={hideEventModal} centered style={{marginTop: "40px"}} size="lg">
+                <Modal.Header closeButton>
+                    <Modal.Title>365toJapan 1.0.2</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <ul className="bullet">
+                        <li>Conversion of website into web-app form with a combination of react.js/node.js/mongoDB</li>
+                        <li>Refreshed all UI for all pages from minor font edits to entire re-structuring of layout</li>
+                        <li>Redesigning blog post format</li>
+                        <li>Redesigned banners (I.e. 365 cover animation)</li>
+                        <li>Login dashboard for editing and posting</li>
+                        <li>Bug fixes from previous website</li>
+                        <li>All contact forms fixed</li>
+                        <li>Creation of 365toJapan API</li>
+                        <li>Other minor fixes (i.e. mobile compatibility)</li>
+                    </ul>
+                    <p>
+                      Reach out to me at <a href="mailto:teswar@wpi.edu" className="email">teswar@wpi.edu</a> if you have any questions or suggestions for future updates. API access can be requested via email.
+                    </p>
+                    
+                </Modal.Body>
+            </Modal>
+     
 {/*     
     <Navbar bg="light" expand="lg">
       <Container>

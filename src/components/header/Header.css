@@ -58,6 +58,8 @@ body {
     font-family: "open sans", sans-serif;
     font-weight: 400;
   }
+
+  
   
   .site-navbar {
     margin-bottom: 0px;
@@ -67,11 +69,60 @@ body {
     padding: 1rem;
  }
 
+ .site-navbar1 {
+  padding-top: 0.55em;
+  padding-bottom: 0.5em;
+  background: #37B193;
+  text-align: center;
+  font-weight: 100;
+
+}
+
+.hide {
+  
+  opacity: 0;
+}
+
+
+.site-navbar1 h6 {
+  color: white;
+  text-align: center;
+}
+
+.card1 button {
+  background: #37B193;
+  color: white;
+  border: none;
+
+  padding: 0px;
+}
+
+.bullet {
+  padding-left: 20px;
+}
+
+.bullet li {
+  list-style-type: disc;
+}
+
+.email:hover {
+  color: #DDB083;
+}
+
+.card1 button:hover {
+  color: #DDB083;
+}
+
  .site-navbar-sticky {
     transition: 1s;
     position: fixed;
     top: 0px;
  }
+ .site-navbar-sticky1 {
+  transition: 1s;
+  position: fixed;
+  top: 117px;
+}
 
  .white {
      background: white;
