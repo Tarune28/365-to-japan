@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./BlogBanner.css";
 import Typewriter from "typewriter-effect";
 import moment from "moment";
-
+import { AntDesignOutlined, UserOutlined } from '@ant-design/icons';
+import { Avatar, Divider, Tooltip } from 'antd';
+import Tarun from "../../img/about/profile.png"
+import Brett from "../../img/about/brett.jpg"
 
 function BlogBanner(props) {
 
@@ -44,7 +47,28 @@ function BlogBanner(props) {
                 </ol>
             </nav>
         </div>
+        <div style={{position: "absolute", bottom: "0px", right: "20px"}}>
+        <Avatar.Group
+      maxCount={2}
+      size="large"
+      maxStyle={{
+        color: '#f56a00',
+        backgroundColor: '#fde3cf',
+        
+      }}
+    >
 
+      <Tooltip title="Tarun Eswar: Primary Author" placement="top">
+      <Avatar src={Tarun} className="imgBl"/>
+      </Tooltip>
+      <Tooltip title="Brett Murphy Hunt: Editor" placement="top">
+      <Avatar src={Brett} className="imgBl"/>
+      </Tooltip>
+      
+  
+    
+    </Avatar.Group>
+        </div>
     </section >
     </>
   );
