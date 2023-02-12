@@ -63,7 +63,7 @@ function hideEventModal() {
        
       </Navbar>
       <Navbar className={(!scroll && window.location.pathname == "/") ? "card1 site-navbar-sticky1 site-navbar1 site-navbar site-navbar-target justify-content-center" : "card1 site-navbar-sticky1 site-navbar1 site-navbar site-navbar-target justify-content-center hide" } variant="light" expand="lg">
-          <h6>365toJapan 1.0.2 updates have been released! Learn more <button onClick={showEventModal}>here.</button></h6>
+          <h6>365toJapan 1.0.2 updates have been released! Learn more <button onClick={showEventModal} style={{textDecoration: "underline"}}>here</button>.</h6>
     </Navbar>
 
     <Modal show={showModal} onHide={hideEventModal} centered style={{
