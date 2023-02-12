@@ -3,7 +3,7 @@
 
 
 
-svg {
+.svg {
     display: block;
     font: 10.5em 'Montserrat';
     width: 960px;
@@ -11,6 +11,15 @@ svg {
     margin: 0 auto;
 }
 
+.star {
+    color: white
+}
+
+.circle {
+    background-color: #ff8c19;
+    padding: 5px;
+    border-radius: 50%;
+}
 
 .text-copy {
     fill: none;
@@ -536,7 +545,7 @@ svg {
 }
 
   @media screen and (max-width: 901px) {
-	svg {
+	.svg {
 		width: 560px;
 	}
     .triangle_down1 {
@@ -545,7 +554,7 @@ svg {
 }
 
 @media screen and (max-width: 601px) {
-	svg {
+	.svg {
 		width: 450px;
 	}
     .triangle_down1 {
@@ -553,10 +562,17 @@ svg {
     }
 }
 @media screen and (max-width: 450px) {
-	svg {
+	.svg {
 		width: 300px;
 	}
     .triangle_down1 {
         top: 20em;
     }
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }

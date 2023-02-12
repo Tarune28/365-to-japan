@@ -4,8 +4,13 @@
   "private": true,
   "dependencies": {
     "14": "^3.1.6",
+    "@ant-design/icons": "^5.0.1",
     "@draft-js-plugins/editor": "^4.1.3",
     "@draft-js-plugins/image": "^4.1.3",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",

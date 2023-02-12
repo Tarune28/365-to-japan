@@ -36,7 +36,7 @@ function AboutPage() {
                   My Mission
                   <br />
                 </h4>
-                <p style={{ textIndent: "40px" }}>
+                <p style={{ textIndent: "0px" }}>
                   I am a passionate Japanese language learner and culture
                   appreciator. Next summer, I plan to visit Japan.Like many
                   Japanese learners, I’m trying to further immerse myself in the
@@ -111,7 +111,7 @@ function AboutPage() {
                   Other Passions
                   <br />
                 </h4>
-                <p style={{ textIndent: "40px", letterSpacing: "250%" }}>
+                <p style={{ textIndent: "0px", letterSpacing: "250%" }}>
                   Outside of Japanese, my other main hobby is coding. Rather
                   than relying on another software to assist me, this blog is
                   made from scratch. With a combination of React.js, express, and MongoDB this blog is made possible. Furthermore, free component libraries such as React-Boostrap and Antd provide the unique styling.
@@ -121,7 +121,7 @@ function AboutPage() {
                 </p>
                 <p
                   style={{
-                    textIndent: "40px",
+                    textIndent: "0px",
                     letterSpacing: "250%",
                     paddingBottom: "25px",
                   }}
@@ -161,7 +161,7 @@ function AboutPage() {
                   Who Is This Website For?
                   <br />
                 </h4>
-                <p style={{ textIndent: "40px" }}>
+                <p style={{ textIndent: "0px" }}>
                   This website is for any Japanese enthusiast. From those who only are interested in Japanese food
                   to those who speak fluently at a native level, this website is
                   for you. Each month, 1-2 blogs will be posted about random
@@ -169,7 +169,7 @@ function AboutPage() {
                   topic could be about studying methods. Don’t miss content—stay
                   connected by joining the notification list found in the footer of this website.
                 </p>
-                <p style={{ textIndent: "40px" }}>
+                <p style={{ textIndent: "0px" }}>
                   A brief overview of the contents of this blog can be found on
                   my introductory post,{" "}
                   <a href="https://365tojapan.com/blog/63812e8f95659bf05eaaa809" className="link">
@@ -203,7 +203,7 @@ function AboutPage() {
                 >
                   Additional Information
                 </h1>
-                <p style={{ textIndent: "40px" }}>
+                <p style={{ textIndent: "0px" }}>
                   One final note about me: I love giving back to the community
                   and taking up any opportunity. If you have any inquiries or
                   opportunities for me, feel free to reach me at {" "}<a href="mailto:teswar@wpi.edu" className="link">
@@ -211,7 +211,7 @@ function AboutPage() {
                   </a>.
                   
                 </p>
-                <p style={{ textIndent: "40px" }}>
+                <p style={{ textIndent: "0px" }}>
                   I also wanted to mention that this blog is still in the
                   development phase, meaning that several features are still
                   being added. Because I'm still working on the website, there
@@ -220,7 +220,7 @@ function AboutPage() {
                     teswar@wpi.edu
                   </a>{" "} to help me avoid future issues. Thank you!
                 </p>
-                <p style={{ textIndent: "40px" }}>
+                <p style={{ textIndent: "0px" }}>
                   Check out the form on the contact page for any if you need to
                   contact me regarding any other issues.
                 </p>

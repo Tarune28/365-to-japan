@@ -46,8 +46,8 @@ console.log(props.blogInfo["date"])
                 <a href="blogs/immersion.html" className="blog_item_date">
                   <h3>{moment(props.blogInfo["date"]).format("DD")}</h3>
                   <p>
-                    {moment(props.blogInfo["date"]).format("MMMM")},{" "}
-                    {moment(props.blogInfo["date"]).format("YY")}
+                    {moment(props.blogInfo["date"]).format("MMM")},{" "}
+                    {moment(props.blogInfo["date"]).format("YYYY")}
                   </p>
                 </a>
               </div>
@@ -55,7 +55,7 @@ console.log(props.blogInfo["date"])
                 <a className="d-inline-block" href="blogs/immersion.html">
                   <h2>{props.blogInfo["title"]}</h2>
                 </a>
-                <p style={{ padding: "10px", wordWrap: "break-word", color: "grey"}}>
+                <p style={{ wordWrap: "break-word", color: "grey"}}>
                   {props.blogInfo["description"]}
                 </p>
                 <ul className="blog-info-link" style={{listStyle: "none", textDecoration: "none"}}>

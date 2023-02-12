@@ -32,7 +32,7 @@ function hideEventModal() {
   return (
     // Navbar (sit on top)
     <>
-     <Navbar className={scroll ? "card white site-navbar-sticky site-navbar site-navbar-target" : "site-navbar-sticky site-navbar site-navbar-target"} variant="light" expand="lg">
+     <Navbar className={scroll ? "card white site-navbar-sticky site-navbar site-navbar-target" : "mobileWhite site-navbar-sticky site-navbar site-navbar-target"} variant="light" expand="lg">
         <Container className="maxwidth-none">
             <Navbar.Brand href="/">
             <img
@@ -66,7 +66,12 @@ function hideEventModal() {
           <h6>365toJapan 1.0.2 updates have been released! Learn more <button onClick={showEventModal}>here.</button></h6>
     </Navbar>
 
-    <Modal show={showModal} onHide={hideEventModal} centered style={{marginTop: "40px"}} size="lg">
+    <Modal show={showModal} onHide={hideEventModal} centered style={{
+      marginTop: '150px',
+      maxHeight: 'calc(100vh - 210px)',
+      overflowY: 'auto',
+      marginRight: '0px'
+     }} size="lg">
                 <Modal.Header closeButton>
                     <Modal.Title>365toJapan 1.0.2</Modal.Title>
                 </Modal.Header>

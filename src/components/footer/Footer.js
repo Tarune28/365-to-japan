@@ -80,18 +80,18 @@ function Footer() {
           <div className="row">
             <div className="col-lg-4  col-md-6 col-sm-6">
               <div className="single-footer-widget">
-                <h6 style={{color: "#f08812"}}>About Me</h6>
+                <h6 style={{color: "white"}}>About Me</h6>
                 <p style={{color: "white"}}>
                   I am a passionate Japanese language learner and culture appreciator. Next summer, I plan to visit Japan. Like many Japanese learners, I’m trying to further immerse myself in the language, and I figured the best way is to spend 2 months in Japan. However, I am not perfect.            </p>
                 <div className=" w3-hide-small">
-                <Button variant="outline-dark" size="sm" href="/about">Read More</Button>{' '}
+                <Button variant="outline-light" size="sm" href="/about">Read More</Button>{' '}
              
                 </div>
               </div>
             </div>
             <div className="offset-lg-1 col-lg-5   col-md-6 col-sm-6">
               <div className="single-footer-widget">
-                <h6 style={{color: "#f08812"}}>Notifications</h6>
+                <h6 style={{color: "white"}}>Notifications</h6>
                 <p style={{color: "white"}}>Enter your name and email to receive updates of upcoming blogs!</p>
                
                
@@ -113,7 +113,9 @@ function Footer() {
       <Form.Group as={Row} className="mb-3" controlId="Email">
  
         <Col sm="10">
-        <Form.Control type="text"
+        <Form.Control 
+              
+              type="text"
               placeholder="Email"
               value={currentEmail}
               onChange={(e) => {
@@ -121,13 +123,13 @@ function Footer() {
               }}/>
         </Col>
       </Form.Group>
-<Button variant="outline-dark" size="sm" onClick={newSubscriber}>Join</Button>{' '}
+<Button variant="outline-light" size="sm" onClick={newSubscriber}>Join</Button>{' '}
 
               </div>
             </div>
             <div className="col-lg-2 col-md-6 col-sm-6">
               <div className="single-footer-widget">
-                <h6 style={{color: "#f08812"}}>Site Map</h6>
+                <h6 style={{color: "white"}}>Site Map</h6>
                 <ul className="footer-div" style={{color: "white"}}>
                   <li><a href="/">Home</a></li>
                   <li><a href="/blogs">Blogs</a></li>

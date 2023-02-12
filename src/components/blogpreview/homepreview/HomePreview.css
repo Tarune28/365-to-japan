@@ -8,5 +8,7 @@
 }
 
 .btn-primary-soft:hover {
-    color: grey;
+    color: white;
+    background: #37B193;
+    border: #37B193 1px solid;
 }

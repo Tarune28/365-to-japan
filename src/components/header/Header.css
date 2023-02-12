@@ -25,6 +25,8 @@ body {
       opacity: 1;
       visibility: visible; }
   
+      body { padding-right: 0 !important }
+
 .img {
   padding-bottom: 0px; 
 }
@@ -59,9 +61,10 @@ body {
     font-weight: 400;
   }
 
-  
+ 
   
   .site-navbar {
+ 
     margin-bottom: 0px;
     z-index: 1999;
     background: rgba(255, 255, 255, 0.4);
@@ -70,8 +73,9 @@ body {
  }
 
  .site-navbar1 {
-  padding-top: 0.55em;
-  padding-bottom: 0.5em;
+  z-index: 19;
+
+  padding-bottom: 0.55em;
   background: #37B193;
   text-align: center;
   font-weight: 100;
@@ -469,5 +473,10 @@ body {
       @media (max-width: 991.98px) {
         .sticky-wrapper .shrink {
           padding-top: 30px !important;
-          padding-bottom: 30px !important; } }
+          padding-bottom: 30px !important; } 
+        .mobileWhite {
+          background-color: white;
+        }
+        
+      }
   

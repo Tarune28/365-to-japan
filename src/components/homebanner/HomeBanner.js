@@ -1,7 +1,27 @@
 import "./HomeBanner.css";
+import { TrophyOutlined } from '@ant-design/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleStar } from '@fortawesome/free-solid-svg-icons'
+import {
+  StarOutlined
+} from '@ant-design/icons';
+import { Modal } from "react-bootstrap";
+import { useState } from "react";
+import award from "./img/365tojapan.png";
 
 function HomeBanner() {
+
+  let [showModal, setShowModal] = useState(false);
+  function showEventModal() {
+    setShowModal(true);
+}
+
+function hideEventModal() {
+  setShowModal(false);
+}
+
   return (
+    <>
     <section className="home_banner_area" style={{background: "rgb(179, 179, 179)"}}>
       <ul className="circles">
                     <li></li>
@@ -54,7 +74,7 @@ function HomeBanner() {
               {/* style="text-indent: 1.1vw;" */}
               
               
-              <svg version="1.1" id="text" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              <svg className="svg" version="1.1" id="text" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 1400 237.6" style={{enableBackground: "new 0 0 1400 237.6;"}} xmlSpace="preserve">
     <path class="st3" d="M 0 136.531 L 26.5 136.531 A 52.237 52.237 0 0 0 29.181 149.288 Q 36.014 168.281 58.25 168.281 Q 66.75 168.281 74.375 164.031 Q 82 159.781 86.875 152.781 A 26.993 26.993 0 0 0 91.006 143.879 A 25.02 25.02 0 0 0 91.75 137.781 A 82.4 82.4 0 0 0 91.219 128.07 Q 89.937 117.31 85.564 111.14 A 20.325 20.325 0 0 0 83.25 108.406 A 24.65 24.65 0 0 0 74.893 103.141 Q 67.53 100.227 56.5 100.044 A 90.136 90.136 0 0 0 55 100.031 L 55 80.031 A 73.267 73.267 0 0 0 63.672 79.555 Q 73.405 78.391 78.943 74.382 A 18.175 18.175 0 0 0 81.25 72.406 A 21.287 21.287 0 0 0 85.672 65.457 Q 88.329 58.979 88.692 49.022 A 88.925 88.925 0 0 0 88.75 45.781 A 28.173 28.173 0 0 0 87.267 36.41 A 23.222 23.222 0 0 0 77.75 24.531 A 34.678 34.678 0 0 0 65.194 19.902 A 45.949 45.949 0 0 0 57.5 19.281 A 24.147 24.147 0 0 0 35.894 31.185 Q 31.201 38.569 29 50.531 L 3.75 50.531 A 81.771 81.771 0 0 1 8.918 29.634 Q 21.016 0.031 57 0.031 A 78.255 78.255 0 0 1 72.004 1.405 A 59.036 59.036 0 0 1 86.75 6.281 A 53.701 53.701 0 0 1 99.239 14.629 A 46.069 46.069 0 0 1 106.625 23.156 A 42.245 42.245 0 0 1 113.704 45.349 A 51.673 51.673 0 0 1 113.75 47.531 A 71.38 71.38 0 0 1 112.141 63.232 Q 108.257 80.444 95 89.281 Q 99.721 92.286 103.061 95.198 A 44.018 44.018 0 0 1 104.125 96.156 A 49.331 49.331 0 0 1 106.396 98.403 Q 107.435 99.505 108.246 100.53 A 21.11 21.11 0 0 1 109.5 102.281 A 41.605 41.605 0 0 1 113.918 112.5 Q 116.75 122.188 116.75 135.781 A 48.715 48.715 0 0 1 112.811 155.435 A 47.054 47.054 0 0 1 109.125 162.281 A 52.294 52.294 0 0 1 89.977 179.807 A 62.383 62.383 0 0 1 88.125 180.781 A 62.666 62.666 0 0 1 67.903 186.872 A 79.747 79.747 0 0 1 57.5 187.531 A 78.971 78.971 0 0 1 39.555 185.611 Q 25.563 182.348 15.836 173.54 A 49.871 49.871 0 0 1 13.5 171.281 A 47.721 47.721 0 0 1 0.03 138.462 A 62.364 62.364 0 0 1 0 136.531 Z"/>
     <path class="st3" d="M 253.75 46.531 L 229.75 46.531 A 43.655 43.655 0 0 0 227.791 35.665 Q 222.385 19.281 203 19.281 Q 178 19.281 170 57.281 A 139.321 139.321 0 0 0 167.937 71.313 Q 166.982 80.996 166.982 92.385 A 280.091 280.091 0 0 0 167 95.531 A 291.261 291.261 0 0 1 171.002 90.408 Q 176.506 83.536 179.729 80.603 A 19.658 19.658 0 0 1 181 79.531 A 32.67 32.67 0 0 1 192.521 74.07 Q 197.167 72.844 202.65 72.595 A 62.831 62.831 0 0 1 205.5 72.531 A 70.8 70.8 0 0 1 222.237 74.382 A 43.612 43.612 0 0 1 249.75 93.531 Q 258.75 107.781 258.75 130.031 A 73.309 73.309 0 0 1 256.618 148.114 A 56.759 56.759 0 0 1 248 167.031 A 46.694 46.694 0 0 1 218.761 185.91 A 74.432 74.432 0 0 1 202.75 187.531 Q 164.5 187.531 152 164.531 A 53.392 53.392 0 0 1 147.651 153.13 Q 142.554 134.375 142.501 99.027 A 496.71 496.71 0 0 1 142.5 98.281 A 236.74 236.74 0 0 1 144.645 64.892 Q 153.938 0.031 203.5 0.031 Q 219.851 0.031 230.752 5.601 A 36.608 36.608 0 0 1 239.5 11.781 A 38.053 38.053 0 0 1 247.279 22.703 Q 251.969 32.281 253.75 46.531 Z M 233.056 135.795 A 82.522 82.522 0 0 0 233.25 130.031 Q 233.25 95.969 208.27 92.24 A 44.176 44.176 0 0 0 201.75 91.781 Q 172.302 91.781 170.167 124.685 A 82.61 82.61 0 0 0 170 130.031 Q 170 164.013 195.06 167.805 A 44.738 44.738 0 0 0 201.75 168.281 Q 230.78 168.281 233.056 135.795 Z"/>
@@ -82,7 +102,33 @@ function HomeBanner() {
           
         </div>
       </div>
+      <div>
+      <div style={{position: "absolute", bottom: "10px", right: "20px"}}>
+        <a onClick={showEventModal}>
+          <div className="circle">
+          <StarOutlined style={{fontSize: '46px'}} className="star"/>
+          </div>
+        </a>
+        
+          
+      </div>
+      
+      </div>
     </section>
+    <Modal show={showModal} onHide={hideEventModal} centered style={{marginTop: "40px"}} size="lg">
+                <Modal.Header closeButton>
+                    <Modal.Title>365toJapan Rated as Top 60 for 2023!</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <h6 style={{fontFamily: "'Open Sans', -apple-system", color: "grey"}}>
+                    365toJapan has been rated as one of the top 60 blogs to watch in 2023 by Feedspot. Learn more <a href="https://blog.feedspot.com/japan_blogs/">here.</a>
+                  </h6>
+                  <br></br>
+                  <img src={award} className="center"/>
+                    
+                </Modal.Body>
+            </Modal>
+    </>
   );
 }
 
