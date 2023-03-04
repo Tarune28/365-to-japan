@@ -163,7 +163,7 @@ function DashboardPage() {
         _id: _id
     }
 
-    RequestUtils.post("/blog/delete", req)
+    RequestUtils.post("/blog/delete", req, user.accessToken)
     .then(response => response.json())
     .then(data => {
         if (!data.ok) {
@@ -188,7 +188,7 @@ function DashboardPage() {
 
     function handleEdit(_id) {
       
-      RequestUtils.get("/blog/info?id=" + _id)
+      RequestUtils.get("/blog/info?id=" + _id, user.accessToken)
       .then(response => response.json()) // take response and turn it into JSON object
       .then(data => { // data = JSON object created ^^
           if (!data.ok) {
@@ -237,7 +237,7 @@ function DashboardPage() {
       countAPI: callBack
     }
 
-    RequestUtils.post("/blog/create", reqObj) // send out post req and get the response from server
+    RequestUtils.post("/blog/create", reqObj, user.accessToken) // send out post req and get the response from server
       .then(response => response.json()) // take response and turn it into JSON object
       .then(data => { // data = JSON object created ^^
         if (!data.ok) {
@@ -272,7 +272,7 @@ function DashboardPage() {
       html: convertedContent
     }
 
-    RequestUtils.post("/blog/update", reqObj) // send out post req and get the response from server
+    RequestUtils.post("/blog/update", reqObj, user.accessToken) // send out post req and get the response from server
       .then(response => response.json()) // take response and turn it into JSON object
       .then(data => { // data = JSON object created ^^
         if (!data.ok) {
@@ -321,7 +321,7 @@ function DashboardPage() {
             },
           }}
         >
-          <Tabs defaultActiveKey="1" onTabClick={console.log("yo")}>
+          <Tabs defaultActiveKey="1">
             <Tabs.TabPane tab="New Blog" key="1">
               <Form onSubmit={e => e.preventDefault()}>
                 <Form.Group className="mb-3 w-25">

@@ -20,8 +20,8 @@ class RequestUtils {
     */
 
     static getDomain() {
-       return "https://blog-server-365.herokuapp.com"; // change this for live node server
-     // return "http://localhost:8080";
+       //return "https://blog-server-365.herokuapp.com"; // change this for live node server
+        return "http://localhost:8080";
     }
 
     /**
@@ -29,14 +29,15 @@ class RequestUtils {
      * @param {String} url
      * @returns 
      */
-    static get(url) {
+    static get(url, token) {
 
         // GET all users with the first name of Tarun: QUERY PARAMETERS vvv
         // https://blog-server-365.herokuapp.com
         // fetch("http://localhost:8080/getUsers?firstName=Tarun&lastName=Eswar")
 
         return fetch(this.getDomain() + url, {
-            method: "get" // type of http request
+            method: "get",
+            headers: {"Content-Type": "application/json", "Authorization": token}
         });
     }
 
@@ -46,7 +47,7 @@ class RequestUtils {
      * @param {JSONObject} object 
      * @returns 
      */
-    static post(url, object) {
+    static post(url, object, token) {
         // fetch(): built in Javascript API for handling HTTP requests
 
         // fetch: URLString, RequestOptions --> Promise
@@ -59,7 +60,7 @@ class RequestUtils {
         */
         return fetch(this.getDomain() + url, {
             method: "post", // type of http request
-            headers: {"Content-Type": "application/json"}, // "options" for an HTTP request. JSON = Javascript Object
+            headers: {"Content-Type": "application/json", "Authorization": token}, // "options" for an HTTP request. JSON = Javascript Object
             body: JSON.stringify(object)// "object" that you want to give backend
         });
     }

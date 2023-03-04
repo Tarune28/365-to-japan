@@ -103,10 +103,10 @@ function hideEventModal() {
         </div>
       </div>
       <div>
-      <div style={{position: "absolute", bottom: "10px", right: "20px"}}>
-        <a onClick={showEventModal}>
+      <div style={{position: "absolute", bottom: "20px", right: "20px"}}>
+        <a onClick={showEventModal} style={{cursor: "pointer"}}>
           <div className="circle">
-          <StarOutlined style={{fontSize: '46px'}} className="star"/>
+          <StarOutlined style={{fontSize: '25px'}} className="star"/>
           </div>
         </a>
         

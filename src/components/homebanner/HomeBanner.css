@@ -12,12 +12,13 @@
 }
 
 .star {
-    color: white
+    color: white;
+    padding: 10px;
 }
 
 .circle {
     background-color: #ff8c19;
-    padding: 5px;
+    padding: 7px;
     border-radius: 50%;
 }
 
