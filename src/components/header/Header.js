@@ -38,7 +38,7 @@ function hideEventModal() {
             <img
               src={logo}
      
-              height="70"
+              height="100"
               className="img my-1"
               alt="React Bootstrap logo"
             />
