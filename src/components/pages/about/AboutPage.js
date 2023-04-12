@@ -81,7 +81,7 @@ function AboutPage() {
                 </div>
 
                 <div class="container1 mx-4">
-                  <a target="0" href="https://www.brettmurphyhunt.com/">
+                  <a target="0" href="https://cps.northeastern.edu/faculty/brett-murphy-hunt/">
                   <img src={Brett} class="image" alt=""/>
                   <div class="overlay">
                   <div class="projeto01">Brett Murphy Hunt<br/> Lecturer @ Northeastern <br/> Editor</div>
