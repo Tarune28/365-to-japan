@@ -27,7 +27,9 @@ function Login() {
     <>
     <PageBanner image={pageImage} title="Administrative Login."/>
     <div className="login">
+      
       <div className="login__container">
+      <h6 style={{fontSize: "1.25rem"}}>365toJapan Staff Login.</h6><br></br>
         <Form.Control
           type="text"
           className="login__textBox"
@@ -43,7 +45,7 @@ function Login() {
           placeholder="Password"
         />
         <Button
-     
+          className="login__button"
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Login

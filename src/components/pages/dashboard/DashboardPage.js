@@ -83,6 +83,8 @@ function DashboardPage() {
 
   let [currentEmail, setCurrentEmail] = useState("");
 
+  let [rand, setRand] = useState(0);
+
   
  
   
@@ -152,8 +154,9 @@ function DashboardPage() {
     if (user) {
       console.log(user.email)
       setCurrentEmail(user.email.slice(0, user.email.indexOf("@")));
+      populateEvents();
     }
-  }, [user, loading, navigate]);
+  }, [user, loading, navigate, currentEmail, rand]);
 
 
   function handleDelete(_id) {
@@ -183,6 +186,31 @@ function DashboardPage() {
     .catch(error => {
         alert("Something went wrong!");
     });
+}
+
+function handleShow(_id) {
+  // Take the _id of the calendar event
+  // Remove the event from the list of calendar events
+  let req = {
+      _id: _id
+  }
+
+
+  RequestUtils.post("/blog/display", req, user.accessToken)
+  .then(response => response.json())
+  .then(data => {
+      if (!data.ok) {
+          alert("Event could not be deleted!");
+          return;
+      }
+
+      setRand(Math.random())
+      // Also remove it from listOldEvents just in case handleDelete is being called from oldCalendarEvent
+    //  removeOldCalendarEvent(_id);
+  })
+  .catch(error => {
+      alert("Something went wrong!");
+  });
 }
 
 
@@ -234,7 +262,8 @@ function DashboardPage() {
       category: currentCategory,
       icon: currentIcon,
       html: convertedContent,
-      countAPI: callBack
+      countAPI: callBack,
+      show: true
     }
 
     RequestUtils.post("/blog/create", reqObj, user.accessToken) // send out post req and get the response from server
@@ -291,7 +320,7 @@ function DashboardPage() {
   function populateEvents(days) {
  
     let req = days;
-    RequestUtils.get("/blog/getCards?days=" + 20) // send out post req and get the response from server
+    RequestUtils.get("/blog/getAll") // send out post req and get the response from server
     .then(response => response.json()) // take response and turn it into JSON object
     .then(data => { // data = JSON object created ^^
         if (!data.ok) {
@@ -492,21 +521,29 @@ function DashboardPage() {
 
             </Tabs.TabPane>
             <Tabs.TabPane tab="Manage Blogs" key="2">
-          
+                <Row>
+
+                
+                       
               {
                 
                 listBlogs.map((props) => {
                     // Code that runs for each element
                     // TODO: Create delete handler
+                
+
                     return (
                       <>
-                      
-                        <BlogDetails blogInfo={props} deleteHandler={handleDelete} editHandler={handleEdit}/>
+                        <Col md={4}>
+                        <BlogDetails blogInfo={props} deleteHandler={handleDelete} editHandler={handleEdit} showHandler={handleShow} />
+                        </Col>
                         </>
                     );
                 })
                 
                 }
+                
+                 </Row>
             </Tabs.TabPane>
 
 
