@@ -11,6 +11,7 @@ import Footer from "./components/footer/Footer";
 import LogoutPage from "./components/pages/login/LogoutPage";
 import NotFoundPage from "./components/pages/404/NotFoundPage";
 import DashboardPage from "./components/pages/dashboard/DashboardPage";
+import Contests from "./components/pages/contests/Contests";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="logout" element={<LogoutPage />} />
             <Route path="blog/:id" element={<BlogTemplate />}/>
             <Route path="dashboard" element={<DashboardPage/>}/>
+            <Route path="contests" element={<Contests/>}/>
             <Route path="*" element={<NotFoundPage/>}/>
         </Routes>
       </BrowserRouter>

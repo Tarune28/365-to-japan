@@ -10,9 +10,10 @@ function PageBanner(props) {
       <div className="container" style={{flexWrap: "wrap"}}>
         <h3 className="w3-text-white" style={{textIndent: ".3vw", fontSize: "4rem"}}>
           <span className="w3-black w3-opacity-min text_3">
-            <Typewriter onInit={(typewriter) => {
+            {props.title == "" ? "" : <Typewriter onInit={(typewriter) => {
               typewriter.typeString(props.title).start();
-            }}/>
+            }}/>}
+  
           </span>
         </h3>
         <nav aria-label="breadcrumb" className="banner-breadcrumb"></nav>
