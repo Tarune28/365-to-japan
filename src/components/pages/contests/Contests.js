@@ -43,10 +43,11 @@ function Contests(){
   />
   </ConfigProvider></Col>
     <Col sm={12} className="mx-auto">
-        Over the upcoming weeks, 365toJapan will host its first summer/spring haiku contest. The contest will be specifically looking for poetry in the form of haiku. The range of topics is not restricted, but focusing on Japanese culture is encouraged. The contest will be open to all ages 13 and up. The contest will be split into two submission periods, with the first submission period beginning on May 30th and ending on July 30th. The results of the contest will be released in the fall/winter issue of 365toJapan. The contest will be judged by a panel of 3-5 judges, with the final decision being made by the panel. The winner of the contest will be awarded a prize of $50.00 USD in Amazon gift cards. The second and third place winners will be awarded a prize of $35.00 USD and $15.00 USD, respectively. 
-        
+    Over the upcoming weeks, 365toJapan will host its first semi-annual summer/spring haiku contest. To start off the contest, we wanted to provide some important notes. (a) The contest will only accept haiku and unfortunately not be able to consider other types of poetry/prose (b) The range of topics within haiku submissions is not restricted, but focusing on Japanese culture is encouraged (c) The results of the contest will be released in the fall/winter issue of 365toJapan. To be clear, at this point, publication will be online only—no print version is planned at this time. 
+         {/* <br></br><br></br>
+         The winner of the contest will be awarded a prize of $50.00 USD in Amazon gift cards. The second and third place winners will be awarded a prize of $35.00 USD and $15.00 USD, respectively.  */}
          <br></br><br></br>
-        The contest will be hosted through Submittable CLMP. Each entry will be required to pay a fee of 5 dollars to enter the contest. The fee will be used to cover the cost of the prizes and the cost of the publication of the winning entries. The fee will be non-refundable. If accommodations are required in paying for the submission, please contact 365toJapan at info@365tojapan.com in order to receive assistance.
+         The contest will be hosted through Submittable CLMP. Each entry will be required to pay a fee of 3 dollars to enter the contest. The fee will be used to cover the cost of the prizes and the cost of the publication of the winning entries. The fee will be non-refundable. If the fee poses a significant financial hardship, please contact us at info@365tojapan.com in order to receive assistance.
     </Col>
       </Row>
       <Row className="pt-5 mx-5">
@@ -79,7 +80,7 @@ Moderate adult language is allowed if it serves the greater purpose of the piece
 
             <h3 className="contestHeader">Judges</h3>
             <br></br><br></br>
-            <p>Our judges will be a rotating panel of 3-5 individuals, with each judge being both native English/Japanese speaker. The judges will be selected based on their experience with haiku, their ability to judge haiku, and their ability to provide constructive criticism. The judges will be announced at the start of each contest.</p>
+            <p>Our judges will be a rotating panel of 3-5 individuals, with each judge being both native English/Japanese speaker. The judges will be selected based on their experience with haiku, their ability to judge haiku, and their ability to provide constructive criticism. The judges will be announced at the start of each contest. Each contestant will receive feedback on their work from judges.</p>
     
       </Row>
       <br></br>

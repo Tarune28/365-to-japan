@@ -48,9 +48,9 @@ function hideEventModal() {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="">
             <Nav.Link className={window.location.pathname == "/" ? "active nav-link mx-4" : "nav-link mx-4"} href="/">Home</Nav.Link>
+            <Nav.Link className={window.location.pathname == "/about" ? "active nav-link mx-4" : "nav-link mx-4"} href="/about">About</Nav.Link>
             <Nav.Link className={window.location.pathname == "/blogs" ? "active nav-link mx-4" : "nav-link mx-4"} href="/blogs">Blogs</Nav.Link>
             <Nav.Link className={window.location.pathname == "/contests" ? "active nav-link mx-4" : "nav-link mx-4"} href="/contests">Contests</Nav.Link>
-            <Nav.Link className={window.location.pathname == "/about" ? "active nav-link mx-4" : "nav-link mx-4"} href="/about">About</Nav.Link>
             <Nav.Link className={window.location.pathname == "/contact" ? "active nav-link mx-4" : "nav-link mx-4"} href="/contact">Contact</Nav.Link>
             <Nav.Link className={window.location.pathname == "/login" ? "active nav-link mx-4" : "nav-link mx-4"} href="/login">Login</Nav.Link>
           </Nav>

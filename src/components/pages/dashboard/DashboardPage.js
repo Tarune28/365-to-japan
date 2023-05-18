@@ -263,7 +263,8 @@ function handleShow(_id) {
       icon: currentIcon,
       html: convertedContent,
       countAPI: callBack,
-      show: true
+      show: true,
+      newAPI: currentEventName.replace(/[^\w]/g, "")
     }
 
     RequestUtils.post("/blog/create", reqObj, user.accessToken) // send out post req and get the response from server
@@ -280,6 +281,7 @@ function handleShow(_id) {
       .catch(error => {
         alert("Something went wrong while posting!");
       });
+    RequestUtils.post("/blog/createCounter", {"name":currentEventName.replace(/[^\w]/g, "")})// data = JSON object created ^^
   }
 
 

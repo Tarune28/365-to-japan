@@ -35,16 +35,32 @@ function BlogTemplate(props) {
     }); 
 }
 
-const countEl = document.getElementById('count');
+    const countEl = document.getElementById('count');
 
-    updateVisitCount();
 
+    if(
+      blogPostData != undefined
+    ) {
+      updateVisitCount();
+    }
+    
+    // let reqbody = { 
+    //   "name": blogPostData.newAPI
+    // }
+    //alert(blogPostData.newAPI)
     function updateVisitCount() {
-        fetch(blogPostData.countAPI)
-            .then(res => res.json())
-            .then(res => {
-                countEl.innerHTML = res.value +  " views";
-            })
+        RequestUtils.post("/blog/updateCounter", { 
+          "name": blogPostData.newAPI
+        }).then(res => res.json())
+        .then(res => {
+          countEl.innerHTML = res.ok.toString() +  " views";
+        })
+
+        // fetch(blogPostData.countAPI)
+        //     .then(res => res.json())
+        //     .then(res => {
+        //         countEl.innerHTML = res.value +  " views";
+        //     })
     }
 
 
@@ -82,7 +98,7 @@ const countEl = document.getElementById('count');
                 <div className="content" dangerouslySetInnerHTML={{__html: blogPostData.html}} />
                 <hr></hr>
            <div className="row" style={{padding: "0px", margin: "0px"}}>
-                <p id="count" className="col-6">0 Views</p>
+                <p id="count" className="col-6">0 Views (Bug being investigated)</p>
                 <p className="col-6" style={{float: "right", textAlign: "right"}}>Tarun Eswar</p>
            </div>
               
