@@ -41,7 +41,13 @@ function BlogTemplate(props) {
     if(
       blogPostData != undefined
     ) {
-      updateVisitCount();
+      RequestUtils.post("/blog/updateCounter", { 
+        "name": params.id
+      }).then(res => res.json())
+      .then(res => {
+        countEl.innerHTML = res.count.toString() +  " views";
+      });
+      
     }
     
     // let reqbody = { 
@@ -49,12 +55,7 @@ function BlogTemplate(props) {
     // }
     //alert(blogPostData.newAPI)
     function updateVisitCount() {
-        RequestUtils.post("/blog/updateCounter", { 
-          "name": blogPostData.newAPI
-        }).then(res => res.json())
-        .then(res => {
-          countEl.innerHTML = res.ok.toString() +  " views";
-        })
+        
 
         // fetch(blogPostData.countAPI)
         //     .then(res => res.json())
@@ -98,7 +99,7 @@ function BlogTemplate(props) {
                 <div className="content" dangerouslySetInnerHTML={{__html: blogPostData.html}} />
                 <hr></hr>
            <div className="row" style={{padding: "0px", margin: "0px"}}>
-                <p id="count" className="col-6">0 Views (Bug being investigated)</p>
+                <p id="count" className="col-6">Loading...</p>
                 <p className="col-6" style={{float: "right", textAlign: "right"}}>Tarun Eswar</p>
            </div>
               
