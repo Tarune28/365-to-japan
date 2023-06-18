@@ -20,8 +20,8 @@ class RequestUtils {
     */
 
     static getDomain() {
-        // return "https://blog-server-365.herokuapp.com"; // change this for live node server
-        return "http://localhost:8080";
+         return "https://blog-server-365.herokuapp.com"; // change this for live node server
+       // return "http://localhost:8080";
     }
 
     /**
