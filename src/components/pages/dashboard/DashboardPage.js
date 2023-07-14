@@ -31,7 +31,7 @@ import {
 import { storage } from "../../../Firebase";
 import { v4 } from "uuid";
 
-import { Button, FormCheck } from "react-bootstrap";
+import { Button, FormCheck, Modal } from "react-bootstrap";
 import moment from "moment";
 import Form from "react-bootstrap/Form"
 import Row from "react-bootstrap/Row";
@@ -49,6 +49,13 @@ function DashboardPage() {
   // file organization in firebase
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
+  const [scheduledTime, setScheduledTime] = useState(0);
+  let [showModal, setShowModal] = useState(false);
+  let [currentStartDateTime, setCurrentStartDateTime] = useState(moment());
+
+  function hideEventModal() {
+    setShowModal(false);
+  }
 
   const uploadFile = () => {
     if (imageUpload == null) return;
@@ -264,7 +271,8 @@ function handleShow(_id) {
       html: convertedContent,
       countAPI: callBack,
       show: true,
-      newAPI: currentEventName.replace(/[^\w]/g, "")
+      newAPI: currentEventName.replace(/[^\w]/g, ""),
+      counter: 0
     }
 
     RequestUtils.post("/blog/create", reqObj, user.accessToken) // send out post req and get the response from server
@@ -282,6 +290,50 @@ function handleShow(_id) {
         alert("Something went wrong while posting!");
       });
     RequestUtils.post("/blog/createCounter", {"name":currentEventName.replace(/[^\w]/g, "")})// data = JSON object created ^^
+  }
+
+  function postBlogLater(e) {
+    e.preventDefault();
+    // if (e != null) {
+    //   e.preventDefault();
+    // }
+   // fetch("https://api.countapi.xyz/create?namespace=365ToJapan.com&key=" + currentEventName.replace(/[^A-Z0-9]/ig, "") + "R&value=0")
+
+   alert("tes");
+   var duration = moment.duration(currentStartDateTime.diff(moment()));
+   var scheduledTime = currentStartDateTime.format("MM/DD/YY hh:mm A");
+   let desc = convertedContent.substring(convertedContent.indexOf("starter") + 9, convertedContent.indexOf("starter") + 295).replace( /(<([^>]+)>)/ig, '') + "...";
+   let reqObj = {
+     title: currentEventName,
+     bannerURL: currentBannerURL,
+     date: currentPostTime.format('MM/DD/YY hh:mm A'),
+     description: desc,
+     location: currentLocationName,
+     category: currentCategory,
+     icon: currentIcon,
+     html: convertedContent,
+     show: true,
+     newAPI: currentEventName.replace(/[^\w]/g, ""),
+     counter: 0,
+     scheduledTime: scheduledTime
+   }
+
+
+    RequestUtils.post("/blog/postLater", reqObj, user.accessToken) // send out post req and get the response from server
+      .then(response => response.json()) // take response and turn it into JSON object
+      .then(data => { // data = JSON object created ^^
+        if (!data.ok) {
+          alert("Blog could not be created!");
+          return;
+        }
+        alert("365toJapan Blog Scheduled!");
+
+
+      })
+      .catch(error => {
+        alert("Something went wrong while posting!");
+      });
+   // RequestUtils.post("/blog/createCounter", {"name":currentEventName.replace(/[^\w]/g, "")})// data = JSON object created ^^
   }
 
 
@@ -519,6 +571,10 @@ function handleShow(_id) {
                 } variant="primary" type="submit">
                   Save
                 </Button>
+                <Button className="mx-2" onClick={e => setShowModal(true)
+                } variant="primary" type="submit">
+                  Post Later
+                </Button>
               </Form>
 
             </Tabs.TabPane>
@@ -566,6 +622,30 @@ function handleShow(_id) {
           Logout
         </button>
       </section>
+
+      <Modal show={showModal} onHide={hideEventModal} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Set Time</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={postBlogLater}>
+
+
+            <Datetime
+              value={currentStartDateTime}
+              onChange={setCurrentStartDateTime}
+            />
+            <br></br>
+            <Button
+              variant="outline-success"
+              type="submit"
+              className="mb-3"
+            >
+              Submit
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal>
     </>
   );
 }
