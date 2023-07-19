@@ -1,0 +1,32 @@
+[debug] [2023-07-19T18:40:11.266Z] ----------------------------------------------------------------------
+[debug] [2023-07-19T18:40:11.267Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-07-19T18:40:11.268Z] CLI Version:   11.25.2
+[debug] [2023-07-19T18:40:11.268Z] Platform:      darwin
+[debug] [2023-07-19T18:40:11.268Z] Node Version:  v19.8.1
+[debug] [2023-07-19T18:40:11.268Z] Time:          Thu Jul 20 2023 00:10:11 GMT+0530 (India Standard Time)
+[debug] [2023-07-19T18:40:11.268Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-19T18:40:11.269Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-07-19T18:40:11.316Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-19T18:40:11.317Z] > authorizing via signed-in user (tarun.eswar15@gmail.com)
+[debug] [2023-07-19T18:40:11.317Z] [iam] checking project tojapan-94cbd for permissions ["firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2023-07-19T18:40:11.317Z] > refreshing access token with scopes: []
+[debug] [2023-07-19T18:40:11.317Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-07-19T18:40:11.317Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-07-19T18:40:12.589Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-07-19T18:40:12.590Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-07-19T18:40:12.608Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-07-19T18:40:12.608Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-07-19T18:40:12.619Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/tojapan-94cbd:testIamPermissions [none]
+[debug] [2023-07-19T18:40:12.619Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/tojapan-94cbd:testIamPermissions x-goog-quota-user=projects/tojapan-94cbd
+[debug] [2023-07-19T18:40:12.619Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tojapan-94cbd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-07-19T18:40:14.008Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/tojapan-94cbd:testIamPermissions 200
+[debug] [2023-07-19T18:40:14.008Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tojapan-94cbd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-07-19T18:40:14.009Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tojapan-94cbd [none]
+[debug] [2023-07-19T18:40:15.451Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tojapan-94cbd 200
+[debug] [2023-07-19T18:40:15.451Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tojapan-94cbd {"projectId":"tojapan-94cbd","projectNumber":"628851232796","displayName":"365tojapan","name":"projects/tojapan-94cbd","resources":{"hostingSite":"tojapan-94cbd","storageBucket":"tojapan-94cbd.appspot.com","locationId":"northamerica-northeast1"},"state":"ACTIVE","etag":"1_3587016d-fc04-4866-b5b5-28dc27691cc3"}
+[info] 
+[info] === Deploying to 'tojapan-94cbd'...
+[info] 
+[info] i  deploying storage, hosting 
+[debug] [2023-07-19T18:40:15.452Z] >>> [apiv2][query] GET https://appengine.googleapis.com/v1/apps/tojapan-94cbd [none]

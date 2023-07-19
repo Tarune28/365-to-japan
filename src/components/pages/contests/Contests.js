@@ -108,11 +108,11 @@ function Contests(){
       },
       {
         title: 'Contest Conclusion',
-        description: "July 30th",
+        description: "August 30th",
       },
       {
         title: 'Release of Results',
-        description: "August 30th - September 30th",
+        description: "September 10th - September 30th",
       },
     ]}
   />
