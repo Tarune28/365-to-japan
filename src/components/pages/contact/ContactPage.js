@@ -67,8 +67,8 @@ function ContactPage(){
     return (
         <>
         <Header/>
-        <PageBanner image={pageImage} title="Contact."/>
-        <section class="area-padding">
+        <PageBanner image={pageImage} title="Contact." subtitle="Reach out to 365toJapan staff."/>
+        <section class="area-padding margin-top-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -124,7 +124,7 @@ function ContactPage(){
               }}/>
         </Col>
       </Form.Group>
-      <Button type="submit" class="w3-button w3-hoverColor1" variant="outline-dark" size="sm" onClick={newMessage}>Send Message</Button>
+      <Button type="submit" className="btn-primary-soft px-5 mb-3" variant="outline-dark" size="sm" onClick={newMessage}>Send Message</Button>
       </div>
                 
                 

@@ -2,7 +2,7 @@ import AllBlogsPreview from "../../blogpreview/allblogspreview/AllBlogsPreview";
 import Footer from "../../footer/Footer";
 import Header from "../../header/Header";
 import PageBanner from "../../pagebanner/PageBanner";
-import pageImage from "../../../img/contests/contest.svg"
+import pageImage from "../../../img/contests/test.jpeg"
 import { Checkbox, ConfigProvider, Row, Col, Steps } from "antd";
 import { Container } from "react-bootstrap";
 import "./Contests.css"
@@ -82,11 +82,11 @@ function Contests(){
     return (
         <>
         <Header/>
-        <PageBanner image={pageImage} title=""/>
+        <PageBanner image={pageImage} title="365toJapan Haiku Contest" subtitle="2023 summer edition."/>
         <Container>
 
-        <Row>
-        <Col md={5} className="mx-auto mt-4">
+        <Row style={{marginTop: "80px"}}>
+        <Col md={7} className="mx-5 mt-5">
         <ConfigProvider
     theme={{
       token: {
@@ -117,7 +117,7 @@ function Contests(){
     ]}
   />
   </ConfigProvider></Col>
-    <Col sm={12} className="mx-auto">
+    <Col lg={12} className="mx-5 mt-4">
     Over the upcoming weeks, 365toJapan will host its first semi-annual summer/spring haiku contest. To start off the contest, we wanted to provide some important notes. (a) The contest will only accept haiku and unfortunately not be able to consider other types of poetry/prose (b) The range of topics within haiku submissions is not restricted, but focusing on Japanese culture is encouraged (c) The results of the contest will be released in the fall/winter issue of 365toJapan. To be clear, at this point, publication will be online only—no print version is planned at this time. 
          {/* <br></br><br></br>
          The winner of the contest will be awarded a prize of $50.00 USD in Amazon gift cards. The second and third place winners will be awarded a prize of $35.00 USD and $15.00 USD, respectively.  */}
@@ -166,7 +166,7 @@ Moderate adult language is allowed if it serves the greater purpose of the piece
             <div class="container">
             <div class="row">
   
-                <div class="col-12">
+                <div class="col-10">
 
 
       <Form.Group className="mb-3" controlId="Email">
@@ -257,7 +257,7 @@ Moderate adult language is allowed if it serves the greater purpose of the piece
         </div>
       ))}
  </Form.Group>
-      <Button type="submit" class="w3-button w3-hoverColor1" variant="outline-dark" size="sm" onClick={newMessage}>Send Message</Button>
+      <Button type="submit" className="btn-primary-soft px-5 mb-5" variant="outline-dark" size="sm" onClick={newMessage}>Send Message</Button>
       </div>
                 
                 

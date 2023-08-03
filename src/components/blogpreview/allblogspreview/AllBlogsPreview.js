@@ -30,9 +30,12 @@ function AllBlogsPreview(props) {
             alert("Blogs could not be populated!");
             return;
         }
-        console.log(data.arr)
+        for(let i = 0; i < data.arr.length; i++){
+          data.arr[i].animationType = true;
+        }
         setListBlogs(data.arr);
-        console.log(data.ok);
+        console.log(data.arr)
+  
 
     })
     .catch(error => { 
@@ -67,7 +70,7 @@ const callbackTabClicked = (key, event) => {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
     <section className="blog_area area-padding portfolio-grid grid-sizer">
       <div className="container">
-        <div className="area-heading">
+        <div className="area-heading margin-top-5">
           <h3>
             <a id="target">All Blogs</a>
           </h3>
@@ -82,13 +85,11 @@ const callbackTabClicked = (key, event) => {
     }}
   >
         <Tabs defaultActiveKey="1" onTabClick={callbackTabClicked}>
-    <Tabs.TabPane tab="All Time" key="1">
-    <div className="row portfolio_area area-padding">
+    <Tabs.Items tab="All Time" key="1">
+    <div className="row portfolio_area mt-4">
           <div className="row portfolio-grid">
           {
                 listBlogs.map((singularBlogPost) => {
-                    // Code that runs for each element
-                    // TODO: Create delete handler
                     return (
                       <BlogCard blogInfo={singularBlogPost}/>
                     );
@@ -97,8 +98,8 @@ const callbackTabClicked = (key, event) => {
           </div>
     </div>
     
-    </Tabs.TabPane>
-    <Tabs.TabPane tab="Past Month" key="2">
+    </Tabs.Items>
+    <Tabs.Items tab="Past Month" key="2">
     <div className="row portfolio_area area-padding portfolio-grid grid-sizer">
           <div className="row portfolio-grid">
     {
@@ -112,8 +113,8 @@ const callbackTabClicked = (key, event) => {
             }
              </div>
     </div>
-    </Tabs.TabPane>
-    <Tabs.TabPane tab="Past 6 Months" key="3">
+    </Tabs.Items>
+    <Tabs.Items tab="Past 6 Months" key="3">
     <div className="row portfolio_area area-padding">
           <div className="row portfolio-grid">
     {
@@ -127,8 +128,8 @@ const callbackTabClicked = (key, event) => {
             }
              </div>
     </div>
-    </Tabs.TabPane>
-    <Tabs.TabPane tab="Past Year" key="4">
+    </Tabs.Items>
+    <Tabs.Items tab="Past Year" key="4">
     <div className="row portfolio_area area-padding">
           <div className="row portfolio-grid">
     {
@@ -142,7 +143,7 @@ const callbackTabClicked = (key, event) => {
             }
             </div>
     </div>
-    </Tabs.TabPane>
+    </Tabs.Items>
   </Tabs>
   </ConfigProvider>
 

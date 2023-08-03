@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import HomePreview from "../../../components/blogpreview/homepreview/HomePreview";
+import HomePreview from "../../homepreview/HomePreview";
 import Footer from "../../../components/footer/Footer";
 import Header from "../../../components/header/Header";
 import HomeBanner from "../../homebanner/HomeBanner";

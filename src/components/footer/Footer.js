@@ -1,11 +1,21 @@
 import "./Footer.css";
 import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { Button, Form, Input, Result } from 'antd';
+import {Row} from 'antd';
+// import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 import RequestUtils from "../../utils/RequestUtils";
-import { Modal } from "react-bootstrap";
+import { Modal } from "antd";
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBCol,
+  MDBRow,
+  MDBIcon,
+  MDBInput,
+  MDBBtn
+} from 'mdb-react-ui-kit';
 
 function Footer() {
 
@@ -37,7 +47,6 @@ function Footer() {
       email: currentEmail
     }
 
-    console.log("here")
     RequestUtils.post("/subscriber/email", reqObj) // send out post req and get the response from server
         .then(response => response.json()) 
         .then(data => { // data = JSON object created ^^
@@ -47,35 +56,81 @@ function Footer() {
             }
             if (data.ok){
               formReset();
-             
             }
-            
-
-    
         })
         .catch(error => {
             alert("Email could not be sent! Try again later!");
         });
-        showEventModal();
+        setShowModal(true);
     }
-    
+
+    const success = () => {
+ 
+        Modal.success({
+        content: 'some messages...some messages...',
+      })
+
+      
+    };
+
     return (
       <>
-      <Modal show={showModal} onHide={hideEventModal} centered>
-                <Modal.Header closeButton>
-                    <Modal.Title>Thank you for subscribing!</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    We will email you when a new blog is out!
-                </Modal.Body>
-            </Modal>
+      <Modal open={showModal} onCancel={hideEventModal} footer={null} centered>
+      <Result
+          status="success"
+          title="Mailing list has been joined"
+        />
+      </Modal>
+
+            <MDBFooter style={{backgroundColor: '#808080'}} className='text-center text-white text-lg-left'>
+      <MDBContainer className='p-4 pb-0 mx-auto text-center' style={{display: "flex"}}>
+      
+      <Form layout="inline" className="mx-auto text-center" style={{
+                width: 550,
+              }}>
+      <Form.Item
+        name="name"
+        rules={[{ required: true, message: 'Please enter your name' }]}
+        className="mb-2 input-control mr-0"
+      >
+        <Input placeholder="name" size="small" onChange={(e) => setCurrentName(e.target.value)}/>
+      </Form.Item>
+
+      <Form.Item
+        name="email"
+        rules={[
+          { required: true, message: 'Please enter your email' },
+          { type: 'email', message: 'Please enter a valid email' },
+        ]}
+        className="mb-2 input-control mx-auto"
+      >
+        <Input placeholder="email" style={{color: "white"}} size="small" onChange={(e) => setCurrentEmail(e.target.value)}/>
+      </Form.Item>
+
+
+      <Form.Item className="ml-0">
+        <Button className="btn-primary-soft-inverse" shape="round" size="small" onClick={() => newSubscriber()}>
+          Join Mailing List
+        </Button>
+      </Form.Item>
+    </Form>
+
+      
+      </MDBContainer>
+
+      <div className='text-center p-3' style={{ backgroundColor: '#808080' }}>
+        &copy; {new Date().getFullYear()} Copyright:{' '}
+        <a className='text-white' href='https://365toJapan.com/'>
+          365toJapan.com
+        </a>
+      </div>
+    </MDBFooter>
 
 
 
 
 
-
-        <footer className="footer-area section_gap">
+        {/* <footer className="footer-area section_gap">
         <div className="container">
           <div className="row">
             <div className="col-lg-4  col-md-6 col-sm-6">
@@ -142,7 +197,7 @@ function Footer() {
             </div>
           </div>
         </div>
-      </footer></>
+      </footer> */}</>
     );
 }
 

@@ -1,9 +1,11 @@
 .login {
-    height: 40vh;
-    width: 100vw;
+    height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
   .login__container {
     display: flex;
@@ -14,8 +16,8 @@
     padding: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 15px;
+    padding-right: 15px;
     border-radius: 4px;
   }
   .login__textBox {
@@ -34,10 +36,27 @@
   .login__google {
     background-color: #4285f4;
   }
-  .login div {
-    margin-top: 7px;
-  }
   .login__button {
     background-color: #51BEAA;
     border-color: transparent;
+  }
+
+  .welcome {
+    font-family: "open sans", sans-serif;
+  }
+
+  .submit:hover {
+    background-color: white!important;
+    color: #36B192!important;
+    border-color: #36B192!important;
+  }
+
+  .submit:active {
+    background-color: white!important;
+  }
+
+  .submit {
+    background-color: #36B192!important;
+    color: white!important;
+    border-color: #36B192!important;
   }

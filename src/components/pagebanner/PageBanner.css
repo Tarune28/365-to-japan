@@ -100,3 +100,27 @@
         font-size: 60px;
     }
 }
+
+.title {
+    font-family: 'Mukta', sans-serif!important;
+    font-size: 4rem!important;
+    display: block!important;
+        line-height: 0!important;
+        color: white!important;
+        padding-bottom: 0px!important;
+}
+.subheadings {
+    font-family: 'Mukta', sans-serif!important;
+    font-size: 2em!important;
+    display: block!important;
+        line-height: 1!important;
+        color: white!important;
+}
+
+
+@media screen and (max-width: 900px) {
+    .title {
+        line-height: 1!important;
+    }
+    
+}

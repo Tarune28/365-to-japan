@@ -15,24 +15,23 @@ import { Button } from "react-bootstrap";
 function AboutPage() {
   return (
     <>
-      <PageBanner image={pageImage} title="About 365toJapan." />
-      <section className="about-area area-padding">
+      <PageBanner image={pageImage} title="About 365toJapan" subtitle="The journey that started it all." />
+      <section className="about-area starter-padding">
       
         <div className="container">
          
     
-          <div className="row">
-            <div className="col-lg-6">
-              <div className="img-styleBox">
-                <div className="styleBox-border">
-                  <img className=" roundedimg" src={plane} alt="" />
-                </div>
-              </div>
-            </div>
+          <div className="row first-row margin-bottom-10">
+          <div className="col-lg-4 my-auto mx-auto">
+             
+             <img className=" roundedimg " src={plane} alt="" />
+    
+         
+       </div>
 
-            <div className="col-lg-5 col-md-12 offset-md-0 offset-lg-1">
+            <div className="col-lg-7 col-md-12 offset-md-0">
               <div className="about-content">
-                <h4>
+                <h4 className="area-heading-about">
                   My Mission
                   <br />
                 </h4>
@@ -53,6 +52,7 @@ function AboutPage() {
                 </Button>
               </div>
             </div>
+            
           </div>
         </div>
       </section>
@@ -100,11 +100,11 @@ function AboutPage() {
 
       
 
-      <section className="about-area area-padding" style={{paddingBottom: "0px"}}>
+      <section className="about-area area-padding">
         <div className="container">
-          <div className="row">
+          <div className="row mx-auto">
           
-            <div className="col-lg-5 col-md-12 offset-md-0 offset-lg-1">
+            <div className="col-lg-7 col-md-12 offset-md-0">
             <div className="about-content">
 
                 <h4>
@@ -134,28 +134,41 @@ function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-4 my-auto mx-auto">
+             
+           
+         <img className=" roundedimg" src={code} alt="" />
+              
+            </div>
+            {/* <div className="col-lg-6">
               <div className="img-styleBox">
                 <div className="styleBox-border">
-                  <img className=" roundedimg" src={code} alt="" />
+                  
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
-      <section className="about-area area-padding" style={{paddingBottom: "0px"}}>
+      <section className="about-area area-padding">
         <div className="container">
-          <div className="row">
-          <div className="col-lg-6">
+          <div className="row mx-auto">
+          <div className="col-lg-5 my-auto mx-auto hideimg">
+             
+             <img className=" roundedimg" src={lanterns} alt="" />
+    
+         
+       </div>
+
+          {/* <div className="col-lg-6">
               <div className="img-styleBox">
                 <div className="styleBox-border">
                   <img className=" roundedimg" src={lanterns} alt="" />
                 </div>
               </div>
-            </div>
-            <div className="col-lg-5 col-md-12 offset-md-0 offset-lg-1">
+            </div> */}
+            <div className="col-lg-6 col-lg-5-ext col-md-12 offset-md-0 offset-lg-1">
               <div className="about-content">
                 <h4>
                   Who Is This Website For?
@@ -185,12 +198,12 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="about-area area-padding" style={{marginBottom: "70px"}}>
+      <section className="about-area area-padding mx-auto" style={{marginBottom: "80px"}}>
         <div className="container">
-          <div className="row">
+          <div className="row mx-auto">
 
       
-              <div className="col-lg-5 col-md-12 offset-md-0 offset-lg-1">
+              <div className="col-lg-6 col-md-12 offset-md-0 offset-lg-1">
               <div className="about-content">
                 <h1
                   style={{
@@ -198,7 +211,6 @@ function AboutPage() {
                     color: "#1a1d24",
                     marginBottom: "18px",
                     lineHeight: "48px",
-                    paddingLeft: "25px",
                   }}
                 >
                   Additional Information
@@ -228,13 +240,19 @@ function AboutPage() {
                 </Button>
               </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-5 my-auto mx-auto hideimg">
+             
+             <img className=" roundedimg" src={shop} alt="" />
+    
+         
+       </div>
+            {/* <div className="col-lg-6">
               <div className="img-styleBox">
                 <div className="styleBox-border">
                   <img className=" roundedimg" src={shop} alt="" />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

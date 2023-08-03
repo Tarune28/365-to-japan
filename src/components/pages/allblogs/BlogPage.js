@@ -8,7 +8,7 @@ function BlogPage(){
     return (
         <>
         <Header/>
-        <PageBanner image={pageImage} title="All 365 Blogs."/>
+        <PageBanner image={pageImage} title="All 365 Blogs" subtitle="The pieces of the journey."/>
         <AllBlogsPreview/>
   
         </>

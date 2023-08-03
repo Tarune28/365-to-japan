@@ -1,9 +1,14 @@
-.area-heading h3 {
+/* .area-heading h3 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-}
+} */
 
-.area-heading {
-    margin-bottom: 60px;
-    margin-top: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@800&family=Nunito&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&family=Nunito&family=Open+Sans&display=swap');
+
+
+
+.area-heading h3{ 
+    font-family: 'Mukta', sans-serif;
+    font-weight: 500;
 }

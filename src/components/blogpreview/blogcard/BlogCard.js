@@ -3,46 +3,39 @@ import { FaBeer } from "react-icons/fa";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import "./BlogCard.css";
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
+import { Avatar, Card, Skeleton, Switch, Col } from 'antd';
+import { AnimationOnScroll } from "react-animation-on-scroll";
+import "animate.css/animate.min.css";
+const { Meta } = Card;
 
 function BlogCard(props) {
-  // let testObj = {
-  //   _id: currentBlogId,
-  //   title: blogTitle,
-  //   bannerURL: blogBannerURL,
-  //   date: blogDate,
-  //   description: blogDescription,
-  //   category: blogCategory
-  // }
-  
 
-console.log(props.blogInfo["date"])
+  const [loading, setLoading] = useState(true);
+  const onChange = (checked) => {
+    setLoading(!checked);
+  };
 
   return (
     <>
-      <link
-        href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
-        rel="stylesheet"
-        type="text/css"
-      ></link>
-      <script
-        src="https://kit.fontawesome.com/adee4bac3e.js"
-        crossorigin="anonymous"
-      ></script>
+    <Col xs={{ span: 23}} md={{span: 11, offset: 0}} lg={{ span: 8, offset: 0}}>
+    <AnimationOnScroll initiallyVisible={props.blogInfo["animationType"]} animateIn={props.blogInfo["animationType"] ? "" : "animate__fadeIn"}>
+    <Link to={"/blog/" + props.blogInfo["_id"]}>
+    <Card
+    hoverable
+    className="mx-2"
+    style={{ marginBottom: 40 }}
+    cover={<img
+      className="img-fluid w-100 card-img rounded-0"
+      src={props.blogInfo["bannerURL"]}
+      style={{height: "300px", objectFit: "cover"}}
+      alt=""
+      
+    />}
 
-      <div className="col-lg-4 col-md-6">
-        <Link to={"/blog/" + props.blogInfo["_id"]}>
-          <div className="single_portfolio">
-       
-            <img
-              className="img-fluid w-100 card-img rounded-0"
-              src={props.blogInfo["bannerURL"]}
-              style={{height: "300px", objectFit: "cover"}}
-              alt=""
-            />
-        
-            
-            <article className="blog_item">
-              <div className="blog_item_img">
+  >
+    <div className="blog_item_img">
                 <a href="blogs/immersion.html" className="blog_item_date">
                   <h3>{moment(props.blogInfo["date"]).format("DD")}</h3>
                   <p>
@@ -51,27 +44,16 @@ console.log(props.blogInfo["date"])
                   </p>
                 </a>
               </div>
-              <div className="blog_details">
-                <a className="d-inline-block" href="blogs/immersion.html">
-                  <h2>{props.blogInfo["title"]}</h2>
-                </a>
-                <p style={{ wordWrap: "break-word", color: "grey"}}>
-                  {props.blogInfo["description"]}
-                </p>
-                <ul className="blog-info-link" style={{listStyle: "none", textDecoration: "none"}}>
-                  <li>
-                    <i
-                      className={"fa " + props.blogInfo["icon"].toString()}
+    <Meta title={props.blogInfo["title"]} date={"test"} description={props.blogInfo["description"]} style={{ padding: 10, marginTop: 10}}/>
+    <div className="additional" style={{ padding: 10}}>
+      
+      <p><i
+                      className={"fa " + props.blogInfo["icon"].toString() + " margin-right-05"}
                       title="Edit"
-                    ></i>
-                    {props.blogInfo["category"]}
-                  </li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </Link>
-      </div>
+                    ></i> {props.blogInfo["category"]}</p>
+    </div>
+  </Card></Link></AnimationOnScroll></Col>
+    
     </>
   );
 }

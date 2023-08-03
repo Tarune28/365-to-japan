@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import { ReactComponent as Logo } from "../../365.png";
 import logo from "../../365.png"
 import { Outlet, Link } from "react-router-dom";
-import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./Header.css"
-import Modal from 'react-bootstrap/Modal'
+import "../../App.css";
+import {Modal, Button} from 'antd'
 
 function Header() {
 
@@ -67,18 +68,20 @@ function hideEventModal() {
           <h6>365toJapan 1.0.2 updates have been released! Learn more <button onClick={showEventModal} style={{textDecoration: "underline"}}>here</button>.</h6>
     </Navbar>
 
-    <Modal show={showModal} onHide={hideEventModal} centered style={{
+    <Modal open={showModal} onCancel={hideEventModal} centered style={{
       marginTop: '150px',
       maxHeight: 'calc(100vh - 210px)',
       overflowY: 'auto',
-      marginRight: '0px'
-     }} size="lg">
-                <Modal.Header closeButton>
-                    <Modal.Title>365toJapan 1.0.2</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+      marginRight: '0px',
+
+     }} size="lg" footer={[
+      <Button key="1" className="btn-primary-soft" shape="round" href="mailto:teswar@wpi.edu">Contact</Button>
+
+    ]} title="365toJapan 1.0.2">
+             
+            
                     <ul className="bullet">
-                        <li>Conversion of website into web-app form with a combination of react.js/node.js/mongoDB</li>
+                        <li>Conversion of static to application-based platform with a MongoDB backing</li>
                         <li>Refreshed all UI for all pages from minor font edits to entire re-structuring of layout</li>
                         <li>Redesigning blog post format</li>
                         <li>Redesigned banners (I.e. 365 cover animation)</li>
@@ -92,7 +95,7 @@ function hideEventModal() {
                       Reach out to me at <a href="mailto:teswar@wpi.edu" className="email">teswar@wpi.edu</a> if you have any questions or suggestions for future updates. API access can be requested via email.
                     </p>
                     
-                </Modal.Body>
+
             </Modal>
      
 {/*     

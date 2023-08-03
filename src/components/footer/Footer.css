@@ -1,4 +1,4 @@
-.footer-div li a {
+/* .footer-div li a {
     color: white
 }
 
@@ -8,4 +8,33 @@
 
 .fade {
     background-color: none;
-  }
+  } */
+.ant-input {
+    border-color: #D9D9D9;
+}
+
+.input-control Input {
+    background-color: transparent!important;
+    color: white!important;
+}
+
+.input-control Input:hover{
+    border-color: white!important;
+}
+
+.input-control Input:active{
+    border-color: white!important;
+}
+
+.input-control Input::placeholder {
+    background-color: transparent!important;
+    color: white!important;
+}
+
+.mr-0 {
+    margin-right: 0px!important;
+}
+
+.ml-0 {
+    margin-left: 0px!important;
+}

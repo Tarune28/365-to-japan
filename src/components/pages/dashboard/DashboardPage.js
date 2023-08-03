@@ -395,7 +395,7 @@ function handleShow(_id) {
     <>
  
       <PageBanner image={pageImage} title={"Welecome " + currentEmail + "."} />
-      <section style={{ padding: "50px" }}>
+      <section className="py-5 container">
 
         <ConfigProvider
           theme={{

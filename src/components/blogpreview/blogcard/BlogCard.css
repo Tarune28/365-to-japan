@@ -21,3 +21,32 @@
 .blog_item_date h3 {
     font-family: "open sans", sans-serif;
 }
+
+.rounded-0 {
+    border-top-right-radius: 10px!important;
+    border-top-left-radius: 10px!important;
+}
+
+.blog_item {
+    border-bottom-right-radius: 10px!important;
+    border-bottom-left-radius: 10px!important;
+}
+
+.single_portfolio {
+    box-shadow: 0 10px 20px 0 hsla(0,0%,90%,.5)!important;
+ 
+
+}
+
+.blog_item_date {
+    overflow-x: show!important;
+}
+
+.blog_details {
+    padding: 45px 25px 45px 20px!important;
+    box-shadow: 0px 10px 20px 0px rgba(221, 221, 221, 0.5);
+}
+
+.ant-card-meta-title {
+    white-space: pre-line!important;
+  }
