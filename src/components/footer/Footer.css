@@ -31,7 +31,17 @@
 @media screen and (max-width: 550px) {
     .div {
         display: inline!important;
-        width: 400px!important;
+        width: 200px!important;
     }
-    
+    .mx-reset form {
+        margin-left: 0rem!important;
+        margin-right: 0rem!important;
+    }
+    .flex-0 div div div div{
+        flex: none!important;
+    }
+    .center-0 {
+        text-align: start!important;
+        padding: 1.5rem !important;
+    }
 }

@@ -10,6 +10,11 @@
   }
 }
 
+strong {
+  font-family: "Crimson Text", serif!important;
+  font-weight: bold!important;
+  color: #8f8f8f!important;
+}
 
 .grey div {
   padding-top: 35px;

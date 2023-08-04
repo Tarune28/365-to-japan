@@ -41,6 +41,20 @@
 
 }
 
+
+@media screen and (max-width: 992px) {
+    .ant-card-body {
+        padding: 2px!important;
+    }
+    
+
+    .mx-reset {
+        margin-left: 0rem!important;
+        margin-right: 0rem!important;
+    }
+}
+
+
 @media screen and (max-width: 900px) {
     
     .margin-bottom-10 {
@@ -50,6 +64,7 @@
     .row {
         --bs-gutter-x: 0rem!important;
     }
+   
 }
 
 @media screen and (max-width: 1280px) {

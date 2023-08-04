@@ -65,7 +65,7 @@ function Footer() {
         className="text-center text-white text-lg-left"
       >
         <MDBContainer
-          className="p-4 pb-0 mx-auto text-center"
+          className="p-4 pb-0 mx-auto text-center mx-reset"
           style={{ display: "flex" }}
         >
           <Form
@@ -78,7 +78,7 @@ function Footer() {
             <Form.Item
               name="name"
               rules={[{ required: true, message: "Please enter your name" }]}
-              className="mb-2 input-control mr-0"
+              className="mb-2 input-control mr-0 mx-reset"
             >
               <Input
                 placeholder="name"
@@ -92,7 +92,7 @@ function Footer() {
                 { required: true, message: "Please enter your email" },
                 { type: "email", message: "Please enter a valid email" },
               ]}
-              className="mb-2 input-control mx-auto"
+              className="mb-2 input-control mx-auto mx-reset"
             >
               <Input
                 placeholder="email"
@@ -101,9 +101,9 @@ function Footer() {
                 onChange={(e) => setCurrentEmail(e.target.value)}
               />
             </Form.Item>
-            <Form.Item className="ml-0">
+            <Form.Item className="ml-0 flex-0">
               <Button
-                className="btn-primary-soft-inverse"
+                className="btn-primary-soft-inverse mx-reset"
                 shape="round"
                 size="small"
                 onClick={() => newSubscriber()}
@@ -114,7 +114,7 @@ function Footer() {
           </Form>
         </MDBContainer>
 
-        <div className="text-center p-3" style={{ backgroundColor: "#808080" }}>
+        <div className="text-center center-0 p-3" style={{ backgroundColor: "#808080" }}>
           &copy; {new Date().getFullYear()} Copyright:{" "}
           <a className="text-white" href="https://365toJapan.com/">
             365toJapan.com

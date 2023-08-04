@@ -1,7 +1,7 @@
 .page-banner {
   position: relative;
   padding: 205px 0 150px !important;
-  background-size: cover;
+  background-size: cover!important;
 }
 
 @media (min-width: 768px) {

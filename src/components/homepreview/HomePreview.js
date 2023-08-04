@@ -77,8 +77,8 @@ function HomePreview(props) {
                     fullstack development to build this platform from scratch.
                   </p>
                   <br></br>
-                  <div className="row text-center mx-4">
-                    <Col span={8}>
+                  <div className="row text-center mx-4 mx-reset">
+                    <Col span={8} className="spacer-2">
                       <Card bordered={true}>
                         <Statistic
                           title="Total Reads"
@@ -90,7 +90,7 @@ function HomePreview(props) {
                       </Card>
                     </Col>
                     <Col span={8}>
-                      <Card bordered={true}>
+                      <Card bordered={true} className="spacer-2">
                         <Statistic
                           title="Blogs"
                           value={blogs}
@@ -100,7 +100,7 @@ function HomePreview(props) {
                         />
                       </Card>
                     </Col>
-                    <Col span={8}>
+                    <Col span={8} className="spacer-2">
                       <Card bordered={true}>
                         <Statistic
                           title="Years"
