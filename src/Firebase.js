@@ -18,7 +18,7 @@ import {
   addDoc,
 } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: "AIzaSyC3iXefJUwFGygE-iSfFc3EErqLQ-SS_2s",
+  apiKey: process.env.REACT_APP_FIREBASE_APP_KEY,
   authDomain: "tojapan-94cbd.firebaseapp.com",
   projectId: "tojapan-94cbd",
   storageBucket: "tojapan-94cbd.appspot.com",

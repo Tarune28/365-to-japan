@@ -1,4 +1,4 @@
-import PageBanner from "./components/pagebanner/PageBanner";
+// Imports
 import HomePage from "./components/pages/home/HomePage";
 import BlogPage from "./components/pages/allblogs/BlogPage";
 import AboutPage from "./components/pages/about/AboutPage";
@@ -33,7 +33,6 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer/>
-      {/* <Footer/> */}
     </>
   );
 }

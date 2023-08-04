@@ -116,6 +116,22 @@ body {
     color: white!important;
 }
 
+.btn-primary-soft-alt {
+
+    color: #d76e1d;
+    background: linear-gradient(to left, #d76e1d 50%, white 50%) left;
+    background-size: 200%;
+    transition: .4s ease-out;
+    border: #d76e1d 1px solid;
+}
+
+.btn-primary-soft-alt:hover {
+    color: white;
+    background: #d76e1d;
+    border: #d76e1d 1px solid!important;
+    color: white!important;
+}
+
 .btn-primary-soft-inverse {
 
     color: white;

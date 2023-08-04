@@ -1,4 +1,5 @@
 class RequestUtils {
+
     /*
         Frontend: Display, this application - user interaction
         Backend: Server, handles data and logic - process data, (tell DB to) store data
@@ -20,8 +21,8 @@ class RequestUtils {
     */
 
     static getDomain() {
-      //   return "https://blog-server-365.herokuapp.com"; // change this for live node server
-        return "http://localhost:8080";
+        // return "https://blog-server-365.herokuapp.com"; // live server
+          return "http://localhost:8080"; // local server
     }
 
     /**
@@ -48,6 +49,7 @@ class RequestUtils {
      * @returns 
      */
     static post(url, object, token) {
+
         // fetch(): built in Javascript API for handling HTTP requests
 
         // fetch: URLString, RequestOptions --> Promise

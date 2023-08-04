@@ -1,8 +1,7 @@
+// Imports
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { logout } from "../../../Firebase";
-import pageImage from "../../../img/about/about-banner.jpg";
-
 
 function LogoutPage() {
     
@@ -10,7 +9,6 @@ function LogoutPage() {
 
     useEffect(() => {
         logout();
-        
         navigate("/login");
     },[navigate]);
 }

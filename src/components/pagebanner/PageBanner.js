@@ -1,27 +1,23 @@
-import React, { useState, useEffect } from "react"
+// Imports
+import React, { useState, useEffect } from "react";
+
+// Stylesheets
 import "./PageBanner.css";
-import Typewriter from "typewriter-effect";
 
-// background: url(../../img/blogs/page-banner.jpg) no-repeat scroll center center;
 function PageBanner(props) {
-
   return (
-    <section className="page-banner" style={{ background: props.title != "" ? `linear-gradient(rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)), url(${props.image}) no-repeat scroll center center` : `url(${props.image}) no-repeat scroll center center`}}>
-      <div className="container" style={{flexWrap: "wrap"}}>
-        {/* <h3 className="w3-text-white typewriter" style={{textIndent: ".3vw", fontSize: "4rem"}}>
-          <span className="w3-black w3-opacity-min text_3">
-            {props.title == "" ? "" : <Typewriter onInit={(typewriter) => {
-              typewriter.typeString(props.title).start();
-            }}/>}
-  
-          </span>
-        </h3> */}
-
-        <h1 className="title margin-top-5">
-                  {props.title}
-                </h1>
-                <h3 className="subheadings">{props.subtitle}</h3>
+    <section
+      className="page-banner"
+      style={{
+        background:
+          props.title != ""
+            ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props.image}) no-repeat scroll center center`
+            : `url(${props.image}) no-repeat scroll center center`,
+      }}
+    >
+      <div className="container" style={{ flexWrap: "wrap" }}>
+        <h1 className="title margin-top-5">{props.title}</h1>
+        <h3 className="subheadings">{props.subtitle}</h3>
         <nav aria-label="breadcrumb" className="banner-breadcrumb"></nav>
       </div>
     </section>

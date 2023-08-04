@@ -1,15 +1,17 @@
-import "./HomeBanner.css";
-import { TrophyOutlined } from "@ant-design/icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleStar } from "@fortawesome/free-solid-svg-icons";
+// Imports
 import { StarOutlined } from "@ant-design/icons";
-// import { Modal } from "react-bootstrap";
-import { Button, Modal } from 'antd';
+import { Modal } from "antd";
 import { useState } from "react";
+
+// Stylesheets
+import "./HomeBanner.css";
+
+// Images
 import award from "./img/365tojapan.png";
 
 function HomeBanner() {
   let [showModal, setShowModal] = useState(false);
+
   function showEventModal() {
     setShowModal(true);
   }
@@ -20,10 +22,7 @@ function HomeBanner() {
 
   return (
     <>
-      <section
-        className="home_banner_area"
-        style={{ background: "#c9c9c9" }}
-      >
+      <section className="home_banner_area" style={{ background: "#c9c9c9" }}>
         <ul className="circles">
           <li></li>
           <li></li>
@@ -69,10 +68,6 @@ function HomeBanner() {
           <div className="container">
             <div className="banner_content">
               <div className="w3-display-middle w3-margin-top">
-                {/* span style="font-family: 'Crimson Text', serif;" */}
-
-                {/* style="text-indent: 1.1vw;" */}
-
                 <svg
                   className="svg"
                   version="1.1"
@@ -83,7 +78,7 @@ function HomeBanner() {
                   y="0px"
                   viewBox="0 0 1400 237.6"
                   fill="white"
-                  // style={{ enableBackground: "new 0 0 1400 237.6;" }}
+                  style={{ enableBackground: "new 0 0 1400 237.6;" }}
                   xmlSpace="preserve"
                 >
                   <path
@@ -127,9 +122,7 @@ function HomeBanner() {
                     d="M 1282.5 184.031 L 1260 184.031 L 1260 59.031 L 1282.5 59.031 L 1282.5 75.031 Q 1285.25 72.281 1288 69.406 Q 1290.75 66.531 1293.25 63.781 A 34.195 34.195 0 0 1 1305.488 57.659 Q 1312.143 55.781 1320.5 55.781 A 72.344 72.344 0 0 1 1339.203 57.983 Q 1368.5 65.844 1368.5 101.781 L 1368.5 184.031 L 1346.25 184.031 L 1346.25 101.281 A 29.139 29.139 0 0 0 1343.759 89.218 A 28.375 28.375 0 0 0 1342 85.906 Q 1337.75 79.031 1330.875 74.906 A 29.179 29.179 0 0 0 1316.096 70.787 A 34.682 34.682 0 0 0 1315.5 70.781 Q 1306.5 70.781 1299 74.906 Q 1291.5 79.031 1287 86.406 A 30.895 30.895 0 0 0 1282.621 100.221 A 38.045 38.045 0 0 0 1282.5 103.281 L 1282.5 184.031 Z"
                   />
                 </svg>
-                <h1 className="text">
-                  365 to Japan
-                </h1>
+                <h1 className="text">365 to Japan</h1>
               </div>
             </div>
             <div
@@ -154,13 +147,6 @@ function HomeBanner() {
           </div>
         </div>
       </section>
-
-      {/* <section>
-        
-
-
-      </section> */}
-
       <Modal
         open={showModal}
         onCancel={hideEventModal}
@@ -170,17 +156,13 @@ function HomeBanner() {
         footer={null}
         title="365toJapan Rated as Top 60 for 2023!"
       >
-    
-          <h6
-            style={{ fontFamily: "'Open Sans', -apple-system", color: "grey" }}
-          >
-            365toJapan has been rated as one of the top 60 blogs to watch in
-            2023 by Feedspot. Learn more{" "}
-            <a href="https://blog.feedspot.com/japan_blogs/">here.</a>
-          </h6>
-          <br></br>
-          <img src={award} className="center" />
-
+        <h6 style={{ fontFamily: "'Open Sans', -apple-system", color: "grey" }}>
+          365toJapan has been rated as one of the top 60 blogs to watch in 2023
+          by Feedspot. Learn more{" "}
+          <a href="https://blog.feedspot.com/japan_blogs/">here.</a>
+        </h6>
+        <br></br>
+        <img src={award} className="center" />
       </Modal>
     </>
   );

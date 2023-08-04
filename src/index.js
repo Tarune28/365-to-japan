@@ -1,16 +1,19 @@
+
+// Imports
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import reportWebVitals from './reportWebVitals';
+
+// Stylesheets
 import './index.css';
 import './shared/css/blog.css';
 import './shared/css/bootstrap.css';
 import './shared/css/breadcrumb.css';
-// import './shared/css/flaticon.css';
 import './shared/css/responsive.css';
 import './shared/css/style.css';
-// import './shared/css/themify-icons.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

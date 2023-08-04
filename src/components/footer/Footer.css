@@ -1,14 +1,3 @@
-/* .footer-div li a {
-    color: white
-}
-
-.footer-div a:hover {
-    color: #37B193;
-}
-
-.fade {
-    background-color: none;
-  } */
 .ant-input {
     border-color: #D9D9D9;
 }
@@ -37,4 +26,12 @@
 
 .ml-0 {
     margin-left: 0px!important;
+}
+
+@media screen and (max-width: 550px) {
+    .div {
+        display: inline!important;
+        width: 400px!important;
+    }
+    
 }

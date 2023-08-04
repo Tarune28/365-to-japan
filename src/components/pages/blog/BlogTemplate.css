@@ -1,47 +1,100 @@
-.grey DIV {
+@media screen and (max-width: 900px) {
+  .grey div {
+    padding-top: 35px;
+    padding-bottom: 30px;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    margin-left: .5vw!important;
+    margin-right: .5vw!important;
+    /* background-color: #c4c4c4; */
+  }
+}
 
-	padding-top: 30px;
+
+.grey div {
+  padding-top: 35px;
   padding-bottom: 30px;
-	padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 45px;
+  padding-right: 45px;
   margin-left: 1.5vw;
   margin-right: 1.5vw;
-	/* background-color: #c4c4c4; */
+  /* background-color: #c4c4c4; */
+}
 
+.grey .row {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  /* background-color: #c4c4c4; */
+}
+
+.grey .col-5 {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+
+  /* background-color: #c4c4c4; */
+}
+
+.grey .col-6 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+
+  /* background-color: #c4c4c4; */
+}
+
+.grey .col-7 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+
+  /* background-color: #c4c4c4; */
 }
 
 .preview {
-	font-family: 'Crimson Text', serif; color: grey; padding-left: 10px; padding-right: 10px;
-  }
+  font-family: "Crimson Text", serif;
+  color: grey;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 .content {
-	word-wrap: break-word;
+  word-wrap: break-word;
   color: white;
   font-size: 15px;
 }
 /* change color later */
 
 .header {
-  
-    font-size: 16px;
-    color: #8f8f8f;
-    ;
-  }
+  font-size: 16px;
+  color: #8f8f8f;
+}
 
 img {
   padding-bottom: 20px;
 }
 
-.content p,h1,h2,h3,h4 {
-    color: #8f8f8f;
-    font-family: "Crimson Text", serif;    
-  }
-
+.content p,
+h1,
+h2,
+h3,
+h4 {
+  color: #8f8f8f;
+  font-family: "Crimson Text", serif;
+}
 
 .content ul {
   padding-left: 40px;
   color: #8f8f8f;
-  
 }
 
 .content ul li {
@@ -54,16 +107,15 @@ ul li li {
 }
 
 u {
-  font-family: 'Crimson Text', serif;
+  font-family: "Crimson Text", serif;
 }
 
 .starter:first-letter {
-   
-    float: left;
-    font-family: Georgia;
-    font-size: 75px;
-    line-height: 60px;
-    padding-top: 4px;
-    padding-right: 8px;
-    padding-left: 3px;
+  float: left;
+  font-family: Georgia;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
 }
