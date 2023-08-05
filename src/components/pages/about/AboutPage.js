@@ -22,7 +22,7 @@ function AboutPage() {
       <PageBanner
         image={pageImage}
         title="About 365toJapan"
-        subtitle="The journey that started it all."
+        subtitle="The seed that started it all."
       />
       <section className="about-area starter-padding">
         <div className="container">

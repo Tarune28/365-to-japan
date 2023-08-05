@@ -20,28 +20,38 @@ function BlogTemplate(props) {
 
   function requestBlog() {
     let id = params.id;
-    RequestUtils.get("/blog/info?id=" + id)
-      .then((response) => response.json())
-      .then((data) => {
-        if (!data.ok) {
+
+    Promise.all([
+      RequestUtils.get("/blog/info?id=" + id)
+      .then((response) => response.json()),
+      RequestUtils.post("/blog/updateCounter", {
+        name: params.id,
+      })
+        .then((res) => res.json())
+    ]).then((data) => {
+        if (!data[0].ok) {
           alert("Blog could not be found!");
           return;
         }
-        setBlogPostData(data.arr[0]);
+        if (data[0].ok) {
+          setBlogPostData(data[0].arr[0]);
+        }
+        if(data[1].count != null) {
+          setViews(data[1].count.toString() + " views");
+        }
+        
       })
       .catch((error) => {
         console.log(error);
       });
 
-    RequestUtils.post("/blog/updateCounter", {
-      name: params.id,
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        if(res.count != null) {
-          setViews(res.count.toString() + " views");
-        }
-      });
+    // RequestUtils.post("/blog/updateCounter", {
+    //   name: params.id,
+    // })
+    //   .then((res) => res.json())
+    //   .then((res) => {
+        
+    //   });
   }
 
   return (

@@ -103,8 +103,9 @@ function HomePreview(props) {
                     <Col span={8} className="spacer-2">
                       <Card bordered={true}>
                         <Statistic
-                          title="Years"
-                          value={4}
+                          title="Est."
+                          value={2020}
+                          groupSeparator=""
                           valueStyle={{
                             color: "#d76e1d",
                           }}
