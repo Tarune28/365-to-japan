@@ -2,6 +2,7 @@
 import PageBanner from "../../../components/pagebanner/PageBanner";
 import { Button } from "react-bootstrap";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { ConfigProvider, Steps } from 'antd';
 
 // Images
 import pageImage from "../../../img/about/about-banner.jpg";
@@ -11,6 +12,7 @@ import lanterns from "../../../img/about/whoAbout.jpg";
 import shop from "../../../img/about/additionalInfo.jpg";
 import Tarun from "../../../img/about/profile.png";
 import Brett from "../../../img/about/brett.jpg";
+import Isabella from "../../../img/about/isabella.jpg";
 
 // Stylesheets
 import "../about/AboutPage.css";
@@ -26,17 +28,14 @@ function AboutPage() {
       />
       <section className="about-area starter-padding">
         <div className="container">
-          <div className="row first-row margin-bottom-10">
-            <div className="col-lg-4 my-auto mx-auto">
-              <img className=" roundedimg " src={plane} alt="" />
-            </div>
-            <div className="col-lg-7 col-md-12 offset-md-0">
+          <div className="row first-row">
+          <div className="col-lg-8 col-md-12 offset-md-0">
               {" "}
               <AnimationOnScroll
                 initiallyVisible={true}
                 animateIn="animate__fadeIn"
               >
-                <div className="about-content">
+                <div className="about-content mb-5">
                   <h4 className="area-heading-about">
                     My Mission
                     <br />
@@ -61,9 +60,63 @@ function AboutPage() {
                 </div>
               </AnimationOnScroll>
             </div>
+            <div className="col-lg-2 my-auto mx-auto">
+            <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#FF914D",
+          },
+        }}
+      >
+                <Steps
+                className=" mb-5"å
+                size="small"
+                direction="vertical"
+                progressDot
+    current={6}
+    items={[
+      {
+        title: 'Started Japanese',
+        description: "April, 2019",
+      },
+      {
+        title: 'Began Writing Haiku',
+        description: "May 2019",
+      },
+      {
+        title: 'Brainstormed Blog',
+        description: "Winter, 2020",
+      },
+      {
+        title: 'Blog Number One',
+        description: "July 7th, 2021",
+      },
+      {
+        title: 'JLPT N5',
+        description: "July, 2022",
+      },
+      {
+        title: 'JLPT N4',
+        description: "December, 2022",
+      },
+      {
+        title: 'Studied Abroad',
+        description: "June, 2023",
+      },
+      {
+        title: 'JLPT N2',
+        description: "Soon?",
+      },
+    ]}
+  />
+  </ConfigProvider>
+            </div>
+            
           </div>
         </div>
       </section>
+
+     
       <section className="about-area area-padding">
         <AnimationOnScroll animateIn="animate__fadeIn">
           <div className="container">
@@ -87,7 +140,7 @@ function AboutPage() {
 
                         <div class="overlay">
                           <div class="projeto01">
-                            Tarun Eswar <br /> Junior @ Mass Academy <br />{" "}
+                            Tarun Eswar <br /> Senior @ Mass Academy <br />{" "}
                             Primary Author
                           </div>
                         </div>
@@ -103,6 +156,20 @@ function AboutPage() {
                           <div class="projeto01">
                             Brett Murphy Hunt
                             <br /> Lecturer @ Northeastern <br /> Editor
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="container1 mx-4">
+                      <a
+                        target="0"
+                        href="https://www.linkedin.com/in/isabella-palit-351600262/"
+                      >
+                        <img src={Isabella} class="image" alt="" />
+                        <div class="overlay">
+                          <div class="projeto01">
+                            Isabella Palit
+                            <br /> Senior @ Mass Academy <br /> Poetry Coordinator
                           </div>
                         </div>
                       </a>
@@ -209,7 +276,7 @@ function AboutPage() {
       >
         <div className="container">
           <div className="row mx-auto">
-            <div className="col-lg-6 col-md-12 offset-md-0 offset-lg-1">
+            <div className="col-lg-6 col-md-12 offset-md-0 offset-lg-1 mx-2">
               <AnimationOnScroll animateIn="animate__fadeIn">
                 <div className="about-content">
                   <h1

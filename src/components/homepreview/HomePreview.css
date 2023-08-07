@@ -29,7 +29,7 @@
 }
 
 .information-1 {
-    padding-top: 130px;
+    padding-top: 20px;
     vertical-align: middle!important;
 }
 
@@ -42,9 +42,10 @@
 }
 
 
+
 @media screen and (max-width: 992px) {
     .ant-card-body {
-        padding: 2px!important;
+        /* padding: 2px!important; */
     }
     
 

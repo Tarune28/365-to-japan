@@ -1,0 +1,3 @@
+- padding issue
+- static cards
+- resizing

@@ -28,7 +28,7 @@ function BlogCard(props) {
             <Card
               hoverable
               className="mx-2"
-              style={{ marginBottom: 40, height: "660px" }}
+              style={{ marginBottom: 40 }}
               cover={
                 <img
                   className="img-fluid w-100 card-img rounded-0"

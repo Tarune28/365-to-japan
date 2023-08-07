@@ -3,11 +3,15 @@
 
 .svg {
   display: block;
-  font: 10.5em "Montserrat";
-  width: 960px;
-  height: 300px;
+  width: 560px;
+  margin-left: 20px;
+  height: 120px;
   margin: 0 auto;
+  overflow-x: visible!important;
+}
+path {
   overflow-x: visible !important;
+  padding-left: 20px!important;
 }
 
 path {
@@ -363,10 +367,14 @@ path {
 }
 
 .text {
-  font-family: "Mukta", sans-serif !important;
+  /* font-family: "Mukta", sans-serif !important; */
   font-size: 10em !important;
+  text-align: center;
   padding: none !important;
   display: none !important;
+  color: #919191!important;
+  margin-bottom: 40px;
+  font-family: "open sans", sans-serif;
 }
 
 @keyframes animate {
@@ -392,13 +400,6 @@ path {
   }
 }
 
-#text {
-  height: 30vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 #text path:nth-child(1) {
   stroke-dasharray: 1047px;
@@ -410,57 +411,57 @@ path {
   stroke-dasharray: 1084px;
   stroke-dashoffset: 1084px;
   animation: line-animation ease forwards 1.5s 0.5s,
-    box-shadow 0.5s ease forwards 6s;
+    box-shadow 1s ease forwards 6s;
 }
 
 #text path:nth-child(3) {
   stroke-dasharray: 1046px;
   stroke-dashoffset: 1046px;
   animation: line-animation ease forwards 1.5s 1s,
-    box-shadow 0.5s ease forwards 6s;
+    box-shadow 1.3s ease forwards 6s;
 }
 
 #text path:nth-child(4) {
   stroke-dasharray: 790px;
   stroke-dashoffset: 790px;
   animation: line-animation ease forwards 1.5s 1.5s,
-    box-shadow 0.5s ease forwards 6s;
+    box-shadow 1.69s ease forwards 6s;
 }
 #text path:nth-child(5) {
   stroke-dasharray: 790px;
   stroke-dashoffset: 790px;
   animation: line-animation ease forwards 1.5s 2s,
-    box-shadow 0.5s ease forwards 6s;
+    box-shadow 2.197s ease forwards 6s;
 }
 #text path:nth-child(6) {
   stroke-dasharray: 790px;
   stroke-dashoffset: 790px;
   animation: line-animation ease forwards 1.5s 2.5s,
-    box-shadow 0.5s ease forwards 6s;
+    box-shadow 2.856s ease forwards 6s;
 }
 #text path:nth-child(7) {
   stroke-dasharray: 790px;
   stroke-dashoffset: 790px;
   animation: line-animation ease forwards 1.5s 3s,
-    box-shadow 0.5s ease forwards 6s;
+    box-shadow 3.713s ease forwards 6s;
 }
 #text path:nth-child(8) {
   stroke-dasharray: 790px;
   stroke-dashoffset: 790px;
   animation: line-animation ease forwards 1.5s 3.5s,
-    box-shadow 0.5s ease forwards 6s;
+    box-shadow 4.827s ease forwards 6s;
 }
 #text path:nth-child(9) {
   stroke-dasharray: 790px;
   stroke-dashoffset: 790px;
   animation: line-animation ease forwards 1.5s 4s,
-    box-shadow 0.5s ease forwards 6s;
+    box-shadow 6.275s ease forwards 6s;
 }
 #text path:nth-child(10) {
   stroke-dasharray: 790px;
   stroke-dashoffset: 790px;
   animation: line-animation ease forwards 1.5s 4.5s,
-    box-shadow 0.5s ease forwards 6s;
+    box-shadow 8.157s ease forwards 6s;
 }
 
 @keyframes line-animation {
@@ -475,9 +476,11 @@ path {
 
 @keyframes box-shadow {
   to {
-    stroke-width: 5;
-    stroke-linejoin: round;
-    stroke: white;
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke: #919191;
+    fill: #919191;
+    fill-rule: evenodd;
   }
 }
 .st0 {
@@ -492,9 +495,9 @@ path {
 }
 .st3 {
   fill: none;
-  stroke: #37b193;
-  stroke-width: 9;
-  stroke-miterlimit: 10;
+  stroke: #c0c0c0;
+  stroke-width: 1;
+  stroke-miterlimit: 0;
 }
 
 .triangle_down {
@@ -551,7 +554,7 @@ path {
   }
   .home_banner_area {
     line-height: 5px !important;
-    padding-bottom: 50px;
+
   }
 }
 
@@ -562,7 +565,6 @@ path {
   .text {
     display: block !important;
     line-height: 0.75 !important;
-    color: white !important;
   }
 }
 
@@ -597,4 +599,41 @@ path {
   justify-content: center;
   align-items: center;
   margin: auto;
+}
+
+.catch-phrase {
+  font-size: 1.8rem!important;
+    line-height: 3.2rem!important;
+    text-align: center;
+    font-weight: 400!important;
+    color: var(--fSfh3A)!important;
+    font-family: "Open Sans", sans-serif!important;
+
+}
+
+.cover-img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  border-radius: 15px;
+  height:300px;
+}
+
+.cover-img-wrapper {
+  padding-left: 10px!important;
+  padding-right: 10px!important;
+}
+
+.la {
+  vertical-align: middle!important;
+}
+
+.test {display: table-cell; vertical-align: middle;
+}
+
+.content1 div {
+  margin-top:auto!important;
+  margin-bottom:auto!important;
+  text-align:center!important;
 }

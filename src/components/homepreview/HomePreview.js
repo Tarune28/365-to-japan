@@ -54,12 +54,13 @@ function HomePreview(props) {
         spinnerColor="#F0965B"
         textColor="#676767"
         logoSrc={logo}
+        backgroundColor="rgb(255, 255, 255, 0)"
       >
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         ></link>
-        <section style={{ marginBottom: "60px" }}>
+        <section className="mt-5" style={{ marginBottom: "60px" }}>
           <div className="container information-1">
             <div className="row">
               <div className="col-8 col-9-ext">
@@ -77,11 +78,11 @@ function HomePreview(props) {
                     fullstack development to build this platform from scratch.
                   </p>
                   <br></br>
-                  <div className="row text-center mx-4 mx-reset">
-                    <Col span={8} className="spacer-2">
+                  <div className="row text-center mx-auto">
+                    <Col span={7} className="mx-auto">
                       <Card bordered={true}>
                         <Statistic
-                          title="Total Reads"
+                          title="Reads"
                           value={views}
                           valueStyle={{
                             color: "#d76e1d",
@@ -89,8 +90,8 @@ function HomePreview(props) {
                         />
                       </Card>
                     </Col>
-                    <Col span={8}>
-                      <Card bordered={true} className="spacer-2">
+                    <Col span={7}>
+                      <Card bordered={true} className="mx-auto">
                         <Statistic
                           title="Blogs"
                           value={blogs}
@@ -100,7 +101,7 @@ function HomePreview(props) {
                         />
                       </Card>
                     </Col>
-                    <Col span={8} className="spacer-2">
+                    <Col span={7} className="mx-auto">
                       <Card bordered={true}>
                         <Statistic
                           title="Est."
@@ -126,16 +127,16 @@ function HomePreview(props) {
                   </div>
                 </AnimationOnScroll>
               </div>
-              <div className="col-3 my-auto hide-show-image margin-left-2">
+              <div className="col-4 my-auto hide-show-image px-5">
                 <img src={street} className="br-50" />
               </div>
             </div>
           </div>
         </section>
-        <section className="blog_area" style={{ marginBottom: "60px" }}>
+        <section className="blog_area mt-5 pt-5">
           <div className="container information">
             <div className="row">
-              <div className="col-3 my-auto hide-show-image margin-right-2">
+              <div className="col-4 my-auto hide-show-image px-5">
                 <img src={nature} className="br-50 " />
               </div>
               <div className="col-8 col-9-ext">
@@ -176,7 +177,7 @@ function HomePreview(props) {
             </div>
           </div>
         </section>
-        <section className="blog_area margin-bottom-1">
+        <section className="blog_area margin-bottom-1 mt-3 pt-5">
           <div className="container information">
             <div className="area-heading" style={{ fontFamily: "inherit" }}>
               <h3 id="target">Recent Blogs</h3>

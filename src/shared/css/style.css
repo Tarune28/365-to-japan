@@ -569,14 +569,17 @@ h5:first-child:first-letter {
 .home_banner_area {
     position: relative;
     z-index: 1;
-    min-height: 930px;
+
 }
 
 .home_banner_area .banner_inner {
     position: relative;
     overflow: hidden;
     width: 100%;
-    min-height: 930px;
+    min-height: auto;
+    margin-top: 150px;
+    padding-bottom: 150px;
+    padding-top: 170px;
 }
 
 .home_banner_area .banner_inner .overlay {
