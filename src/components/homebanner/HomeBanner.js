@@ -11,12 +11,22 @@ import { Card, Modal } from "antd";
 import { useState } from "react";
 import { Carousel } from "@trendyol-js/react-carousel";
 import ReactDOM from "react-dom";
-
-// Stylesheets
 import "./HomeBanner.css";
 
 // Images
 import award from "./img/365tojapan.png";
+import image1 from "../../img/home/cover-images/416B2A12-AB00-4FC4-9EB5-E633297FB8C2.jpg"
+import image2 from "../../img/home/cover-images/IMG_9258.jpg"
+import image3 from "../../img/home/cover-images/IMG_9280.jpg"
+import image4 from "../../img/home/cover-images/IMG_9335.jpg"
+import image5 from "../../img/home/cover-images/IMG_9360.jpg"
+import image6 from "../../img/home/cover-images/IMG_9373.jpg"
+import image7 from "../../img/home/cover-images/IMG_9403.jpg"
+import image8 from "../../img/home/cover-images/IMG_9408.jpg"
+import image9 from "../../img/home/cover-images/IMG_9522.jpg"
+import image10 from "../../img/home/cover-images/IMG_9557.jpg"
+import image11 from "../../img/home/cover-images/IMG_9676.jpg"
+import image12 from "../../img/home/cover-images/IMG_9840.jpg"
 
 function HomeBanner() {
   let [showModal, setShowModal] = useState(false);
@@ -95,7 +105,7 @@ function HomeBanner() {
                 />
               </svg>
 
-              <h1 className="text px-3">365 to Japan</h1>
+              <h1 className="text px-4">365 to Japan</h1>
             </div>
             <div
               class="col-lg-12 mb-5"
@@ -143,73 +153,73 @@ function HomeBanner() {
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2F416B2A12-AB00-4FC4-9EB5-E633297FB8C2.jpg?alt=media&token=99b60330-11ed-456f-afe5-6dce2d64691e"
+                    src={image1}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_4159.jpeg?alt=media&token=94a50ed2-c5d1-49be-9d82-608f77763455"
+                    src={image2}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_9258.jpeg?alt=media&token=a358915a-300d-40c2-81cc-669fd2b08f80"
+                    src={image3}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_9280.jpeg?alt=media&token=a3b512b6-697c-4f75-83b3-97e3398b337b"
+                    src={image4}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_9335.jpeg?alt=media&token=0fdaf80b-af83-4812-97d2-d18abc2d9461"
+                    src={image5}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_9360.jpeg?alt=media&token=4055376a-9bc2-447d-b462-f1b3d79b162a"
+                    src={image6}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_9373.jpeg?alt=media&token=f57330fd-b4ee-49e7-b088-ea14f08059ee"
+                    src={image7}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_9403.jpeg?alt=media&token=3bdf78dd-4d86-437c-8f03-f00ced4b8754"
+                    src={image8}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_9408.jpeg?alt=media&token=59afe1d2-0be8-4d89-9eb0-f7e101741acd"
+                    src={image9}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_9522.jpeg?alt=media&token=bae371f4-0f7c-4bda-9a89-f4878e404915"
+                    src={image10}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_9557.jpeg?alt=media&token=ce40f717-13e3-41df-b195-e59aba3c58b5"
+                    src={image11}
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
-                    src="https://firebasestorage.googleapis.com/v0/b/tojapan-94cbd.appspot.com/o/images%2FCover%20Images%2FIMG_9676.jpeg?alt=media&token=34bb062e-6560-427e-b14d-c81305795749"
+                    src={image12}
                   ></img>
                 </div>
               </Carousel>

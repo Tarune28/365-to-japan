@@ -113,7 +113,6 @@ function Footer() {
             </Form.Item>
           </Form>
         </MDBContainer>
-
         <div className="text-center center-0 p-3" style={{ backgroundColor: "#808080" }}>
           &copy; {new Date().getFullYear()} Copyright:{" "}
           <a className="text-white" href="https://365toJapan.com/">

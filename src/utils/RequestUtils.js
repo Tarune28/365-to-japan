@@ -21,7 +21,7 @@ class RequestUtils {
     */
 
     static getDomain() {
-         return "https://blog-server-365.herokuapp.com"; // live server
+        return "https://blog-server-365.herokuapp.com"; // live server
         // return "http://localhost:8080"; // local server
     }
 

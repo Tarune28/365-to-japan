@@ -46,8 +46,6 @@ function BlogBanner(props) {
               <div style={{ width: "100%", textAlign: "center" }}>
                 <li className="breadcrumb-item date">
                   <a style={{ color: "#F08811" }}>
-                    {/* `${year}年 ${month}月 ${day}日 ${dayname}` */}
-                    {/* {moment(props.pageInfo.date).locale('ja').format("LL")} */}
                     {moment(props.pageInfo.date).format("YYYY") + "年 " + moment(props.pageInfo.date).format("MM") + "月 " + moment(props.pageInfo.date).format("DD") + "日 " }
                   </a>
                 </li>

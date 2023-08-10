@@ -368,7 +368,7 @@ path {
 
 .text {
   /* font-family: "Mukta", sans-serif !important; */
-  font-size: 10em !important;
+  font-size: 8em !important;
   text-align: center;
   padding: none !important;
   display: none !important;
@@ -564,7 +564,7 @@ path {
   }
   .text {
     display: block !important;
-    line-height: 0.75 !important;
+    line-height: .9 !important;
   }
 }
 

@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@800&family=Nunito&family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&family=Nunito&family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@800&family=Nunito&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@500&family=Nunito&family=Open+Sans&display=swap");
 
-
-.area-heading h3{ 
-    font-family: 'Mukta', sans-serif;
-    font-weight: 500;
+.area-heading h3 {
+  font-family: "Mukta", sans-serif;
+  font-weight: 500;
 }

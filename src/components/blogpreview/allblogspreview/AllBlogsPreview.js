@@ -32,7 +32,7 @@ function AllBlogsPreview(props) {
         setListBlogs(data.arr);
       })
       .catch((error) => {
-        alert(error);
+        console.log(error);
       });
   }
 
