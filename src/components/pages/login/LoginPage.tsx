@@ -29,10 +29,11 @@ function Login() {
     if (user) navigate("/dashboard");
   }, [user, loading]);
 
-  const onFinish = (values) => {
+  const onFinish = (values: { [x: string]: any; }) => {
     logInWithEmailAndPassword(values["email"], values["password"]).then(
       (result) => {
-        if (result == "Invalid password or email") {
+        let val = result != null ? result : "";
+        if (val == "Invalid password or email") {
           return Modal.error({
             title: "Login Failed",
             content:
@@ -43,7 +44,7 @@ function Login() {
     );
   };
 
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
 

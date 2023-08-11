@@ -1,8 +1,8 @@
 // Imports
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-import Header from "../../../components/header/Header";
-import PageBanner from "../../../components/pagebanner/PageBanner";
+import Header from "../../header/Header";
+import PageBanner from "../../pagebanner/PageBanner";
 import RequestUtils from "../../../utils/RequestUtils";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -30,7 +30,7 @@ function ContactPage() {
     setCurrentName("");
   }
 
-  function newMessage(e) {
+  function newMessage(e: { preventDefault: () => void; } | null) {
     if (e != null) {
       e.preventDefault();
     }
@@ -64,15 +64,15 @@ function ContactPage() {
         title="Contact."
         subtitle="Reach out to 365toJapan staff."
       />
-      <section class="margin-top-5 margin-bottom-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="contact-title" style={{ color: "#00b192" }}>
+      <section className="margin-top-5 margin-bottom-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h2 className="contact-title" style={{ color: "#00b192" }}>
                 Contact Form
               </h2>
             </div>
-            <div class="col-10">
+            <div className="col-10">
               <Form.Group
                 as={Row}
                 className="mb-3"
@@ -135,9 +135,9 @@ function ContactPage() {
                 Send Message
               </Button>
             </div>
-            <div class="col-12">
+            <div className="col-12">
               <br />
-              <h2 class="contact-title" style={{ color: "#00b192" }}>
+              <h2 className="contact-title" style={{ color: "#00b192" }}>
                 Other Contact Methods
               </h2>
               <p>Email: info@365tojapan.com</p>

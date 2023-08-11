@@ -124,3 +124,18 @@ u {
   padding-right: 8px;
   padding-left: 3px;
 }
+
+
+.spinner {
+  margin-left: auto!important;
+  margin-right: auto!important;
+  width: 100%
+}
+
+.ant-spin {
+  color: #FF914D!important;
+}
+
+.ant-spin-dot-item {
+  background-color: #FF914D!important;
+}

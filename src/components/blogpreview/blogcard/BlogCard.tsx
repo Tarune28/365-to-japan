@@ -12,7 +12,14 @@ import "animate.css/animate.min.css";
 // Meta Card
 const { Meta } = Card;
 
-function BlogCard(props) {
+function BlogCard(props: { blogInfo: { [x: string]: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }; loading: boolean | undefined; }) {
+  
+  let date = props.blogInfo["date"]?.toString();
+
+  let image = props.blogInfo["bannerURL"]?.toString();
+
+  let loading = props.loading;
+
   return (
     <>
       <Col
@@ -21,7 +28,8 @@ function BlogCard(props) {
         lg={{ span: 8, offset: 0 }}
       >
         <AnimationOnScroll
-          initiallyVisible={props.blogInfo["animationType"]}
+          animateOnce={true}
+          initiallyVisible={props.blogInfo["animationType"] ? true : false}
           animateIn={props.blogInfo["animationType"] ? "" : "animate__fadeIn"}
         >
           <Link to={"/blog/" + props.blogInfo["_id"]}>
@@ -32,25 +40,24 @@ function BlogCard(props) {
               cover={
                 <img
                   className="img-fluid w-100 card-img rounded-0"
-                  src={props.blogInfo["bannerURL"]}
+                  src={image}
                   style={{ height: "300px", objectFit: "cover" }}
                   alt=""
-                  loading={props.loading}
                 />
               }
+              loading={loading}
             >
               <div className="blog_item_img">
-                <a href="blogs/immersion.html" className="blog_item_date">
-                  <h3>{moment(props.blogInfo["date"]).format("DD")}</h3>
+                <a className="blog_item_date">
+                  <h3>{moment(date).format("DD")}</h3>
                   <p>
-                    {moment(props.blogInfo["date"]).format("MMM")},{" "}
-                    {moment(props.blogInfo["date"]).format("YYYY")}
+                    {moment(date).format("MMM")},{" "}
+                    {moment(date).format("YYYY")}
                   </p>
                 </a>
               </div>
               <Meta
                 title={props.blogInfo["title"]}
-                date={"test"}
                 description={props.blogInfo["description"]}
                 style={{ padding: 10, marginTop: 10 }}
               />
@@ -59,7 +66,7 @@ function BlogCard(props) {
                   <i
                     className={
                       "fa " +
-                      props.blogInfo["icon"].toString() +
+                      props.blogInfo["icon"]?.toString() +
                       " margin-right-05"
                     }
                     title="Edit"

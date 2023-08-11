@@ -11,6 +11,8 @@ function LogoutPage() {
         logout();
         navigate("/login");
     },[navigate]);
+
+    return (<></>);
 }
 
 export default LogoutPage;

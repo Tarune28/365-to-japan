@@ -4,7 +4,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import "./BlogDetails.css";
 
-function BlogDetails(props) {
+function BlogDetails(props: { blogInfo: { [x: string]: any; }; deleteHandler: (arg0: any) => void; editHandler: (arg0: any) => void; showHandler: (arg0: any) => void; }) {
   return (
     <Card className="my-3 rounded1 py-1 px-2">
       <Card.Body>

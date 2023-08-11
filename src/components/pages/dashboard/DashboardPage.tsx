@@ -48,22 +48,25 @@ function DashboardPage() {
     );
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
-        setImageUrls((prev) => [...prev, url]);
+        setImageUrls((prev) => [...prev!, url]);
       });
     });
   };
 
+
   const [user, loading] = useAuthState(auth);
+
+
 
   const navigate = useNavigate();
 
-  const [imageUpload, setImageUpload] = useState(null);
+  const [imageUpload, setImageUpload] = useState<File>();
 
-  const [imageUrls, setImageUrls] = useState([]);
+  const [imageUrls, setImageUrls] = useState<String[]>([]);
 
   let [showModal, setShowModal] = useState(false);
 
-  let [currentStartDateTime, setCurrentStartDateTime] = useState(moment());
+  let [currentStartDateTime, setCurrentStartDateTime] = useState(MomentUtils.roundUp(moment(new Date()), "hour").add(1, "hour"));
 
   let [currentID, setCurrentID] = useState("");
 
@@ -94,14 +97,31 @@ function DashboardPage() {
   const imagePlugin = createImagePlugin();
 
   const plugins = [imagePlugin];
+
+  const handPostTimeChange = (newDate: any) => {
+    setCurrentPostTime(newDate);
+  };
+
+  const handleStartDateTimeChange = (newDate: any) => {
+    setCurrentStartDateTime(newDate);
+  };
+
+  let step: Datetime.TimeConstraint = {
+    step: 15,
+    min: 0,
+    max: 0
+  };
   
+  let restraint: Datetime.TimeConstraints = {minutes: step};
+
+  // let restraint: Datetime.TimeConstraint = Datetime.TimeConstraints.
 
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
   const [convertedContent, setConvertedContent] = useState("_");
 
-  const handleEditorChange = (state) => {
+  const handleEditorChange = (state: React.SetStateAction<EditorState>) => {
     setEditorState(state);
     convertContentToHTML();
   };
@@ -110,13 +130,17 @@ function DashboardPage() {
     setConvertedContent(currentContentAsHTML);
   };
 
-  const createMarkup = (html) => {
+  const createMarkup = (html: string) => {
     return {
       __html: convertedContent,
     };
   };
 
   let [mail, setMail] = useState("");
+
+  interface HTMLInputEvent extends Event {
+    target: HTMLInputElement & EventTarget;
+}
 
 
   useEffect(() => {
@@ -126,19 +150,19 @@ function DashboardPage() {
   useEffect(() => {
     if (loading) {
       setImageUrls([]);
-      populateEvents(3);
+      populateEvents();
       return;
     }
     if (!user) navigate("/login");
     if (user) {
-      setCurrentEmail(user.email.slice(0, user.email.indexOf("@")));
+      setCurrentEmail(user.email!.slice(0, user.email!.indexOf("@")));
       populateEvents();
     }
   }, [user, loading, navigate, currentEmail, rand]);
 
 
   // SET NEWSLETTER HTML
-  function setMailer(currentBannerURL, currentEventName, currentPostTime) {
+  function setMailer(currentBannerURL: string, currentEventName: string, currentPostTime: { format: (arg0: string) => any; }) {
     let date = currentPostTime.format('MMMM Do YYYY');
     let desc =
     convertedContent
@@ -154,12 +178,12 @@ function DashboardPage() {
   }
 
   // ON DELETE
-  function handleDelete(_id) {
+  function handleDelete(_id: string) {
     let req = {
       _id: _id,
     };
 
-    RequestUtils.post("/blog/delete", req, user.accessToken)
+    RequestUtils.post("/blog/delete", req, (user as any).accessToken)
       .then((response) => response.json())
       .then((data) => {
         if (!data.ok) {
@@ -167,7 +191,7 @@ function DashboardPage() {
           return;
         }
         let listBlogsCopy = listBlogs.filter((blog) => {
-          return blog["_id"].localeCompare(_id) != 0;
+          return (blog["_id"] as String).localeCompare(_id) != 0;
         });
         setListBlogs(listBlogsCopy);
       })
@@ -178,12 +202,12 @@ function DashboardPage() {
   }
 
   // ON SHOW TOGGLE
-  function handleShow(_id) {
+  function handleShow(_id: any) {
     let req = {
       _id: _id,
     };
 
-    RequestUtils.post("/blog/display", req, user.accessToken)
+    RequestUtils.post("/blog/display", req, (user as any).accessToken)
       .then((response) => response.json())
       .then((data) => {
         if (!data.ok) {
@@ -198,8 +222,8 @@ function DashboardPage() {
   }
 
   // ON EDIT
-  function handleEdit(_id) {
-    RequestUtils.get("/blog/info?id=" + _id, user.accessToken)
+  function handleEdit(_id: string) {
+    RequestUtils.get("/blog/info?id=" + _id, (user as any).accessToken)
       .then((response) => response.json()) // take response and turn it into JSON object
       .then((data) => {
         // data = JSON object created ^^
@@ -232,7 +256,7 @@ function DashboardPage() {
   }
 
   // ON POST
-  function postBlog(e) {
+  function postBlog(e?: { preventDefault: () => void; } | null | undefined) {
     if (e != null) {
       e.preventDefault();
     }
@@ -262,7 +286,7 @@ function DashboardPage() {
       newsletter: mail,
     };
 
-    RequestUtils.post("/blog/create", reqObj, user.accessToken)
+    RequestUtils.post("/blog/create", reqObj, (user as any).accessToken)
       .then((response) => response.json())
       .then((data) => {
         if (!data.ok) {
@@ -277,11 +301,11 @@ function DashboardPage() {
       });
     RequestUtils.post("/blog/createCounter", {
       name: currentEventName.replace(/[^\w]/g, ""),
-    });
+    }, null);
   }
 
   // SCHEDULED POST
-  function postBlogLater(e) {
+  function postBlogLater(e: any) {
     e.preventDefault();
     alert("tes");
     var duration = moment.duration(currentStartDateTime.diff(moment()));
@@ -312,7 +336,7 @@ function DashboardPage() {
       scheduledTime: scheduledTime,
     };
 
-    RequestUtils.post("/blog/postLater", reqObj, user.accessToken)
+    RequestUtils.post("/blog/postLater", reqObj, (user as any).accessToken)
       .then((response) => response.json())
       .then((data) => {
         if (!data.ok) {
@@ -327,7 +351,7 @@ function DashboardPage() {
   }
 
   // ON EDIT
-  function editBlog(e) {
+  function editBlog(e?: any) {
     if (e != null) {
       e.preventDefault();
     }
@@ -354,7 +378,7 @@ function DashboardPage() {
       html: convertedContent,
     };
 
-    RequestUtils.post("/blog/update", reqObj, user.accessToken)
+    RequestUtils.post("/blog/update", reqObj, (user as any).accessToken)
       .then((response) => response.json())
       .then((data) => {
         if (!data.ok) {
@@ -369,8 +393,8 @@ function DashboardPage() {
   }
 
   // POPULATE BLOG DETAILS
-  function populateEvents(days) {
-    RequestUtils.get("/blog/getAll")
+  function populateEvents() {
+    RequestUtils.get("/blog/getAll", null)
       .then((response) => response.json())
       .then((data) => {
         if (!data.ok) {
@@ -381,12 +405,16 @@ function DashboardPage() {
       })
       .catch((error) => {
         alert(error);
+        console.log(error)
       });
   }
 
+  
+
+
   return (
     <>
-      <PageBanner image={pageImage} title={"Welecome " + currentEmail + "."} />
+      <PageBanner image={pageImage} title={"Welecome " + currentEmail + "."} subtitle="365toJapan Editor"/>
       <section className="py-5 container">
         <ConfigProvider
           theme={{
@@ -449,8 +477,8 @@ function DashboardPage() {
                       <Form.Label>Post Time</Form.Label>
                       <Datetime
                         value={currentPostTime}
-                        timeConstraints={{ minutes: { step: 5 } }}
-                        onChange={setCurrentPostTime}
+                        timeConstraints={restraint}
+                        onChange={handPostTimeChange}
                       />
                     </Form.Group>
                   </Col>
@@ -472,8 +500,10 @@ function DashboardPage() {
                     className="mb-4"
                     type="file"
                     multiple
-                    onChange={(event) => {
-                      setImageUpload(event.target.files[0]);
+                    onChange={(event: React.ChangeEvent) => {
+                      const target= event.target as HTMLInputElement;
+                      const file = target.files![0];
+                      setImageUpload(file);
                     }}
                   />
                   <Button onClick={uploadFile}>Insert</Button>
@@ -504,7 +534,6 @@ function DashboardPage() {
                     wrapperClassName="wrapper-class"
                     editorClassName="editor-class"
                     toolbarClassName="toolbar-class"
-                    plugins={plugins}
                   />
                   <Form.Group className="mb-3 form-inline">
                     <Form.Label>HTML Adjustments</Form.Label>
@@ -609,7 +638,7 @@ function DashboardPage() {
           <Form onSubmit={postBlogLater}>
             <Datetime
               value={currentStartDateTime}
-              onChange={setCurrentStartDateTime}
+              onChange={handleStartDateTimeChange}
             />
             <br></br>
             <Button variant="outline-success" type="submit" className="mb-3">

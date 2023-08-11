@@ -180,3 +180,18 @@ img {
       margin-bottom: 45px;
   }
 }
+
+.ant-skeleton-content {
+  margin-left: auto!important;
+  margin-right: auto!important;
+}
+
+.ant-skeleton-title {
+  margin-left: auto!important;
+  margin-right: auto!important;
+}
+
+.ant-skeleton {
+  margin-left: auto!important;
+  margin-right: auto!important;
+}

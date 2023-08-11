@@ -1,8 +1,8 @@
 // Imports
-import PageBanner from "../../../components/pagebanner/PageBanner";
+import PageBanner from "../../pagebanner/PageBanner";
 import { Button } from "react-bootstrap";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import { ConfigProvider, Steps } from 'antd';
+import { ConfigProvider, Steps } from "antd";
 
 // Images
 import pageImage from "../../../img/about/about-banner.jpg";
@@ -29,12 +29,8 @@ function AboutPage() {
       <section className="about-area starter-padding">
         <div className="container">
           <div className="row first-row">
-          <div className="col-lg-8 col-md-12 offset-md-0">
+            <div className="col-lg-8 col-md-12 offset-md-0">
               {" "}
-              <AnimationOnScroll
-                initiallyVisible={true}
-                animateIn="animate__fadeIn"
-              >
                 <div className="about-content mb-5">
                   <h4 className="area-heading-about">
                     My Mission
@@ -54,69 +50,66 @@ function AboutPage() {
                     Additionally, I love reading and writing, which makes this
                     website a perfect outlet.
                   </p>
-                  <Button variant="custom" href="https://365tojapan.com/blogs">
+                  <Button variant="custom" href="/blogs">
                     Recent Blogs
                   </Button>
                 </div>
-              </AnimationOnScroll>
             </div>
             <div className="col-lg-2 my-auto mx-auto">
-            <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: "#FF914D",
-          },
-        }}
-      >
+              <ConfigProvider
+                theme={{
+                  token: {
+                    colorPrimary: "#FF914D",
+                  },
+                }}
+              >
                 <Steps
-                className=" mb-5"å
-                size="small"
-                direction="vertical"
-                progressDot
-    current={6}
-    items={[
-      {
-        title: 'Started Japanese',
-        description: "April, 2019",
-      },
-      {
-        title: 'Began Writing Haiku',
-        description: "May 2019",
-      },
-      {
-        title: 'Brainstormed Blog',
-        description: "Winter, 2020",
-      },
-      {
-        title: 'Blog Number One',
-        description: "July 7th, 2021",
-      },
-      {
-        title: 'JLPT N5',
-        description: "July, 2022",
-      },
-      {
-        title: 'JLPT N4',
-        description: "December, 2022",
-      },
-      {
-        title: 'Studied Abroad',
-        description: "June, 2023",
-      },
-      {
-        title: 'JLPT N2',
-        description: "Soon?",
-      },
-    ]}
-  />
-  </ConfigProvider>
+                  className=" mb-5"
+                  size="small"
+                  direction="vertical"
+                  progressDot
+                  current={6}
+                  items={[
+                    {
+                      title: "Started Japanese",
+                      description: "April, 2019",
+                    },
+                    {
+                      title: "Began Writing Haiku",
+                      description: "May 2019",
+                    },
+                    {
+                      title: "Brainstormed Blog",
+                      description: "Winter, 2020",
+                    },
+                    {
+                      title: "Blog Number One",
+                      description: "July 7th, 2021",
+                    },
+                    {
+                      title: "JLPT N5",
+                      description: "July, 2022",
+                    },
+                    {
+                      title: "JLPT N4",
+                      description: "December, 2022",
+                    },
+                    {
+                      title: "Studied Abroad",
+                      description: "June, 2023",
+                    },
+                    {
+                      title: "JLPT N2",
+                      description: "Soon?",
+                    },
+                  ]}
+                />
+              </ConfigProvider>
             </div>
-            
           </div>
         </div>
       </section>
 
-     
       <section className="about-area area-padding">
         <AnimationOnScroll animateIn="animate__fadeIn">
           <div className="container">
@@ -134,42 +127,43 @@ function AboutPage() {
                       justifyContent: "center",
                     }}
                   >
-                    <div class="container1 mx-4">
+                    <div className="container1 mx-4">
                       <a target="0" href="https://www.taruneswar.com/">
-                        <img src={Tarun} class="image" alt="" />
+                        <img src={Tarun} className="image" alt="" />
 
-                        <div class="overlay">
-                          <div class="projeto01">
+                        <div className="overlay">
+                          <div className="projeto01">
                             Tarun Eswar <br /> Senior @ Mass Academy <br />{" "}
                             Primary Author
                           </div>
                         </div>
                       </a>
                     </div>
-                    <div class="container1 mx-4">
+                    <div className="container1 mx-4">
                       <a
                         target="0"
                         href="https://cps.northeastern.edu/faculty/brett-murphy-hunt/"
                       >
-                        <img src={Brett} class="image" alt="" />
-                        <div class="overlay">
-                          <div class="projeto01">
+                        <img src={Brett} className="image" alt="" />
+                        <div className="overlay">
+                          <div className="projeto01">
                             Brett Murphy Hunt
                             <br /> Lecturer @ Northeastern <br /> Editor
                           </div>
                         </div>
                       </a>
                     </div>
-                    <div class="container1 mx-4">
+                    <div className="container1 mx-4">
                       <a
                         target="0"
                         href="https://www.linkedin.com/in/isabella-palit-351600262/"
                       >
-                        <img src={Isabella} class="image" alt="" />
-                        <div class="overlay">
-                          <div class="projeto01">
+                        <img src={Isabella} className="image" alt="" />
+                        <div className="overlay">
+                          <div className="projeto01">
                             Isabella Palit
-                            <br /> Senior @ Mass Academy <br /> Poetry Coordinator
+                            <br /> Senior @ Mass Academy <br /> Poetry
+                            Coordinator
                           </div>
                         </div>
                       </a>
@@ -255,7 +249,7 @@ function AboutPage() {
                     A brief overview of the contents of this blog can be found
                     on my introductory post,{" "}
                     <a
-                      href="https://365tojapan.com/blog/63812e8f95659bf05eaaa809"
+                      href="/blog/63812e8f95659bf05eaaa809"
                       className="link"
                     >
                       setting intentions.
@@ -315,7 +309,7 @@ function AboutPage() {
                   </p>
                   <Button
                     variant="custom"
-                    href="https://365tojapan.com/contact"
+                    href="/contact"
                   >
                     Contact Me
                   </Button>

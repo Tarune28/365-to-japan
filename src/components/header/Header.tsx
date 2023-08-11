@@ -150,7 +150,6 @@ function Header() {
           overflowY: "auto",
           marginRight: "0px",
         }}
-        size="lg"
         footer={[
           <Button
             key="1"

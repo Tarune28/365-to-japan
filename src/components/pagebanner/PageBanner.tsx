@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 // Stylesheets
 import "./PageBanner.css";
 
-function PageBanner(props) {
+function PageBanner(props: { title: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | null | undefined; image: any; subtitle: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }) {
   return (
     <section
       className="page-banner"

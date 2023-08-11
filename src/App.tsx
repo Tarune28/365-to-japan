@@ -8,10 +8,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BlogTemplate from "./components/pages/blog/BlogTemplate";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import LogoutPage from "./components/pages/login/LogoutPage";
+import LogoutPage from "./components/pages/logout/LogoutPage";
 import NotFoundPage from "./components/pages/404/NotFoundPage";
 import DashboardPage from "./components/pages/dashboard/DashboardPage";
 import Contests from "./components/pages/contests/Contests";
+import React from "react";
 
 
 function App() {

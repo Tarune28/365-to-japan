@@ -29,7 +29,7 @@ function Footer() {
     setCurrentName("");
   }
 
-  function newSubscriber(e) {
+  function newSubscriber(e?: { preventDefault: () => void; } | null | undefined) {
     if (e != null) {
       e.preventDefault();
     }

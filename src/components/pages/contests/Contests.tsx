@@ -43,7 +43,7 @@ function Contests() {
     setAgree(false);
   }
 
-  function newMessage(e) {
+  function newMessage(e: { preventDefault: () => void; } | null) {
     if (e != null) {
       e.preventDefault();
     }
@@ -200,9 +200,9 @@ function Contests() {
             follow all guidlines and note that you have read and met them with
             the checkbox at the end.
           </p>
-          <div class="container">
-            <div class="row">
-              <div class="col-10">
+          <div className="container">
+            <div className="row">
+              <div className="col-10">
                 <Form.Group className="mb-3" controlId="Email">
                   <Col sm="12">
                     <Form.Control
@@ -256,13 +256,13 @@ function Contests() {
                   </Col>
                 </Form.Group>
                 <Form.Group>
-                  {["radio"].map((type) => (
+                  {['radio'].map((type) => (
                     <div key={`inline-${type}`} className="mb-3">
                       <Form.Check
                         inline
                         label="I agree to the guildlines of the contest, including parental consent if needed."
                         name="group1"
-                        type={type}
+                        type={"radio"}
                         onChange={(e) => {
                           setAgree(true);
                         }}
@@ -273,7 +273,7 @@ function Contests() {
                         inline
                         label="I do not agree to the guildlines of the contest."
                         name="group1"
-                        type={type}
+                        type={"radio"}
                         onChange={(e) => {
                           setAgree(false);
                         }}
@@ -303,7 +303,7 @@ function Contests() {
           title="Haiku Successfully Submitted to Contest"
           subTitle="Remember that only 1 submission is allowed per person per submission period. Additional submissions will not be considered. If there was a mistake in your submission and you wish to resubmit, please contact us at."
           extra={[
-            <Button type="primary" onClick={() => window.location.reload()}>
+            <Button onClick={() => window.location.reload()}>
               Close
             </Button>,
           ]}

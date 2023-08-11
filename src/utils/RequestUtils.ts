@@ -21,8 +21,9 @@ class RequestUtils {
     */
 
     static getDomain() {
-        return "https://blog-server-365.herokuapp.com"; // live server
-        // return "http://localhost:8080"; // local server
+       // return "https://blog-server-365.herokuapp.com"; // live server
+       // return "http://localhost:8080"; // local server
+       return "https://testing-srever-28dc3c2e4f31.herokuapp.com";
     }
 
     /**
@@ -30,15 +31,19 @@ class RequestUtils {
      * @param {String} url
      * @returns 
      */
-    static get(url, token) {
+    static get(url: string, token?: string | null | undefined) {
 
         // GET all users with the first name of Tarun: QUERY PARAMETERS vvv
         // https://blog-server-365.herokuapp.com
         // fetch("http://localhost:8080/getUsers?firstName=Tarun&lastName=Eswar")
 
+        const requestHeaders: HeadersInit = new Headers();
+        requestHeaders.set("Content-Type", "application/json");
+        requestHeaders.set("Authorization", token!);
+
         return fetch(this.getDomain() + url, {
             method: "get",
-            headers: {"Content-Type": "application/json", "Authorization": token}
+            headers: requestHeaders
         });
     }
 
@@ -48,7 +53,7 @@ class RequestUtils {
      * @param {JSONObject} object 
      * @returns 
      */
-    static post(url, object, token) {
+    static post(url: string, object: { name?: string | undefined; email?: string; subject?: string; message?: string; _id?: any; title?: string; bannerURL?: string; date?: any; description?: string; location?: string; category?: string; icon?: string; html?: string; show?: boolean; newAPI?: string; counter?: number; newsletter?: string; scheduledTime?: string; authorsNote?: string; haiku?: string; agree?: boolean; }, token?: string | null | undefined) {
 
         // fetch(): built in Javascript API for handling HTTP requests
 
@@ -60,9 +65,13 @@ class RequestUtils {
                 2. Send the request. Keep running the app, but do something WHEN the backend comes back and gives response
             Second option is better. This is called ASYNCHRONOUS HTTP Request
         */
+        const requestHeaders: HeadersInit = new Headers();
+        requestHeaders.set("Content-Type", "application/json");
+        requestHeaders.set("Authorization", token!);
+
         return fetch(this.getDomain() + url, {
             method: "post", // type of http request
-            headers: {"Content-Type": "application/json", "Authorization": token}, // "options" for an HTTP request. JSON = Javascript Object
+            headers: requestHeaders, // "options" for an HTTP request. JSON = Javascript Object
             body: JSON.stringify(object)// "object" that you want to give backend
         });
     }

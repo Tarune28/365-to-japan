@@ -2,13 +2,13 @@
 import React from "react";
 import "./BlogBanner.css";
 import moment from "moment";
-import { Avatar, Tooltip } from "antd";
+import { Avatar, Skeleton, Tooltip } from "antd";
 
 // Images
 import Tarun from "../../img/about/profile.png";
 import Brett from "../../img/about/brett.jpg";
 
-function BlogBanner(props) {
+function BlogBanner(props?: { pageInfo: { bannerURL?: any; title?: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; date?: moment.MomentInput; location?: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }, loading: boolean | undefined }) {
   return (
     <>
       <link
@@ -18,7 +18,7 @@ function BlogBanner(props) {
       <section
         className="blog-banner"
         style={{
-          background: `url(${props.pageInfo.bannerURL}) center center / cover no-repeat scroll`,
+           background: props!.loading ? "" : `url(${props!.pageInfo.bannerURL}) center center / cover no-repeat scroll`,
         }}
       >
         <div
@@ -38,7 +38,7 @@ function BlogBanner(props) {
         >
           <h2 style={{ fontFamily: "Crimson Text" }}>
             <div className="w3-black1" style={{ zIndex: "10" }}>
-              {props.pageInfo.title}
+              {props!.loading ? <Skeleton paragraph={{rows: 0}}></Skeleton> : props!.pageInfo.title}
             </div>
           </h2>
           <nav aria-label="breadcrumb" className="banner-breadcrumb">
@@ -46,7 +46,7 @@ function BlogBanner(props) {
               <div style={{ width: "100%", textAlign: "center" }}>
                 <li className="breadcrumb-item date">
                   <a style={{ color: "#F08811" }}>
-                    {moment(props.pageInfo.date).format("YYYY") + "年 " + moment(props.pageInfo.date).format("MM") + "月 " + moment(props.pageInfo.date).format("DD") + "日 " }
+                    {moment(props!.pageInfo.date).format("YYYY") + "年 " + moment(props!.pageInfo.date).format("MM") + "月 " + moment(props!.pageInfo.date).format("DD") + "日 " }
                   </a>
                 </li>
               </div>
@@ -58,7 +58,7 @@ function BlogBanner(props) {
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
                 <a style={{ color: "white" }}>
-                  {props.pageInfo.location}
+                  {props!.pageInfo.location}
                 </a>
               </li>
             </ol>
@@ -74,15 +74,19 @@ function BlogBanner(props) {
             }}
           >
             <Tooltip title="Tarun Eswar: Primary Author" placement="top">
-              <Avatar src={Tarun} className="imgBl" />
+              {props!.loading ? <Skeleton avatar title={false} paragraph={{rows: 0}}></Skeleton> : <Avatar src={Tarun} className="imgBl" />
+              }
+              
+              
             </Tooltip>
             <Tooltip title="Brett Murphy Hunt: Editor" placement="top">
-              <Avatar src={Brett} className="imgBl" />
+            {props!.loading ? <Skeleton avatar title={false} paragraph={{rows: 0}}></Skeleton> : <Avatar src={Brett} className="imgBl" />
+              }
             </Tooltip>
           </Avatar.Group>
         </div>
       </section>
-    </>
+      </>
   );
 }
 
