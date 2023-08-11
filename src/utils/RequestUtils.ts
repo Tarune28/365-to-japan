@@ -21,9 +21,9 @@ class RequestUtils {
     */
 
     static getDomain() {
-       // return "https://blog-server-365.herokuapp.com"; // live server
+        return "https://blog-server-365.herokuapp.com"; // live server
        // return "http://localhost:8080"; // local server
-       return "https://testing-srever-28dc3c2e4f31.herokuapp.com";
+     //  return "https://testing-srever-28dc3c2e4f31.herokuapp.com";
     }
 
     /**

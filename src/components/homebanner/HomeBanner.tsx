@@ -127,7 +127,7 @@ function HomeBanner() {
             >
               <Carousel
                 className="my-auto content1"
-                show={4.5}
+                show={window.innerWidth > 700 ? 4.5 : 2}
                 slide={1}
                 swiping={true}
                 leftArrow={
