@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="https://365tojapan.com/static/media/365.e1fa59e3b9316a70ac9d.png" alt="365tojapanreact" width="150" style="padding-top: 50px"/>
+  <img src="https://365tojapan.com/static/media/365.e1fa59e3b9316a70ac9d.png" alt="365tojapanreact" width="150" style="padding-top: 100px"/>
 
   &#xa0;
 
