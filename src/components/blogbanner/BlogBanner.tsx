@@ -38,7 +38,7 @@ function BlogBanner(props?: { pageInfo: { bannerURL?: any; title?: string | numb
         >
           <h2 style={{ fontFamily: "Crimson Text" }}>
             <div className="w3-black1" style={{ zIndex: "10" }}>
-              {props!.loading ? <Skeleton paragraph={{rows: 0}}></Skeleton> : props!.pageInfo.title}
+              {props!.loading ? <Skeleton paragraph={{rows: 0}} active={true}></Skeleton> : props!.pageInfo.title}
             </div>
           </h2>
           <nav aria-label="breadcrumb" className="banner-breadcrumb">
@@ -74,13 +74,13 @@ function BlogBanner(props?: { pageInfo: { bannerURL?: any; title?: string | numb
             }}
           >
             <Tooltip title="Tarun Eswar: Primary Author" placement="top">
-              {props!.loading ? <Skeleton avatar title={false} paragraph={{rows: 0}}></Skeleton> : <Avatar src={Tarun} className="imgBl" />
+              {props!.loading ? <Skeleton avatar title={false} paragraph={{rows: 0}} active={true}></Skeleton> : <Avatar src={Tarun} className="imgBl" />
               }
               
               
             </Tooltip>
             <Tooltip title="Brett Murphy Hunt: Editor" placement="top">
-            {props!.loading ? <Skeleton avatar title={false} paragraph={{rows: 0}}></Skeleton> : <Avatar src={Brett} className="imgBl" />
+            {props!.loading ? <Skeleton avatar title={false} paragraph={{rows: 0}} active={true}></Skeleton> : <Avatar src={Brett} className="imgBl" />
               }
             </Tooltip>
           </Avatar.Group>

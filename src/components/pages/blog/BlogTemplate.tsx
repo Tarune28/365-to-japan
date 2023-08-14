@@ -108,7 +108,7 @@ function BlogTemplate() {
                   },
                 }}
               ></ConfigProvider>
-              <Skeleton paragraph={{ rows: 20 }} title={false}/>
+              <Skeleton paragraph={{ rows: 20 }} title={false} active={true}/>
               </div> :
           <div style={{ paddingLeft: "2vw", paddingRight: "2vw" }}>
   

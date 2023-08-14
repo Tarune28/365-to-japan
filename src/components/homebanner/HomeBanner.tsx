@@ -7,14 +7,14 @@ import {
   RightOutlined,
   StarOutlined,
 } from "@ant-design/icons";
-import { Card, Modal } from "antd";
-import { useState } from "react";
+import { Card, Modal, notification } from "antd";
+import React, { useState,useMemo, useEffect } from "react";
 import { Carousel } from "@trendyol-js/react-carousel";
 import ReactDOM from "react-dom";
 import "./HomeBanner.css";
+import type { NotificationPlacement } from 'antd/es/notification/interface';
 
 // Images
-import award from "./img/365tojapan.png";
 import image1 from "../../img/home/cover-images/416B2A12-AB00-4FC4-9EB5-E633297FB8C2.jpg"
 import image2 from "../../img/home/cover-images/IMG_9258.jpg"
 import image3 from "../../img/home/cover-images/IMG_9280.jpg"
@@ -28,19 +28,31 @@ import image10 from "../../img/home/cover-images/IMG_9557.jpg"
 import image11 from "../../img/home/cover-images/IMG_9676.jpg"
 import image12 from "../../img/home/cover-images/IMG_9840.jpg"
 
+
+const Context = React.createContext({ name: 'Default' });
+
 function HomeBanner() {
-  let [showModal, setShowModal] = useState(false);
 
-  function showEventModal() {
-    setShowModal(true);
-  }
+  const [api, contextHolder] = notification.useNotification();
 
-  function hideEventModal() {
-    setShowModal(false);
-  }
+  const openNotification = (placement: NotificationPlacement) => {
+    api.info({
+      message: `Check out 365toJapan's haiku contest!`,
+      description: 'Learn more under the contests tab.',
+      placement,
+    });
+  };
+
+  const contextValue = useMemo(() => ({ name: 'Ant Design' }), []);
+
+  useEffect(() => {
+    openNotification('bottomRight')
+  }, []);
 
   return (
     <>
+    <Context.Provider value={contextValue}>
+      {contextHolder}
       <section className="home_banner_area" style={{ background: "#fff" }}>
         <div className="banner_inner d-flex align-items-center">
           <div className="container">
@@ -223,22 +235,7 @@ function HomeBanner() {
           </div>
         </div>
       </section>
-      <Modal
-        open={showModal}
-        onCancel={hideEventModal}
-        centered
-        style={{ marginTop: "40px" }}
-        footer={null}
-        title="365toJapan Rated as Top 60 for 2023!"
-      >
-        <h6 style={{ fontFamily: "'Open Sans', -apple-system", color: "grey" }}>
-          365toJapan has been rated as one of the top 60 blogs to watch in 2023
-          by Feedspot. Learn more{" "}
-          <a href="https://blog.feedspot.com/japan_blogs/">here.</a>
-        </h6>
-        <br></br>
-        <img src={award} className="center" />
-      </Modal>
+      </Context.Provider>
     </>
   );
 }

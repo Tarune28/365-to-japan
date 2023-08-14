@@ -4,7 +4,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Modal, Button } from "antd";
 
 // Logo Image
-import logo from "../../365.png";
+import logo from "../../img/main-logo/365.png";
 
 // Stylesheets
 import "./Header.css";
