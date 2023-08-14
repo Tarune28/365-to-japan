@@ -15,18 +15,18 @@ import "./HomeBanner.css";
 import type { NotificationPlacement } from 'antd/es/notification/interface';
 
 // Images
-import image1 from "../../img/home/cover-images/416B2A12-AB00-4FC4-9EB5-E633297FB8C2.jpg"
-import image2 from "../../img/home/cover-images/IMG_9258.jpg"
-import image3 from "../../img/home/cover-images/IMG_9280.jpg"
-import image4 from "../../img/home/cover-images/IMG_9335.jpg"
-import image5 from "../../img/home/cover-images/IMG_9360.jpg"
-import image6 from "../../img/home/cover-images/IMG_9373.jpg"
-import image7 from "../../img/home/cover-images/IMG_9403.jpg"
-import image8 from "../../img/home/cover-images/IMG_9408.jpg"
-import image9 from "../../img/home/cover-images/IMG_9522.jpg"
-import image10 from "../../img/home/cover-images/IMG_9557.jpg"
-import image11 from "../../img/home/cover-images/IMG_9676.jpg"
-import image12 from "../../img/home/cover-images/IMG_9840.jpg"
+import image1 from "../../img/home/cover-images/416B2A12-AB00-4FC4-9EB5-E633297FB8C2-min.webp"
+import image2 from "../../img/home/cover-images/IMG_9258-min.webp"
+import image3 from "../../img/home/cover-images/IMG_9280-min.webp"
+import image4 from "../../img/home/cover-images/IMG_9335-min.webp"
+import image5 from "../../img/home/cover-images/IMG_9360-min.webp"
+import image6 from "../../img/home/cover-images/IMG_9373-min.webp"
+import image7 from "../../img/home/cover-images/IMG_9403-min.webp"
+import image8 from "../../img/home/cover-images/IMG_9408-min.webp"
+import image9 from "../../img/home/cover-images/IMG_9522-min.webp"
+import image10 from "../../img/home/cover-images/IMG_9557-min.webp"
+import image11 from "../../img/home/cover-images/IMG_9676-min.webp"
+import image12 from "../../img/home/cover-images/IMG_9840-min.webp"
 
 
 const Context = React.createContext({ name: 'Default' });
@@ -162,72 +162,84 @@ function HomeBanner() {
                   <img
                     className="cover-img"
                     src={image1}
+                    alt="Japan economcics center"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image2}
+                    alt="lake in Japan"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image3}
+                    alt="tree in shrine in Japan"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image4}
+                    alt="leaves of shrine in Japan"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image5}
+                    alt="lake view"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image6}
+                    alt="bark tree in Japan"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image7}
+                    alt="lake Biwa Japan"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image8}
+                    alt="Higashinotoin street Japan"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image9}
+                    alt="gion district Japan"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image10}
+                    alt="gion district Japan"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image11}
+                    alt="taiko drumming"
                   ></img>
                 </div>
                 <div className="cover-img-wrapper">
                   <img
                     className="cover-img"
                     src={image12}
+                    alt="7/11 in Japan"
                   ></img>
                 </div>
               </Carousel>

@@ -9,7 +9,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
 // Images
-import pageImage from "../../../img/contact/contactUs.jpg";
+import pageImage from "../../../img/contact/contactUs.webp";
 
 // Stylesheets
 import "./ContactPage.css";

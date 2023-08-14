@@ -1,7 +1,7 @@
 
 .blog-banner {
   position: relative;
-  padding: 205px 0 150px !important;
+  padding: 255px 0 160px !important;
 
 }
 
@@ -194,4 +194,8 @@ img {
 .ant-skeleton {
   margin-left: auto!important;
   margin-right: auto!important;
+}
+
+.blog-title {
+  font-style: italic;
 }

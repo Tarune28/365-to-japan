@@ -28,7 +28,7 @@ function BlogBanner(props?: { pageInfo: { bannerURL?: any; title?: string | numb
             left: "0",
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            backgroundColor: "rgba(0, 0, 0, 0.43)",
             zIndex: "0",
           }}
         ></div>
@@ -37,7 +37,7 @@ function BlogBanner(props?: { pageInfo: { bannerURL?: any; title?: string | numb
           style={{ position: "relative", zIndex: "10" }}
         >
           <h2 style={{ fontFamily: "Crimson Text" }}>
-            <div className="w3-black1" style={{ zIndex: "10" }}>
+            <div className="w3-black1 blog-title" style={{ zIndex: "10" }}>
               {props!.loading ? <Skeleton paragraph={{rows: 0}} active={true}></Skeleton> : props!.pageInfo.title}
             </div>
           </h2>

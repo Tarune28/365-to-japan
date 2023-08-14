@@ -3,7 +3,6 @@ Allow: /
 Allow: /blogs
 Allow: /about
 Allow: /contact
-Disallow: https://365tojapan.com
 Disallow: /dashboard
 Disallow: /login
 Disallow: /css/

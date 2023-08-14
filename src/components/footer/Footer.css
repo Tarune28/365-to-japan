@@ -28,6 +28,10 @@
   margin-left: 0px !important;
 }
 
+.text-white a:hover {
+  color: rgb(255,144,77) !important;
+}
+
 @media screen and (max-width: 550px) {
   .div {
     display: inline !important;

@@ -48,13 +48,13 @@ function BlogCard(props: { blogInfo: { [x: string]: string | number | boolean | 
               loading={loading}
             >
               <div className="blog_item_img">
-                <a className="blog_item_date">
+                <span className="blog_item_date">
                   <h3>{moment(date).format("DD")}</h3>
                   <p>
                     {moment(date).format("MMM")},{" "}
                     {moment(date).format("YYYY")}
                   </p>
-                </a>
+                </span>
               </div>
               <Meta
                 title={props.blogInfo["title"]}

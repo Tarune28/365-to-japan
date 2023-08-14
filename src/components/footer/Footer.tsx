@@ -117,6 +117,9 @@ function Footer() {
           &copy; {new Date().getFullYear()} Copyright:{" "}
           <a className="text-white" href="https://365toJapan.com/">
             365toJapan.com
+          </a> | {" "}
+          <a className="text-white" target="0" href="https://github.com/Tarune28/365-to-japan/blob/master/Terms-Conditions.md">
+             Terms & Conditions
           </a>
         </div>
       </MDBFooter>

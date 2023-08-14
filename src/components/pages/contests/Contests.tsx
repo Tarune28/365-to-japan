@@ -11,7 +11,7 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
 // Images
-import pageImage from "../../../img/contests/background.jpeg";
+import pageImage from "../../../img/contests/background.webp";
 
 // Stylesheets
 import "./Contests.css";

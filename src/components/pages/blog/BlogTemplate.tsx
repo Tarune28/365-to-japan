@@ -83,20 +83,12 @@ function BlogTemplate() {
       .catch((error) => {
         console.log(error);
       });
-
-    // RequestUtils.post("/blog/updateCounter", {
-    //   n ame: params.id,
-    // })
-    //   .then((res) => res.json())
-    //   .then((res) => {
-        
-    //   });
   }
 
   return (
     <div>
       <BlogBanner pageInfo={blogPostData} loading={loading}></BlogBanner>
-      <section className="blog-area area-padding">
+      <section className="blog-areag">
         <div className="container grey">
         {loading ?
             <div className="loading">
@@ -111,7 +103,7 @@ function BlogTemplate() {
               <Skeleton paragraph={{ rows: 20 }} title={false} active={true}/>
               </div> :
           <div style={{ paddingLeft: "2vw", paddingRight: "2vw" }}>
-  
+             
             <div
             className="content"
             dangerouslySetInnerHTML={{ __html: blogPostData!["html"]! }}
@@ -119,7 +111,7 @@ function BlogTemplate() {
           
             
             <hr></hr>
-            <div className="row" style={{ padding: "0px", margin: "0px" }}>
+            <div className="row info1" style={{ padding: "0px", margin: "0px" }}>
               <p id="count" className="col-6">
                 {views}
               </p>

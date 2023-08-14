@@ -8,9 +8,9 @@ import { Card, Statistic, Row, Col } from "antd";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 // Images
-import nature from "./../../img/home/nature.jpeg";
+import nature from "./../../img/home/nature.webp";
 import logo from "../../365.png";
-import street from "./../../img/home/sqbg.jpeg";
+import street from "./../../img/home/sqbg.webp";
 
 // Stylesheets
 import "./HomePreview.css";
@@ -62,7 +62,7 @@ function HomePreview(props: any) {
             <div className="col-8 col-9-ext">
               <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
                 <div className="area-heading">
-                  <h3 id="target">About 365ToJapan</h3>
+                  <h1 id="target">About 365ToJapan</h1>
                 </div>
                 <p>
                   365toJapan is a language and culture publication focused on
@@ -117,6 +117,7 @@ function HomePreview(props: any) {
                       size="large"
                       href="/about"
                     >
+                      <span className="screen-reader-text">Details</span>
                       Learn More
                     </Button>
                   </div>
@@ -124,7 +125,7 @@ function HomePreview(props: any) {
               </AnimationOnScroll>
             </div>
             <div className="col-4 my-auto hide-show-image px-5">
-              <img src={street} className="br-50" />
+              <img src={street} className="br-50" alt="street in Japan"/>
             </div>
           </div>
         </div>
@@ -133,12 +134,12 @@ function HomePreview(props: any) {
         <div className="container information">
           <div className="row">
             <div className="col-4 my-auto hide-show-image px-5">
-              <img src={nature} className="br-50 " />
+              <img src={nature} className="br-50 " alt="nature in Japan"/>
             </div>
             <div className="col-8 col-9-ext">
               <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
                 <div className="area-heading">
-                  <h3 id="target">365ToJapan Contests</h3>
+                  <h1 id="target">365ToJapan Contests</h1>
                 </div>
                 <div className="row text-center">
                   <div className="col-12 no-text-center">
@@ -215,6 +216,7 @@ function HomePreview(props: any) {
               size="large"
               href="/blogs"
             >
+              <span className="screen-reader-text">Details</span>
               View All Blogs
             </Button>
           </div>

@@ -5,7 +5,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 import { ConfigProvider, Steps } from "antd";
 
 // Images
-import pageImage from "../../../img/about/about-banner.jpg";
+import pageImage from "../../../img/about/about-banner-min.webp";
 import plane from "../../../img/about/about1.jpg";
 import code from "../../../img/about/coding.jpg";
 import lanterns from "../../../img/about/whoAbout.jpg";
