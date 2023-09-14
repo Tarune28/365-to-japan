@@ -9,6 +9,7 @@
     padding-right: 10px!important;
     margin-left: 0vw!important;
     margin-right: 0vw!important;
+    font-family: "Crimson Text", serif!important;
     /* background-color: #c4c4c4; */
   }
   .info1 {
@@ -123,6 +124,10 @@ img {
   /* font-family: 'Noto Serif Vithkuqi', serif!important; */
 }
 
+.content img {
+  margin-bottom: 30px;
+}
+
 .content p,
 h3,
 h4 {
@@ -130,17 +135,17 @@ h4 {
   
   /* font-family: 'Noto Serif Vithkuqi', serif; */
   /* font-family: 'Noto Serif Vithkuqi', serif!important; */
-  /* font-family: "Crimson Text", serif; */
+  font-family: "Crimson Text", serif;
 }
 
 .content h2, h1 {
-  font-family: 'Noto Serif Vithkuqi', serif;
+  font-family: "Crimson Text", serif!important;
 }
 
 .content ol {
   padding-left: 40px;
   color: #373737!important;
-  font-family: 'Noto Serif Vithkuqi', serif;
+  font-family: "Crimson Text", serif!important;
 }
 
 .content ol li {
@@ -163,7 +168,7 @@ ul li li {
 }
 
 u {
-  font-family: 'Noto Serif Vithkuqi', serif;
+  font-family: "Crimson Text", serif!important;
 }
 
 .starter:first-letter {
