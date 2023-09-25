@@ -153,7 +153,7 @@ function AboutPage() {
                         </div>
                       </a>
                     </div>
-                    <div className="container1 mx-4">
+                    {/* <div className="container1 mx-4">
                       <a
                         target="0"
                         href="https://www.linkedin.com/in/isabella-palit-351600262/"
@@ -167,7 +167,7 @@ function AboutPage() {
                           </div>
                         </div>
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

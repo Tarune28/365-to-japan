@@ -61,8 +61,8 @@ function HomePreview(props: any) {
           <div className="row">
             <div className="col-8 col-9-ext">
               <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
-                <div className="area-heading">
-                  <h1 id="target">About 365ToJapan</h1>
+                <div className="area-heading" style={{ fontFamily: "inherit" }}>
+                  <h3 id="target">About 365ToJapan</h3>
                 </div>
                 <p>
                   365toJapan is a language and culture publication focused on
@@ -71,7 +71,7 @@ function HomePreview(props: any) {
                   primary author—Tarun Eswar—to reflection and share his
                   progress learning Japanese over the course of 5+ years. As a
                   software engineer, Tarun was able to leverage his skills in
-                  fullstack development to build this platform from scratch.
+                  fullstack development to build this platform from scratch, making 365toJapan one of few blogging platforms with its own custom framework. The platform was built using React, Node, Express, and MongoDB, hosted through Heroku Dynos and Firebase.
                 </p>
                 <br></br>
                 <div className="row text-center mx-auto">
@@ -138,8 +138,8 @@ function HomePreview(props: any) {
             </div>
             <div className="col-8 col-9-ext">
               <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
-                <div className="area-heading">
-                  <h1 id="target">365ToJapan Contests</h1>
+                <div className="area-heading" style={{ fontFamily: "inherit" }}>
+                  <h3 id="target" style={{fontFamily: "Mukta, sans-serif"}}>365ToJapan Contests</h3>
                 </div>
                 <div className="row text-center">
                   <div className="col-12 no-text-center">
