@@ -13,6 +13,7 @@ import NotFoundPage from "./components/pages/404/NotFoundPage";
 import DashboardPage from "./components/pages/dashboard/DashboardPage";
 import Contests from "./components/pages/contests/Contests";
 import React from "react";
+import Unsubcribe from "./components/pages/unsubscribe/Unsubscribe";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="blog/:id" element={<BlogTemplate />}/>
             <Route path="dashboard" element={<DashboardPage/>}/>
             <Route path="contests" element={<Contests/>}/>
+            <Route path="unsubscribe" element={<Unsubcribe/>}/>
             <Route path="*" element={<NotFoundPage/>}/>
         </Routes>
       </BrowserRouter>

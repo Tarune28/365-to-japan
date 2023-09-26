@@ -11,7 +11,7 @@ function NotFoundPage() {
     >
       <Result
         status="error"
-        title="404: Page does not exist. Contact an administrator if you believe this is an error."
+        title="404 - Contact an administrator if you believe this is an error."
         className="my-auto mx-auto"
         style={{width: "30%"}}
         extra={
