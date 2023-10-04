@@ -1,3 +1,13 @@
 .rounded1 {
     border-radius: 1rem!important;
 }
+.btn-grey {
+    background-color: white!important;
+    border-color: grey!important;
+}
+
+.btn-grey:hover {
+    background-color: white!important;
+    border-color: rgb(179, 179, 179)!important;
+    color: rgb(179, 179, 179)!important;
+}

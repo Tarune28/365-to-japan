@@ -1,7 +1,8 @@
 import Card from "react-bootstrap/Card";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
+import {Button} from "antd";
 import "./BlogDetails.css";
 
 function BlogDetails(props: { blogInfo: { [x: string]: any; }; deleteHandler: (arg0: any) => void; editHandler: (arg0: any) => void; showHandler: (arg0: any) => void; }) {
@@ -11,34 +12,29 @@ function BlogDetails(props: { blogInfo: { [x: string]: any; }; deleteHandler: (a
         <Card.Title>{props.blogInfo["title"]}</Card.Title>
         <ButtonToolbar>
           <ButtonGroup className="me-2" aria-label="Second group">
-            <button
-              className="btn pr-3  btn-outline-danger"
+            <Button
+              danger
               onClick={() => {
                 props.deleteHandler(props.blogInfo["_id"]);
               }}
             >
               Delete
-            </button>
-            <button
-              className="btn pr-3  btn-outline-secondary"
+            </Button>
+            <Button
+              className="btn-grey mx-2"
               onClick={() => {
                 props.editHandler(props.blogInfo["_id"]);
               }}
             >
               Edit
-            </button>
-            <button
-              className={
-                props.blogInfo["show"]
-                  ? "btn pr-3  btn-outline-primary"
-                  : "btn pr-3  btn-outline-success"
-              }
+            </Button>
+            <Button
               onClick={() => {
                 props.showHandler(props.blogInfo["_id"]);
               }}
             >
               {props.blogInfo["show"] ? "Hide" : "Show"}
-            </button>
+            </Button>
           </ButtonGroup>
         </ButtonToolbar>
       </Card.Body>

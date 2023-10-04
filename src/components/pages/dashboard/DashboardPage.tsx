@@ -1,8 +1,14 @@
+// load theme styles with webpack
+require('medium-editor/dist/css/medium-editor.css');
+require('medium-editor/dist/css/themes/default.css');
+ 
+
 // Authentication
 import { auth } from "../../../Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 // Imports
+import type { UploadProps } from 'antd';
 import React, { useEffect, useState } from "react";
 import RequestUtils from "../../../utils/RequestUtils";
 import { EditorState } from "draft-js";
@@ -10,16 +16,16 @@ import { Editor } from "react-draft-wysiwyg";
 import createImagePlugin from "@draft-js-plugins/image";
 import { useNavigate } from "react-router";
 import { convertToHTML } from "draft-convert";
-import moment from "moment";
+import moment from 'moment';
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Datetime from "react-datetime";
 import MomentUtils from "../../../utils/MomentUtils";
-import { ConfigProvider, Tabs } from "antd";
+import { ConfigProvider, Tabs, Modal as AModal, Radio, Checkbox, Button, Input, Upload } from "antd";
 import BlogDetails from "../../blogdetails/BlogDetails";
-import { Button, Modal } from "react-bootstrap";
-
+import { Modal } from "react-bootstrap";
+// var Editor = require('react-medium-editor').default;
 // Stylesheets
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "./DashboardPage.css";
@@ -33,6 +39,8 @@ import PageBanner from "../../pagebanner/PageBanner";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../../../Firebase";
 import { v4 } from "uuid";
+import { UploadOutlined } from "@ant-design/icons";
+import TextArea from "antd/es/input/TextArea";
 
 function DashboardPage() {
   // CONSTS AND FUNCTIONS
@@ -54,6 +62,15 @@ function DashboardPage() {
   };
 
 
+  const props: UploadProps = {
+    name: 'file',
+    onChange(info) {
+      setImageUpload(info.file.originFileObj);
+      // setImageUpload(file);
+    },
+  };
+
+
   const [user, loading] = useAuthState(auth);
 
 
@@ -63,6 +80,8 @@ function DashboardPage() {
   const [imageUpload, setImageUpload] = useState<File>();
 
   const [imageUrls, setImageUrls] = useState<String[]>([]);
+
+  let [newsletter, setNewsletter] = useState(false);
 
   let [showModal, setShowModal] = useState(false);
 
@@ -81,6 +100,8 @@ function DashboardPage() {
   let [currentCategory, setCurrentCategory] = useState("");
 
   let [currentIcon, setCurrentIcon] = useState("");
+
+  let [message, setMessage] = useState("");
 
   let [currentPostTime, setCurrentPostTime] = useState(
     MomentUtils.roundUp(moment(new Date()), "hour").add(1, "hour")
@@ -271,6 +292,11 @@ function DashboardPage() {
 
     setMainDesc(desc);
 
+    if(currentEventName == "" || currentBannerURL == "" || currentPostTime == null || convertedContent == "" || currentCategory == "" || currentIcon == ""){
+      setMessage("Please fill out all fields!");
+      return;
+    }
+
     let reqObj = {
       title: currentEventName,
       bannerURL: currentBannerURL,
@@ -284,6 +310,7 @@ function DashboardPage() {
       newAPI: currentEventName.replace(/[^\w]/g, ""),
       counter: 0,
       newsletter: mail,
+      newsletterSent: newsletter,
     };
 
     RequestUtils.post("/blog/create", reqObj, (user as any).accessToken)
@@ -354,6 +381,11 @@ function DashboardPage() {
   function editBlog(e?: any) {
     if (e != null) {
       e.preventDefault();
+    }
+
+    if (currentID == "") {
+      setMessage("Please select a blog to edit!");
+      return;
     }
 
     let desc =
@@ -428,48 +460,70 @@ function DashboardPage() {
               <Form onSubmit={(e) => e.preventDefault()}>
                 <Form.Group className="mb-3 w-25">
                   <Form.Label>Title</Form.Label>
-                  <Form.Control
+                  <Input type="text" placeholder="Enter blog title" value={currentEventName}
+                    onChange={(e) => {
+                      setCurrentEventName(e.target.value);
+                    }}/>
+                  {/* <Form.Control
                     type="text"
                     placeholder="Enter blog title"
                     value={currentEventName}
                     onChange={(e) => {
                       setCurrentEventName(e.target.value);
                     }}
-                  />
+                  /> */}
                 </Form.Group>
 
                 <Form.Group className="mb-3 w-25">
                   <Form.Label>Location (optional)</Form.Label>
-                  <Form.Control
+                  <Input type="text"
+                    placeholder="Enter blog location"
+                    value={currentLocationName}
+                    onChange={(e) => {
+                      setCurrentLocationName(e.target.value);
+                    }}/>
+                  {/* <Form.Control
                     type="text"
                     placeholder="Enter blog location"
                     value={currentLocationName}
                     onChange={(e) => {
                       setCurrentLocationName(e.target.value);
                     }}
-                  />
+                  /> */}
                 </Form.Group>
                 <Form.Group className="mb-3 w-25">
                   <Form.Label>Category</Form.Label>
-                  <Form.Control
+                  <Input type="text"
+                    placeholder="i.e. informational"
+                    value={currentCategory}
+                    onChange={(e) => {
+                      setCurrentCategory(e.target.value);
+                    }}></Input>
+                  {/* <Form.Control
                     type="text"
                     placeholder="i.e. informational"
                     value={currentCategory}
                     onChange={(e) => {
                       setCurrentCategory(e.target.value);
                     }}
-                  />
+                  /> */}
                 </Form.Group>
                 <Form.Group className="mb-3 w-25">
                   <Form.Label>Icon</Form.Label>
-                  <Form.Control
+                  <Input type="text"
+                    placeholder="i.e. fa-pencil"
+                    value={currentIcon}
+                    onChange={(e) => {
+                      setCurrentIcon(e.target.value);
+                    }}></Input>
+                  {/* <Form.Control
                     type="text"
                     placeholder="i.e. fa-pencil"
                     value={currentIcon}
                     onChange={(e) => {
                       setCurrentIcon(e.target.value);
                     }}
-                  />
+                  /> */}
                 </Form.Group>
                 <Row>
                   <Col>
@@ -483,30 +537,40 @@ function DashboardPage() {
                     </Form.Group>
                   </Col>
                 </Row>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3 w-25">
                   <Form.Label>Blog File Storage</Form.Label>
-                  <Form.Control
+                  <Input type="text"
+                    placeholder="Enter file location"
+                    value={currentFileName}
+                    onChange={(e) => {
+                      setCurrentFileName(e.target.value);
+                    }}></Input>
+                  {/* <Form.Control
                     type="text"
                     placeholder="Enter file location"
                     value={currentFileName}
                     onChange={(e) => {
                       setCurrentFileName(e.target.value);
                     }}
-                  />
+                  /> */}
                 </Form.Group>
                 <Form.Group controlId="formFileMultiple" className="mb-3">
-                  <Form.Label>Upload Files</Form.Label>
-                  <Form.Control
+                  <Form.Label>Upload Files</Form.Label><br></br>
+                  <Upload {...props}>
+    <Button icon={<UploadOutlined />}>Click to Upload</Button>
+  </Upload>
+                  {/* <Form.Control
                     className="mb-4"
                     type="file"
                     multiple
                     onChange={(event: React.ChangeEvent) => {
                       const target= event.target as HTMLInputElement;
                       const file = target.files![0];
+                      console.log(file)
                       setImageUpload(file);
-                    }}
-                  />
-                  <Button onClick={uploadFile}>Insert</Button>
+                    }} */}
+                  {/* /> */}
+                  <Button onClick={uploadFile} className="mt-3">Insert</Button>
                   {imageUrls.map((url) => {
                     return (
                       <>
@@ -516,18 +580,15 @@ function DashboardPage() {
                   })}
                 </Form.Group>
                 <Form.Group className="mb-3">
-                  <Form.Label>Cover Image URL</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter cover image url"
-                    value={currentBannerURL}
+                  <Form.Label>Cover Image URL</Form.Label><br></br>
+                  <Input placeholder="Enter cover image url" value={currentBannerURL}
                     onChange={(e) => {
                       setCurrentBannerURL(e.target.value);
-                    }}
-                  />
+                    }} className="w-25"/>
+              
                 </Form.Group>
                 <Form.Group className="mb-3">
-                  <Form.Label>HTML insert</Form.Label>
+                  <Form.Label>Editor</Form.Label>
                   <Editor
                     editorState={editorState}
                     onEditorStateChange={handleEditorChange}
@@ -537,7 +598,21 @@ function DashboardPage() {
                   />
                   <Form.Group className="mb-3 form-inline">
                     <Form.Label>HTML Adjustments</Form.Label>
-                    <Form.Control
+                    <TextArea
+                    rows={
+                      convertedContent != null
+                        ? convertedContent.toString().length / 90
+                        : 0
+                    }
+                    value={convertedContent.replaceAll("</p>", "</P>\n")}
+                      onChange={(e) => {
+                        setConvertedContent(e.target.value);
+                        createMarkup(convertedContent);
+                      }}
+                    >
+                    
+                    </TextArea>
+                    {/* <Form.Control
                       type="text"
                       as="textarea"
                       rows={
@@ -551,7 +626,7 @@ function DashboardPage() {
                         setConvertedContent(e.target.value);
                         createMarkup(convertedContent);
                       }}
-                    />
+                    /> */}
                   </Form.Group>
                   <pre
                     className="preview"
@@ -560,45 +635,47 @@ function DashboardPage() {
                   ></pre>
                   <br>
                   </br>
-                  <div>
-                      <p>
-                      title: {currentEventName} <br></br>
-      bannerURL: {currentBannerURL} <br></br>
-      date: {currentPostTime.format("MM/DD/YY hh:mm A")} <br></br>
-      description: {mainDesc} <br></br>
-      location: {currentLocationName} <br></br>
-      category: {currentCategory} <br></br>
-      icon: {currentIcon} <br></br>
-      show: {true} <br></br>
-      counter: {0} <br></br>
+                  <div className="json">
+                  <span className="starter-brace">{"{"}</span>
+                      <p><span className="brace">{'"metadata" : {'}</span><br></br>
+                      <span className="ident">
+                      title: </span>{currentEventName ? currentEventName : "null"} <br></br>
+                      <span className="ident">bannerURL: </span> {currentBannerURL ? currentBannerURL : "null"} <br></br>
+                      <span className="ident">date:</span> {currentPostTime.format("MM/DD/YY hh:mm A")} <br></br>
+                      <span className="ident">description:</span> {mainDesc ? mainDesc : "null"} <br></br>
+                      <span className="ident">location:</span> {currentLocationName ? currentLocationName : "null"} <br></br>
+                      <span className="ident">category:</span> {currentCategory ? currentCategory : "null"} <br></br>
+                      <span className="ident">icon:</span> {currentIcon ? currentIcon : "null"} <br></br>
+                      <span className="ident">show:</span> {"true"}<br></br>
+                      <span className="ident">counter:</span> {0}<br></br>
+                      <span className="brace">{"}"}</span> <br></br>
+                      <span className="starter-brace">{"}"}</span>
                       </p>
-
+                      
                   </div>
+                  <br></br>
+                  <Checkbox onChange={(e) => setNewsletter(e.target.checked)}>Newsletter email?</Checkbox>
                 </Form.Group>
                 <Button
                   onClick={(e) => postBlog()}
-                  variant="primary"
-                  type="submit"
                 >
                   Post
                 </Button>
                 <Button
                   className="mx-2"
                   onClick={(e) => editBlog()}
-                  variant="primary"
-                  type="submit"
                 >
-                  Save
+                  Save Changes
                 </Button>
                 <Button
                   className="mx-2"
                   onClick={(e) => setShowModal(true)}
-                  variant="primary"
-                  type="submit"
                 >
                   Post Later
                 </Button>
+                
               </Form>
+              <p className="error">{message}</p>
             </Tabs.TabPane>
             <Tabs.TabPane tab="Manage Blogs" key="2">
               <Row>
@@ -620,15 +697,14 @@ function DashboardPage() {
             </Tabs.TabPane>
           </Tabs>
         </ConfigProvider>
-        <br />
-        <button
-          className="btn pr-3 btn-outline-danger"
+        <Button
+          danger
           onClick={() => {
             navigate("/logout");
           }}
         >
           Logout
-        </button>
+        </Button>
       </section>
       <Modal show={showModal} onHide={hideEventModal} centered>
         <Modal.Header closeButton>
@@ -641,7 +717,7 @@ function DashboardPage() {
               onChange={handleStartDateTimeChange}
             />
             <br></br>
-            <Button variant="outline-success" type="submit" className="mb-3">
+            <Button htmlType="submit" className="mb-3">
               Submit
             </Button>
           </Form>
