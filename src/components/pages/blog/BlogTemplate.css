@@ -131,7 +131,7 @@ img {
 .content p,
 h3,
 h4 {
-  color: #373737;
+  color: #373737!important;
   
   /* font-family: 'Noto Serif Vithkuqi', serif; */
   /* font-family: 'Noto Serif Vithkuqi', serif!important; */

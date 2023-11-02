@@ -93,7 +93,7 @@ function Contests() {
             >
               <Steps
                 direction="vertical"
-                current={1}
+                current={2}
                 items={[
                   {
                     title: "Contest Start",
@@ -105,11 +105,11 @@ function Contests() {
                   },
                   {
                     title: "Contest Conclusion",
-                    description: "September 30th",
+                    description: "October 20th",
                   },
                   {
                     title: "Release of Results",
-                    description: "October 10th - October 30th",
+                    description: "October 20th - November 30th",
                   },
                 ]}
               />
