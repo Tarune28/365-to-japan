@@ -6,6 +6,10 @@
 
 .contestHeader {
     font-family: 'Open Sans', sans-serif;
-    color: #36B192;
+    color: #000000;
     font-weight: 800;
+}
+
+.results {
+    color: #FF904D;
 }

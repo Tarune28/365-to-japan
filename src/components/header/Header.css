@@ -82,7 +82,7 @@ a:hover {
 
 .site-navbar {
   margin-bottom: 0px;
-  z-index: 1999;
+  z-index: 999;
   background: rgba(255, 255, 255, 0.4);
   width: 100%;
   padding: 1rem;

@@ -1,13 +1,13 @@
 // Imports
 import Header from "../../header/Header";
 import PageBanner from "../../pagebanner/PageBanner";
-import { Result } from "antd";
+import { Card, Result, TabsProps } from "antd";
 import { useState } from "react";
 import RequestUtils from "../../../utils/RequestUtils";
 import { Button } from "react-bootstrap";
 import { ConfigProvider, Row, Col, Steps } from "antd";
 import { Container } from "react-bootstrap";
-import Modal from "react-bootstrap/Modal";
+import {Modal} from "antd";
 import Form from "react-bootstrap/Form";
 
 // Images
@@ -15,6 +15,8 @@ import pageImage from "../../../img/contests/background.webp";
 
 // Stylesheets
 import "./Contests.css";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+import { InfoCircleOutlined } from "@ant-design/icons";
 
 function Contests() {
 
@@ -29,6 +31,36 @@ function Contests() {
   let [successModal, setSuccessModal] = useState(false);
 
   let [agree, setAgree] = useState(false);
+
+
+  let [bio, setBio] = useState("");
+
+  let [showModal, setShowModal] = useState(false);
+
+
+  const authorBios: { [key: string]: string; } = {
+    "adam": "Adam Haver’s writing has been featured in Popshot Quarterly, Poetry Scotland, Ballast, Braided Way, as well as other journals. He received the 2022 Willie Morris Award for Southern Poetry and previously served as Editor of the literary magazine, FOLIO. You can connect with him on Twitter: @ac_haver.",
+    "nicole": "Nicole is a current 11th grader from Vancouver, Canada. She started learning Japanese a year ago in school, and is looking forward to progressing with her language skills. Next year, she intends to visit Japan in order to improve her speaking skills.",
+    "frank": "Frank Amaya did not request an author's note.",
+  }
+
+  let showBio = (key: string) => {
+    setBio(authorBios[key]);
+    setShowModal(true);
+  };
+  
+  const items: TabsProps['items'] = [
+    {
+      key: '1',
+      label: 'Tab 1',
+      children: 'Content of Tab Pane 1',
+    },
+    {
+      key: '2',
+      label: 'Tab 2',
+      children: 'Content of Tab Pane 2',
+    },
+  ];
 
   function hideSuccessModal() {
     setSuccessModal(false);
@@ -79,10 +111,57 @@ function Contests() {
       <PageBanner
         image={pageImage}
         title="365toJapan Haiku Contest"
-        subtitle="2023 summer edition."
+        subtitle="Currently: 2023 summer edition."
       />
       <Container>
-        <Row style={{ marginTop: "80px" }}>
+      <Row className="pt-5 mt-5 mx-5">
+         
+         <h3 className="contestHeader results">
+           Results from the 2021 Summer Haiku Contest
+         </h3>
+         
+         
+         <Container>
+         <p className="description mb-5">[Released Nov. 2nd 22:42 EST]<br></br><br></br>We are happy to announce that we received many submissions from 365toJapan readers for our inaugural contest. After weeks of judging, we decided on the following three selections for their strong connections to Japanese culture and vivid descriptions. These pieces will hold their place on 365toJapan and represent the start of a haiku collection celebrated within our community. Thank you to everyone that participated, and be sure to watch out for our upcoming fall/winter contest!<br></br><br></br> —365toJapan</p>
+          <Row>
+            <Col span={7} className="mx-4">
+              
+            <Card title="Adam Haver" extra={<InfoCircleOutlined onClick={() => showBio("adam")}/>}>
+            unblinking Sandra <br></br>
+green eyes of envy<br></br>
+weeding with shadow<br></br>
+
+            </Card>
+            </Col>
+            <Col span={7} className="mx-2">
+            <Card title={"Nicole Zhang"} extra={<InfoCircleOutlined onClick={() => showBio("nicole")}/>}>
+            Pay respects and bow<br></br>
+Black cloth whips about, calves tense<br></br>
+気合, then attack.
+
+            </Card>
+            </Col>
+            <Col span={7} className="mx-4">
+            <Card title={"Frank Amaya"} extra={<InfoCircleOutlined onClick={() => showBio("frank")}/>}>
+            Koi weave through moon's glow,<br></br>
+Whispers ripple in stillness—<br></br>
+Secrets of the depths.
+
+            </Card>
+            </Col>
+            </Row>
+         </Container>
+       </Row>
+       
+
+       <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
+       <h3 className="contestHeader mx-5 mt-5 pt-5">
+           General Contest Information
+         </h3>
+
+      
+        <Row style={{ marginTop: "0px" }} className="mx-5">
+        
           <Col md={7} className="mx-5 mt-5">
             <ConfigProvider
               theme={{
@@ -93,7 +172,7 @@ function Contests() {
             >
               <Steps
                 direction="vertical"
-                current={2}
+                current={3}
                 items={[
                   {
                     title: "Contest Start",
@@ -116,14 +195,12 @@ function Contests() {
             </ConfigProvider>
           </Col>
           <Col lg={12} className="mx-5 mt-4">
-            Over the upcoming weeks, 365toJapan will host its first semi-annual
-            summer/spring haiku contest. To start off the contest, we wanted to
-            provide some important notes. (a) The contest will only accept haiku
+            365toJapan will hosts both a summer/spring and a fall/winter haiku
+            contest. Each contest follows some key notes. (a) The contest will only accept haiku
             and unfortunately not be able to consider other types of
             poetry/prose (b) The range of topics within haiku submissions is not
             restricted, but focusing on Japanese culture is encouraged (c) The
-            results of the contest will be released in the fall/winter issue of
-            365toJapan. To be clear, at this point, publication will be online
+            results of the contest will be released approximately 2 months after the contest start. To be clear, at this point, publication will be online
             only—no print version is planned at this time.
           
             <br></br>
@@ -136,9 +213,12 @@ function Contests() {
             at info@365tojapan.com in order to receive assistance.
           </Col>
         </Row>
+      </AnimationOnScroll>
+        <div>
         <Row className="pt-5 mx-5">
+         
           <h3 className="contestHeader">
-            Guidelines (preliminary and subject to change)
+            Guidelines (subject to change)
           </h3>
           <ol>
             <li>
@@ -196,11 +276,11 @@ function Contests() {
           <br></br>
           <br></br>
           <p>
-            Below, the submission spot for this contest can be found. Please
+            (Currently closed) Below, the submission spot for this contest can be found. Please
             follow all guidlines and note that you have read and met them with
             the checkbox at the end.
           </p>
-          <div className="container">
+          {/* <div className="container">
             <div className="row">
               <div className="col-10">
                 <Form.Group className="mb-3" controlId="Email">
@@ -287,17 +367,18 @@ function Contests() {
                   className="btn-primary-soft px-5 mb-5"
                   variant="outline-dark"
                   size="sm"
-                  onClick={newMessage}
+                  disabled
                 >
-                  Send Message
+                  Send Submission
                 </Button>
               </div>
             </div>
-          </div>
+          </div> */}
         </Row>
+        </div>
         <br></br>
       </Container>
-      <Modal show={successModal} onHide={hideSuccessModal} centered>
+      <Modal open={successModal} onCancel={hideSuccessModal} centered>
         <Result
           status="success"
           title="Haiku Successfully Submitted to Contest"
@@ -308,6 +389,14 @@ function Contests() {
             </Button>,
           ]}
         />
+      </Modal>
+      <Modal 
+        title="Author Bio" 
+        open={showModal} 
+        onCancel={() => setShowModal(false)}
+        footer={null}
+      >
+        <p>{bio}</p>
       </Modal>
     </>
   );

@@ -37,7 +37,7 @@ function HomeBanner() {
 
   const openNotification = (placement: NotificationPlacement) => {
     api.info({
-      message: `Check out 365toJapan's haiku contest!`,
+      message: `Check out 365toJapan's haiku contest results!`,
       description: 'Learn more under the contests tab.',
       placement,
     });
@@ -45,8 +45,13 @@ function HomeBanner() {
 
   const contextValue = useMemo(() => ({ name: 'Ant Design' }), []);
 
+  let shown = 0;
+
   useEffect(() => {
-    openNotification('bottomRight')
+    if(shown == 0) {
+      openNotification('bottomRight');
+      shown++;
+    }
   }, []);
 
   return (

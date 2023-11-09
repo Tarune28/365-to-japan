@@ -17,6 +17,11 @@
   }
 }
 
+.grey h3 {
+  color: #373737!important;
+
+}
+
 .info1 {
   margin-bottom: 50px!important;
 }
@@ -131,7 +136,7 @@ img {
 .content p,
 h3,
 h4 {
-  color: #373737!important;
+  color: #373737;
   
   /* font-family: 'Noto Serif Vithkuqi', serif; */
   /* font-family: 'Noto Serif Vithkuqi', serif!important; */
