@@ -127,7 +127,7 @@ function Contests() {
             <Col span={7} className="mx-4">
               
             <Card title="Adam Haver" extra={<InfoCircleOutlined onClick={() => showBio("adam")}/>}>
-            unblinking Sandra <br></br>
+            Unblinking Sandra <br></br>
 green eyes of envy<br></br>
 weeding with shadow<br></br>
 
