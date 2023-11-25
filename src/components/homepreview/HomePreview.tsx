@@ -3,13 +3,11 @@ import BlogCard from "../blogpreview/blogcard/BlogCard";
 import { useEffect, useState } from "react";
 import RequestUtils from "../../utils/RequestUtils";
 import { Button } from "antd";
-import moment from "moment";
 import { Card, Statistic, Row, Col } from "antd";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 // Images
 import nature from "./../../img/home/nature.webp";
-import logo from "../../365.png";
 import street from "./../../img/home/sqbg.webp";
 
 // Stylesheets
@@ -34,11 +32,6 @@ function HomePreview(props: any) {
         return;
       }
 
-      // data[0].arr.sort(
-      //   (a: { date: moment.MomentInput; }, b: { date: moment.MomentInput; }) =>
-      //     new (moment(b.date) as any).format("YYYYMMDD") -
-      //     new (moment(a.date) as any).format("YYYYMMDD")
-      // );
       for (let i = 0; i < data[0].arr.length; i++) {
         data[0].arr[i].animationType = false;
       }

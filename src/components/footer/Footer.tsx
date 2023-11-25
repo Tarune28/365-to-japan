@@ -65,12 +65,12 @@ function Footer() {
         className="text-center text-white text-lg-left"
       >
         <MDBContainer
-          className="p-4 pb-0 mx-auto text-center mx-reset"
+          className="p-4 pb-0 mx-auto text-center max-width-0"
           style={{ display: "flex" }}
         >
           <Form
             layout="inline"
-            className="mx-auto text-center div"
+            className="mx-auto text-center div mx-reset-1"
             style={{
               width: 550,
             }}
@@ -78,7 +78,7 @@ function Footer() {
             <Form.Item
               name="name"
               rules={[{ required: true, message: "Please enter your name" }]}
-              className="mb-2 input-control mr-0 mx-reset"
+              className="mb-2 input-control mr-0 mx-reset-1"
             >
               <Input
                 placeholder="name"
@@ -92,7 +92,7 @@ function Footer() {
                 { required: true, message: "Please enter your email" },
                 { type: "email", message: "Please enter a valid email" },
               ]}
-              className="mb-2 input-control mx-auto mx-reset"
+              className="mb-2 input-control mx-auto mx-reset-1"
             >
               <Input
                 placeholder="email"
@@ -103,7 +103,7 @@ function Footer() {
             </Form.Item>
             <Form.Item className="ml-0 flex-0">
               <Button
-                className="btn-primary-soft-inverse mx-reset"
+                className="btn-primary-soft-inverse mx-reset-1"
                 shape="round"
                 size="small"
                 onClick={() => newSubscriber()}

@@ -44,11 +44,6 @@
 
 
 @media screen and (max-width: 992px) {
-    .ant-card-body {
-        /* padding: 2px!important; */
-    }
-    
-
     .mx-reset {
         margin-left: 0rem!important;
         margin-right: 0rem!important;

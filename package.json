@@ -74,6 +74,7 @@
     ]
   },
   "devDependencies": {
+    "@types/aria-query": "^5.0.4",
     "@types/draft-convert": "^2.1.4",
     "@types/react-draft-wysiwyg": "^1.13.4",
     "@types/uuid": "^9.0.2",

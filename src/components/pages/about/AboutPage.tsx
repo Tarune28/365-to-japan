@@ -6,13 +6,11 @@ import { ConfigProvider, Steps } from "antd";
 
 // Images
 import pageImage from "../../../img/about/about-banner-min.webp";
-import plane from "../../../img/about/about1.jpg";
 import code from "../../../img/about/coding.jpg";
 import lanterns from "../../../img/about/whoAbout.jpg";
 import shop from "../../../img/about/additionalInfo.jpg";
 import Tarun from "../../../img/about/profile.png";
 import Brett from "../../../img/about/brett.jpg";
-import Isabella from "../../../img/about/isabella.jpg";
 
 // Stylesheets
 import "../about/AboutPage.css";
@@ -153,21 +151,6 @@ function AboutPage() {
                         </div>
                       </a>
                     </div>
-                    {/* <div className="container1 mx-4">
-                      <a
-                        target="0"
-                        href="https://www.linkedin.com/in/isabella-palit-351600262/"
-                      >
-                        <img src={Isabella} className="image" alt="" />
-                        <div className="overlay">
-                          <div className="projeto01">
-                            Isabella Palit
-                            <br /> Senior @ Mass Academy <br /> Poetry
-                            Coordinator
-                          </div>
-                        </div>
-                      </a>
-                    </div> */}
                   </div>
                 </div>
               </div>

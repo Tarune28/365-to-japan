@@ -3,7 +3,7 @@ import BlogBanner from "../../blogbanner/BlogBanner";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import RequestUtils from "../../../utils/RequestUtils";
-import { ConfigProvider, Skeleton, Space, Spin } from 'antd';
+import { ConfigProvider, Skeleton } from 'antd';
 
 // Stylesheets
 import "./BlogTemplate.css";
@@ -77,8 +77,6 @@ function BlogTemplate() {
         if(queue === 2) {
           setLoading(false);
         }
-        
-        
       })
       .catch((error) => {
         console.log(error);

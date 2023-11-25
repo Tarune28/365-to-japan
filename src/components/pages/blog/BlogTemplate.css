@@ -10,7 +10,6 @@
     margin-left: 0vw!important;
     margin-right: 0vw!important;
     font-family: "Crimson Text", serif!important;
-    /* background-color: #c4c4c4; */
   }
   .info1 {
     margin-bottom: 50px!important;
@@ -35,7 +34,6 @@
     margin-left: 0vw!important;
     margin-right: 0vw!important;
     max-width: auto!important;
-    /* background-color: #c4c4c4; */
   }
   .info1 {
     margin-bottom: 40px!important;
@@ -55,10 +53,7 @@ strong {
   padding-right: 45px;
   margin-left: 4vw;
   margin-right: 4vw;
-  /* background-color: #c4c4c4; */
 }
-
-
 
 .grey .row {
   margin-left: auto !important;
@@ -69,7 +64,6 @@ strong {
   padding-right: 0px !important;
   margin-left: 0px !important;
   margin-right: 0px !important;
-  /* background-color: #c4c4c4; */
 }
 
 .grey .col-5 {
@@ -79,7 +73,6 @@ strong {
   padding-right: 0px !important;
   margin-left: .5vw!important;
   margin-right: .5vw!important;;
-  /* background-color: #c4c4c4; */
 }
 
 .grey .col-6 {
@@ -87,8 +80,6 @@ strong {
   padding-bottom: 0px !important;
   padding-left: 0px !important;
   padding-right: 0px !important;
-
-  /* background-color: #c4c4c4; */
 }
 
 .grey .col-7 {
@@ -96,8 +87,6 @@ strong {
   padding-bottom: 0px !important;
   padding-left: 0px !important;
   padding-right: 0px !important;
-
-  /* background-color: #c4c4c4; */
 }
 
 .preview {
@@ -112,7 +101,6 @@ strong {
   color: white;
   font-size: 15px;
 }
-/* change color later */
 
 .header {
   font-size: 16px;
@@ -123,12 +111,6 @@ img {
   padding-bottom: 20px;
 }
 
-.content p {
-  /* font-weight: 800!important; */
-  /* color: black!important; */
-  /* font-family: 'Noto Serif Vithkuqi', serif!important; */
-}
-
 .content img {
   margin-bottom: 30px;
 }
@@ -137,9 +119,6 @@ img {
 h3,
 h4 {
   color: #373737;
-  
-  /* font-family: 'Noto Serif Vithkuqi', serif; */
-  /* font-family: 'Noto Serif Vithkuqi', serif!important; */
   font-family: "Crimson Text", serif;
 }
 
@@ -200,8 +179,3 @@ u {
 .ant-spin-dot-item {
   background-color: #FF914D!important;
 }
-
-/* .content img {
-  padding-left: 20px;
-  padding-right: 20px;
-} */

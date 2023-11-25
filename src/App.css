@@ -147,3 +147,9 @@ body {
     border: #d76e1d 1px solid!important;
     color: white!important;
 }
+
+@media screen and (max-width: 768px) {
+    .max-width-0 {
+        max-width: 100% !important;
+      }
+}

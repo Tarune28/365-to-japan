@@ -1,16 +1,11 @@
 // Imports
 import {
-  LeftCircleFilled,
   LeftCircleOutlined,
-  LeftOutlined,
   RightCircleOutlined,
-  RightOutlined,
-  StarOutlined,
 } from "@ant-design/icons";
-import { Card, Modal, notification } from "antd";
-import React, { useState,useMemo, useEffect } from "react";
+import { notification } from "antd";
+import React, { useMemo, useEffect } from "react";
 import { Carousel } from "@trendyol-js/react-carousel";
-import ReactDOM from "react-dom";
 import "./HomeBanner.css";
 import type { NotificationPlacement } from 'antd/es/notification/interface';
 
@@ -76,7 +71,6 @@ function HomeBanner() {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 1400 237.6"
                 fill="white"
-                // style={{ enableBackground: "new 0 0 1400 237.6;" }}
                 xmlSpace="preserve"
               >
                 <path

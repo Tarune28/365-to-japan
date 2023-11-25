@@ -32,14 +32,16 @@
   color: rgb(255,144,77) !important;
 }
 
-@media screen and (max-width: 550px) {
+
+@media screen and (max-width: 700px) {
   .div {
     display: inline !important;
     width: 200px !important;
   }
-  .mx-reset form {
+  .mx-reset-1 {
     margin-left: 0rem !important;
     margin-right: 0rem !important;
+    max-width: 100% !important;
   }
   .flex-0 div div div div {
     flex: none !important;
@@ -47,5 +49,8 @@
   .center-0 {
     text-align: start !important;
     padding: 1.5rem !important;
+  }
+  .max-width-0 {
+    max-width: 100% !important;
   }
 }
