@@ -1,0 +1,107 @@
+
+.btn-primary-soft {
+
+    color: #37B193;
+    background: linear-gradient(to left, #37B193 50%, white 50%) left;
+    background-size: 200%;
+    transition: .4s ease-out;
+    border: #37B193 1px solid;
+}
+
+.btn-primary-soft:hover {
+    color: white;
+    background: #37B193;
+    border: #37B193 1px solid!important;
+    color: white!important;
+}
+
+.hrhDgb {
+    position: fixed!important;
+    overflow-y: hidden!important;
+
+}
+
+::-webkit-scrollbar {width: 0; background: transparent;}
+
+.area-heading {
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.information-1 {
+    padding-top: 20px;
+    vertical-align: middle!important;
+}
+
+
+.information {
+    padding-top: 100px;
+    
+    vertical-align: middle!important;
+
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .mx-reset {
+        margin-left: 0rem!important;
+        margin-right: 0rem!important;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    
+    .margin-bottom-10 {
+        margin-bottom: 5rem!important;
+    }
+    
+    .row {
+        --bs-gutter-x: 0rem!important;
+    }
+   
+}
+
+@media screen and (max-width: 1280px) {
+    .information {
+        padding-top: 0px;
+        padding-bottom: 0px;
+
+    }
+    .area-padding {
+        padding-top: 100px!important;
+        padding-bottom: 0px!important;
+    }
+    .portfolio_area {
+        padding-bottom: 0px!important;
+    }
+}
+    
+
+@media screen and (max-width: 770px) {
+    .hide-show-image {
+        display: none!important;
+        width: 0px;
+    }
+    .col-9-ext {
+        width: 90%!important;
+        margin-left: 20px!important;
+     
+    }
+}
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    word-break: normal;
+}

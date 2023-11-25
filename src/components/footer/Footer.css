@@ -1,0 +1,56 @@
+.ant-input {
+  border-color: #d9d9d9;
+}
+
+.input-control Input {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.input-control Input:hover {
+  border-color: white !important;
+}
+
+.input-control Input:active {
+  border-color: white !important;
+}
+
+.input-control Input::placeholder {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.mr-0 {
+  margin-right: 0px !important;
+}
+
+.ml-0 {
+  margin-left: 0px !important;
+}
+
+.text-white a:hover {
+  color: rgb(255,144,77) !important;
+}
+
+
+@media screen and (max-width: 700px) {
+  .div {
+    display: inline !important;
+    width: 200px !important;
+  }
+  .mx-reset-1 {
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+    max-width: 100% !important;
+  }
+  .flex-0 div div div div {
+    flex: none !important;
+  }
+  .center-0 {
+    text-align: start !important;
+    padding: 1.5rem !important;
+  }
+  .max-width-0 {
+    max-width: 100% !important;
+  }
+}

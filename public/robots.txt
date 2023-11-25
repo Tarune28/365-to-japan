@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /blogs
+Allow: /about
+Allow: /contact
+Disallow: /dashboard
+Disallow: /login
+Disallow: /css/
+Disallow: /js/
+Disallow: /images/
+Host: https://365tojapan.com
+
+Sitemap: https://365tojapan.com/sitemap.xml

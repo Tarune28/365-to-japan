@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Lora:wght@500;700&family=Noto+Serif+Vithkuqi&display=swap');
+
+@media screen and (max-width:600px) {
+  .grey div {
+    padding-top: 30px!important;
+    padding-bottom: 0px!important;
+    margin-bottom: 30px;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    margin-left: 0vw!important;
+    margin-right: 0vw!important;
+    font-family: "Crimson Text", serif!important;
+  }
+  .info1 {
+    margin-bottom: 50px!important;
+  }
+}
+
+.grey h3 {
+  color: #373737!important;
+
+}
+
+.info1 {
+  margin-bottom: 50px!important;
+}
+
+@media screen and (min-width:600px) and (max-width:991px) {
+  .grey div {
+    padding-top: 30px!important;
+    padding-bottom: 0px!important;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+    margin-left: 0vw!important;
+    margin-right: 0vw!important;
+    max-width: auto!important;
+  }
+  .info1 {
+    margin-bottom: 40px!important;
+  }
+}
+
+strong {
+  font-family: "Crimson Text", serif!important;
+  font-weight: bold!important;
+  color: #8f8f8f!important;
+}
+
+.grey div {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-left: 45px;
+  padding-right: 45px;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+.grey .row {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.grey .col-5 {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-left: .5vw!important;
+  margin-right: .5vw!important;;
+}
+
+.grey .col-6 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.grey .col-7 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.preview {
+  font-family: "Crimson Text", serif;
+  color: grey;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.content {
+  word-wrap: break-word;
+  color: white;
+  font-size: 15px;
+}
+
+.header {
+  font-size: 16px;
+  color: #373737;
+}
+
+img {
+  padding-bottom: 20px;
+}
+
+.content img {
+  margin-bottom: 30px;
+}
+
+.content p,
+h3,
+h4 {
+  color: #373737;
+  font-family: "Crimson Text", serif;
+}
+
+.content h2, h1 {
+  font-family: "Crimson Text", serif!important;
+}
+
+.content ol {
+  padding-left: 40px;
+  color: #373737!important;
+  font-family: "Crimson Text", serif!important;
+}
+
+.content ol li {
+  list-style-type: disc;
+  color: #373737!important;
+}
+
+.content ul {
+  padding-left: 40px;
+  color: #373737!important;
+}
+
+.content ul li {
+  list-style-type: disc;
+  color: #373737!important;
+}
+
+ul li li {
+  background-color: blue;
+}
+
+u {
+  font-family: "Crimson Text", serif!important;
+}
+
+.starter:first-letter {
+  float: left;
+  font-family: Georgia;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+
+
+.spinner {
+  margin-left: auto!important;
+  margin-right: auto!important;
+  width: 100%
+}
+
+.ant-spin {
+  color: #FF914D!important;
+}
+
+.ant-spin-dot-item {
+  background-color: #FF914D!important;
+}

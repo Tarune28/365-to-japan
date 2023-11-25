@@ -1,0 +1,84 @@
+.preview {
+  font-family: 'Crimson Text', serif; color: grey; padding-left: 10px; padding-right: 10px;
+}
+
+  .preview {
+    word-wrap: break-word;
+    white-space: initial;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 10px;
+    background-color: lightgray;
+  }
+
+  .indent {
+    text-indent: 40px;
+  }
+
+  .header {
+    
+    font-size: 18px;
+  }
+
+  h1,h2,h3,h4 {
+    color: grey;
+  }
+
+  .top {
+    padding-top: 10px;
+  }
+  .returnLink {
+    color:gray;
+  }
+
+  .starter:first-letter {
+   
+    float: left;
+    font-family: Georgia;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+}
+
+mark {
+  background-color: rgb(1,176,147);
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+}
+
+.json {
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 15px;
+}
+.json p {
+  color: rgb(54,177,146);
+}
+.json .brace {
+  color: white;
+  padding-left: 45px;
+}
+
+.json .starter-brace {
+  color: white;
+  padding-left: 5px;
+}
+.ident {
+  padding-left: 85px;
+  color: #FFA671;
+}
+
+.ant-modal-content {
+  z-index: 1000;
+  position: absolute;
+}
+
+.error {
+  padding-top: 5px;
+  color: red;
+  font-weight: 300;
+  font-style: italic;
+}

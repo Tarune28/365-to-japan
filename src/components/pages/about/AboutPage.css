@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+
+.roundedimg {
+   
+
+    padding-top: 0px;
+    border-radius: 10px;
+    vertical-align: middle;
+
+}
+
+@media screen and (max-width: 760px) {
+  .roundedimg {
+    margin-bottom: 30px!important;
+  }
+}
+
+.first-row {
+   
+  position: relative;
+  top:50px
+}
+
+.btn-custom {
+    background-color: #F4AF6A;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: white;
+    border: 1px solid #F4AF6A;
+    color: #F4AF6A
+}
+
+
+  .container1 {
+    position: relative;
+    width: 200px;
+    border-radius: 50%;
+   
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+    height: auto;
+    padding-bottom: 0px;
+    
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(55,177,147, 0.8);
+  }
+  
+  .container1:hover .overlay {
+    opacity: 1;
+  }
+  
+  .projeto01 {
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+.link {
+    color:#37B193;
+}
+
+.link:hover {
+    color: grey;
+}
+
+.about-area .about-content h4 {
+  font-family: "open sans", sans-serif;
+  font-weight: 400;
+}
+
+.about-area .about-content h1 {
+  font-family: "open sans", sans-serif;
+  font-weight: 400;
+}
+
+.area-heading-about {
+  text-decoration: bold;
+}
+
+@media screen and (max-width: 993px) {
+  .hideimg {
+    display: none!important;
+  }
+  .col-lg-5-ext {
+    width: 90%!important;
+  }
+  .area-padding {
+    padding-top: 60px!important;
+  }
+  .roundedimg {
+    width: 50%!important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .roundedimg {
+    width: 70%!important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .roundedimg {
+    display: none;
+  }
+}
