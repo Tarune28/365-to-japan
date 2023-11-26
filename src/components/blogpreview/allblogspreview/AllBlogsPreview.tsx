@@ -269,6 +269,3 @@ function AllBlogsPreview(props: any) {
 }
 
 export default AllBlogsPreview;
-
-
-export default AllBlogsPreview;
