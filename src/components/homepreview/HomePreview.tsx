@@ -68,7 +68,7 @@ function HomePreview(props: any) {
                 </p>
                 <br></br>
                 <div className="row text-center mx-auto">
-                  <Col span={7} className="mx-auto">
+                  <Col span={6} className="mx-auto">
                     <Card bordered={true} loading={loading}>
                       <Statistic
                         title="Reads"
@@ -79,7 +79,7 @@ function HomePreview(props: any) {
                       />
                     </Card>
                   </Col>
-                  <Col span={7}>
+                  <Col span={6}>
                     <Card bordered={true} className="mx-auto" loading={loading}>
                       <Statistic
                         title="Blogs"
@@ -90,11 +90,24 @@ function HomePreview(props: any) {
                       />
                     </Card>
                   </Col>
-                  <Col span={7} className="mx-auto">
+                  <Col span={6} className="mx-auto">
                     <Card bordered={true} loading={loading}>
                       <Statistic
                         title="Est."
                         value={2020}
+                        groupSeparator=""
+                        valueStyle={{
+                          color: "#d76e1d",
+                        }}
+                      />
+                    </Card>
+                  </Col>
+                  <Col span={6} className="mx-auto">
+                    <Card bordered={true} loading={loading}>
+                      <Statistic
+                        title="Blog Ranking"
+                        value={39}
+                        prefix="#"
                         groupSeparator=""
                         valueStyle={{
                           color: "#d76e1d",
