@@ -120,6 +120,8 @@ function DashboardPage() {
 
   let [mainDesc, setMainDesc] = useState("");
 
+  let [postable, setPostable] = useState(true);
+
   const imagePlugin = createImagePlugin();
 
   const plugins = [imagePlugin];
@@ -270,6 +272,7 @@ function DashboardPage() {
           return;
         }
 
+        setPostable(false);
         setCurrentID(data.arr[0]["_id"]);
         setCurrentEventName(data.arr[0]["title"]);
         setCurrentFileName(
@@ -709,17 +712,18 @@ function DashboardPage() {
                     </p>
                   </div>
                   <br></br>
-                  <Checkbox onChange={(e) => setNewsletter(e.target.checked)}>
+                  <Checkbox disabled={!postable} onChange={(e) => setNewsletter(e.target.checked)}>
                     Newsletter email?
                   </Checkbox>
                 </Form.Group>
-                <Button onClick={(e) => postBlog()}>Post</Button>
-                <Button className="mx-2" onClick={(e) => editBlog()}>
-                  Save Changes
-                </Button>
-                <Button className="mx-2" onClick={(e) => setShowModal(true)}>
+                <Button disabled={!postable} onClick={(e) => postBlog()}>Post</Button>
+                <Button disabled={!postable} className="mx-2" onClick={(e) => setShowModal(true)}>
                   Post Later
                 </Button>
+                <Button disabled={postable} className="mx-2" onClick={(e) => editBlog()}>
+                  Save Edits
+                </Button>
+                
               </Form>
               <p className="error">{message}</p>
             </Tabs.TabPane>
