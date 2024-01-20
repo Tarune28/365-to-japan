@@ -256,16 +256,10 @@ function AboutPage() {
             <div className="col-lg-6 col-md-12 offset-md-0 offset-lg-1 mx-2">
               <AnimationOnScroll animateIn="animate__fadeIn">
                 <div className="about-content">
-                  <h1
-                    style={{
-                      fontSize: "36px",
-                      color: "#1a1d24",
-                      marginBottom: "18px",
-                      lineHeight: "48px",
-                    }}
-                  >
+                <h4>
                     Additional Information
-                  </h1>
+                    <br />
+                  </h4>
                   <p style={{ textIndent: "0px" }}>
                     One final note about me: I love giving back to the community
                     and taking up any opportunity. If you have any inquiries or
