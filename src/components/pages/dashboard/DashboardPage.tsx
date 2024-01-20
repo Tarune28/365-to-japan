@@ -30,9 +30,10 @@ import {
   Button,
   Input,
   Upload,
+  Modal
 } from "antd";
 import BlogDetails from "../../blogdetails/BlogDetails";
-import { Modal } from "react-bootstrap";
+// import { Modal } from "react-bootstrap";
 
 // Stylesheets
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
@@ -365,7 +366,6 @@ function DashboardPage() {
   // SCHEDULED POST
   function postBlogLater(e: any) {
     e.preventDefault();
-    alert("tes");
     var duration = moment.duration(currentStartDateTime.diff(moment()));
     var scheduledTime = currentStartDateTime.format("MM/DD/YY hh:mm A");
     let desc =
@@ -756,11 +756,7 @@ function DashboardPage() {
           Logout
         </Button>
       </section>
-      <Modal show={showModal} onHide={hideEventModal} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Set Time</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+      <Modal title="Set Time" open={showModal} onCancel={hideEventModal} footer={[]} centered>
           <Form onSubmit={postBlogLater}>
             <Datetime
               value={currentStartDateTime}
@@ -771,7 +767,6 @@ function DashboardPage() {
               Submit
             </Button>
           </Form>
-        </Modal.Body>
       </Modal>
     </>
   );
