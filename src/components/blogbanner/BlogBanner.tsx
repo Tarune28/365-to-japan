@@ -9,6 +9,9 @@ import Tarun from "../../img/about/profile.png";
 import Brett from "../../img/about/brett.jpg";
 
 function BlogBanner(props?: { pageInfo: { bannerURL?: any; title?: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; date?: moment.MomentInput; location?: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }, loading: boolean | undefined }) {
+  
+  let postTime = props!.pageInfo.date;
+
   return (
     <>
       <link
@@ -32,10 +35,12 @@ function BlogBanner(props?: { pageInfo: { bannerURL?: any; title?: string | numb
             zIndex: "0",
           }}
         ></div>
+        
         <div
           className="container"
           style={{ position: "relative", zIndex: "10" }}
         >
+          
           <h2 style={{ fontFamily: "Crimson Text" }}>
             <div className="w3-black1 blog-title" style={{ zIndex: "10" }}>
               {props!.loading ? <Skeleton paragraph={{rows: 0}} active={true}></Skeleton> : props!.pageInfo.title}
@@ -46,7 +51,7 @@ function BlogBanner(props?: { pageInfo: { bannerURL?: any; title?: string | numb
               <div style={{ width: "100%", textAlign: "center" }}>
                 <li className="breadcrumb-item date">
                   <a style={{ color: "#F08811" }}>
-                    {moment(props!.pageInfo.date).format("YYYY") + "年 " + moment(props!.pageInfo.date).format("MM") + "月 " + moment(props!.pageInfo.date).format("DD") + "日 " }
+                    {postTime != undefined ? moment(props!.pageInfo.date).format("YYYY") + "年 " + moment(props!.pageInfo.date).format("MM") + "月 " + moment(props!.pageInfo.date).format("DD") + "日 " : "Loading..."}
                   </a>
                 </li>
               </div>
